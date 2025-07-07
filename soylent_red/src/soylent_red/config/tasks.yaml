@@ -1,0 +1,142 @@
+brand_strategy_task:
+  description: >
+    Analyze the content topic "{topic}" and develop a comprehensive brand strategy approach.
+    
+    Your responsibilities include:
+    1. Review any existing brand guidelines and voice documentation
+    2. Identify key brand messaging pillars that should be emphasized
+    3. Determine the appropriate tone and style for the target audience
+    4. Create content positioning strategy that aligns with brand goals
+    5. Establish key themes and messaging frameworks for the article
+    6. Identify brand differentiators to highlight in the content
+    
+    Use the Brand Style Guide tool to reference existing brand guidelines and ensure consistency.
+    Output should include specific brand voice guidelines, key messaging points, and content strategy recommendations.
+  expected_output: >
+    A comprehensive brand strategy document containing:
+    - Brand voice and tone guidelines for this article
+    - Key messaging pillars and themes to emphasize
+    - Target audience considerations and positioning strategy
+    - Content differentiation strategy
+    - Specific brand guidelines and requirements for the writing team
+    - Success metrics and brand alignment criteria
+    Formatted as structured markdown without code blocks
+  agent: brand_strategist
+
+research_task:
+  description: >
+    Conduct comprehensive research on the topic "{topic}" to gather insights, data, and supporting information.
+    
+    Your research should include:
+    1. Industry trends and current developments related to the topic
+    2. Key statistics, data points, and factual information
+    3. Expert opinions and authoritative sources
+    4. Competitor analysis and content gap identification
+    5. Trending subtopics and related themes
+    6. Audience interests and engagement patterns
+    7. Supporting examples, case studies, or real-world applications
+    
+    Use web search tools to gather current information and ensure all sources are credible and up-to-date.
+    Focus on finding unique insights and angles that will differentiate the content.
+  expected_output: >
+    A detailed research report containing:
+    - Executive summary of key findings
+    - Industry trends and current developments
+    - Statistical data and factual information with sources
+    - Expert insights and authoritative quotes
+    - Competitor analysis and content opportunities
+    - Trending topics and audience interests
+    - Supporting examples and case studies
+    - Recommended content angles and unique perspectives
+    Formatted as structured markdown with proper citations
+  agent: content_researcher
+
+writing_task:
+  description: >
+    Create a compelling, well-structured article on "{topic}" that aligns with the brand strategy and incorporates research findings.
+    
+    Article requirements:
+    1. Follow the brand voice and messaging guidelines from the Brand Strategy task
+    2. Incorporate key research findings and data from the Research task
+    3. Create an engaging headline that captures attention and reflects the brand
+    4. Structure the article with clear sections, subheadings, and logical flow
+    5. Include compelling introduction that hooks the reader
+    6. Develop main content that provides genuine value and insights
+    7. Create a strong conclusion with clear takeaways or call-to-action
+    8. Ensure the content is optimized for newsletter/Substack format
+    9. Maintain consistent brand voice throughout
+    10. Include relevant examples, quotes, or data points to support arguments
+    
+    The article should be publication-ready and align with Substack best practices for engagement and readability.
+  expected_output: >
+    A complete, publication-ready article containing:
+    - Compelling headline that captures attention
+    - Engaging introduction that hooks readers
+    - Well-structured main content with clear sections
+    - Supporting data, examples, and insights
+    - Strong conclusion with clear takeaways
+    - Proper formatting for newsletter/Substack publication
+    - Consistent brand voice throughout
+    - Word count appropriate for the platform (1500-3000 words)
+    Formatted as clean markdown ready for publication
+  agent: article_writer
+
+seo_optimization_task:
+  description: >
+    Optimize the article for search engines and engagement while maintaining content quality and brand alignment.
+    
+    Optimization requirements:
+    1. Analyze the article for SEO opportunities
+    2. Optimize headline and subheadings for search and engagement
+    3. Ensure proper keyword integration without compromising readability
+    4. Improve content structure for better search engine understanding
+    5. Enhance meta descriptions and article descriptions
+    6. Optimize for featured snippets and rich results
+    7. Improve internal linking opportunities
+    8. Ensure mobile-friendly formatting
+    9. Optimize for newsletter-specific SEO considerations
+    10. Maintain brand voice while incorporating SEO best practices
+    
+    Use SEO analysis tools to identify optimization opportunities and ensure the content balances discoverability with quality.
+  expected_output: >
+    An SEO-optimized version of the article including:
+    - Optimized headline and subheadings
+    - Strategic keyword integration throughout content
+    - Improved content structure and formatting
+    - Meta description and article summary
+    - SEO recommendations and implementation notes
+    - Newsletter-specific optimization suggestions
+    - Performance metrics and optimization targets
+    - Maintained brand voice and content quality
+    Formatted as publication-ready markdown with SEO enhancements
+  agent: seo_specialist
+
+editing_task:
+  description: >
+    Review, refine, and finalize the article to ensure it meets the highest publication standards and brand requirements.
+    
+    Editing responsibilities:
+    1. Review content for grammar, spelling, and punctuation accuracy
+    2. Ensure consistent brand voice and messaging throughout
+    3. Verify all facts, statistics, and citations for accuracy
+    4. Improve content flow, readability, and engagement
+    5. Ensure proper formatting for Substack publication
+    6. Check compliance with brand guidelines and strategy
+    7. Optimize content structure and organization
+    8. Ensure all SEO optimizations are properly implemented
+    9. Verify content meets word count and format requirements
+    10. Provide final quality assurance before publication
+    
+    The final output should be a polished, publication-ready article that represents the brand professionally.
+  expected_output: >
+    A final, publication-ready article that includes:
+    - Error-free grammar, spelling, and punctuation
+    - Consistent brand voice and messaging
+    - Verified facts and accurate citations
+    - Optimized content flow and readability
+    - Proper Substack formatting and structure
+    - Quality assurance report with any changes made
+    - Final recommendations for publication
+    - Performance expectations and success metrics
+    Formatted as polished markdown ready for immediate publication
+  agent: editor
