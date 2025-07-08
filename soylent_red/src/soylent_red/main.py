@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import sys
 import warnings
+import os
 
 from soylent_red.crew import SoylentRed
 
@@ -8,22 +9,38 @@ warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
 def run():
     """
-    Run the crew with user-provided topic.
-    Usage: crewai run "Your Article Topic"
+    Run the crew with user-provided content file path.
+    Usage: crewai run "path/to/content/file.md"
     """
     if len(sys.argv) < 2:
-        topic = input("Enter the article topic: ")
+        file_path = input("Enter the relative path to content file: ")
     else:
-        topic = " ".join(sys.argv[1:])
+        file_path = " ".join(sys.argv[1:])
+    
+    # Validate file path
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"Content file not found: {file_path}")
+    
+    # Read file content
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            raw_content = f.read()
+    except Exception as e:
+        raise Exception(f"Error reading content file: {e}")
+    
+    # Extract filename for reference
+    filename = os.path.basename(file_path)
     
     inputs = {
-        'topic': topic,
+        'content_file_path': file_path,
+        'raw_content': raw_content,
+        'source_filename': filename,
     }
     
     try:
         result = SoylentRed().crew().kickoff(inputs=inputs)
         print(f"\n✅ Article completed successfully!")
-        print(f"📝 Topic: {topic}")
+        print(f"📁 Source: {file_path}")
         print(f"📄 Output saved to: final_article.md")
         return result
     except Exception as e:

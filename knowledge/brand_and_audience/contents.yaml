@@ -1,0 +1,14 @@
+knowledge:
+  - publication.md:
+      descriptor: "Guidelines for content distribution and channels"
+      children:
+        - maya_chen.md:
+            descriptor: "The Curious Explorer / Anxious Innovator"
+        - alex_rodriguez.md:
+            descriptor: "The Ethical Navigator"
+        - jordan_park.md:
+            descriptor: "The Holistic Thinker / The Ethical Innovator"
+        - rohan_gupta.md:
+            descriptor: "The Strategic Orchestrator / The Ethical Innovator"
+  - brand-foundation.md:
+      descriptor: "Core brand principles and guidelines"

@@ -1,6 +1,6 @@
 # SoylentRed Crew
 
-Welcome to the SoylentRed Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+A specialized CrewAI-powered multi-agent system for creating on-brand Substack articles. SoylentRed serves as a production-ready coding assistant crew that can take natural language inputs and provide guidance, author code, and handle content creation workflows. The crew is designed to learn from interactions over time and improve future outputs through experience.
 
 ## Installation
 
@@ -20,12 +20,24 @@ crewai install
 ```
 ### Customizing
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
+**Add your API keys into the `.env` file:**
+- `OPENAI_API_KEY` - Required for LLM operations
+- `SERPER_API_KEY` - Required for web search functionality
 
-- Modify `src/soylent_red/config/agents.yaml` to define your agents
-- Modify `src/soylent_red/config/tasks.yaml` to define your tasks
-- Modify `src/soylent_red/crew.py` to add your own logic, tools and specific args
-- Modify `src/soylent_red/main.py` to add custom inputs for your agents and tasks
+**Configuration:**
+- `src/soylent_red/config/agents.yaml` - Agent definitions and roles
+- `src/soylent_red/config/tasks.yaml` - Task workflows and outputs  
+- `src/soylent_red/crew.py` - Crew logic and tool integrations
+- `src/soylent_red/main.py` - Entry point and input handling
+
+## Integrated Tools
+
+This crew includes the following production-ready tools:
+- **SerperDevTool** - Real internet search capabilities
+- **FileReadTool** - Read files and CSV data
+- **FileWriterTool** - Create and write output files
+- **DirectoryReadTool** - Browse directory structures
+- **Brand & Content Tools** - Specialized tools for on-brand content creation
 
 ## Running the Project
 
@@ -37,11 +49,19 @@ $ crewai run
 
 This command initializes the soylent_red Crew, assembling the agents and assigning them tasks as defined in your configuration.
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+The crew will execute a sequential workflow to create publication-ready Substack articles, outputting a final `final_article.md` file.
 
-## Understanding Your Crew
+## Crew Architecture
 
-The soylent_red Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+The SoylentRed crew consists of specialized agents working in sequence:
+
+1. **Brand Strategist** - Ensures content aligns with brand guidelines and audience preferences
+2. **Content Researcher** - Performs web research and gathers supporting data using SerperDevTool
+3. **Article Writer** - Creates the main content following brand guidelines and quality standards
+4. **SEO Specialist** - Optimizes content for search and audience engagement
+5. **Editor** - Performs final review, formatting, and quality assurance
+
+Each agent has access to specialized tools appropriate for their role, with file operations handled through the integrated FileRead/Write tools and research conducted via SerperDevTool.
 
 ## Support
 

@@ -1,71 +1,88 @@
 brand_strategy_task:
   description: >
-    Analyze the content topic "{topic}" and develop a comprehensive brand strategy approach.
+    Analyze the provided raw content from "{source_filename}" and develop a comprehensive brand strategy approach for transforming it into a polished article.
+    
+    Raw content to analyze:
+    {raw_content}
     
     Your responsibilities include:
-    1. Review any existing brand guidelines and voice documentation
-    2. Identify key brand messaging pillars that should be emphasized
-    3. Determine the appropriate tone and style for the target audience
-    4. Create content positioning strategy that aligns with brand goals
-    5. Establish key themes and messaging frameworks for the article
-    6. Identify brand differentiators to highlight in the content
+    1. Review the raw content to understand its core themes and messages
+    2. Review existing brand guidelines and voice documentation
+    3. Identify key brand messaging pillars that should be emphasized
+    4. Determine the appropriate tone and style for the target audience
+    5. Create content positioning strategy that aligns with brand goals
+    6. Establish key themes and messaging frameworks for the article
+    7. Identify brand differentiators to highlight in the content
+    8. Suggest how to structure and enhance the raw content
     
     Use the Brand Style Guide tool to reference existing brand guidelines and ensure consistency.
     Output should include specific brand voice guidelines, key messaging points, and content strategy recommendations.
   expected_output: >
     A comprehensive brand strategy document containing:
+    - Analysis of the raw content's themes and potential
     - Brand voice and tone guidelines for this article
     - Key messaging pillars and themes to emphasize
     - Target audience considerations and positioning strategy
     - Content differentiation strategy
     - Specific brand guidelines and requirements for the writing team
+    - Recommendations for structuring and enhancing the raw content
     - Success metrics and brand alignment criteria
     Formatted as structured markdown without code blocks
   agent: brand_strategist
 
 research_task:
   description: >
-    Conduct comprehensive research on the topic "{topic}" to gather insights, data, and supporting information.
+    Conduct comprehensive research to enhance and validate the content from "{source_filename}". Use the raw content as your starting point to identify research needs.
+    
+    Raw content for reference:
+    {raw_content}
     
     Your research should include:
-    1. Industry trends and current developments related to the topic
-    2. Key statistics, data points, and factual information
-    3. Expert opinions and authoritative sources
-    4. Competitor analysis and content gap identification
-    5. Trending subtopics and related themes
-    6. Audience interests and engagement patterns
+    1. Fact-checking and validation of claims made in the raw content
+    2. Industry trends and current developments related to the content themes
+    3. Additional statistics, data points, and factual information to support the content
+    4. Expert opinions and authoritative sources that reinforce key points
+    5. Competitor analysis and content gap identification
+    6. Trending subtopics and related themes that could enhance the content
     7. Supporting examples, case studies, or real-world applications
+    8. Current best practices and methodologies mentioned in the content
     
     Use web search tools to gather current information and ensure all sources are credible and up-to-date.
-    Focus on finding unique insights and angles that will differentiate the content.
+    Focus on finding additional insights and validation that will strengthen the content.
   expected_output: >
     A detailed research report containing:
-    - Executive summary of key findings
+    - Fact-checking results for claims in the raw content
+    - Executive summary of key findings and validation
     - Industry trends and current developments
-    - Statistical data and factual information with sources
+    - Additional statistical data and factual information with sources
     - Expert insights and authoritative quotes
     - Competitor analysis and content opportunities
     - Trending topics and audience interests
     - Supporting examples and case studies
-    - Recommended content angles and unique perspectives
+    - Recommended content enhancements and angles
     Formatted as structured markdown with proper citations
   agent: content_researcher
 
 writing_task:
   description: >
-    Create a compelling, well-structured article on "{topic}" that aligns with the brand strategy and incorporates research findings.
+    Transform the raw content from "{source_filename}" into a compelling, well-structured article that aligns with the brand strategy and incorporates research findings.
+    
+    Raw content to transform:
+    {raw_content}
     
     Article requirements:
-    1. Follow the brand voice and messaging guidelines from the Brand Strategy task
-    2. Incorporate key research findings and data from the Research task
-    3. Create an engaging headline that captures attention and reflects the brand
-    4. Structure the article with clear sections, subheadings, and logical flow
-    5. Include compelling introduction that hooks the reader
-    6. Develop main content that provides genuine value and insights
-    7. Create a strong conclusion with clear takeaways or call-to-action
-    8. Ensure the content is optimized for newsletter/Substack format
-    9. Maintain consistent brand voice throughout
-    10. Include relevant examples, quotes, or data points to support arguments
+    1. Use the raw content as your foundation, expanding and refining it
+    2. Follow the brand voice and messaging guidelines from the Brand Strategy task
+    3. Incorporate key research findings and data from the Research task
+    4. Create an engaging headline that captures attention and reflects the brand
+    5. Structure the article with clear sections, subheadings, and logical flow
+    6. Expand the introduction to hook the reader while preserving key insights
+    7. Develop main content that provides genuine value and insights
+    8. Enhance with additional examples, case studies, and practical applications
+    9. Create a strong conclusion with clear takeaways or call-to-action
+    10. Ensure the content is optimized for newsletter/Substack format
+    11. Maintain consistent brand voice throughout
+    12. Include relevant examples, quotes, or data points to support arguments
     
     The article should be publication-ready and align with Substack best practices for engagement and readability.
   expected_output: >
@@ -73,7 +90,8 @@ writing_task:
     - Compelling headline that captures attention
     - Engaging introduction that hooks readers
     - Well-structured main content with clear sections
-    - Supporting data, examples, and insights
+    - Enhanced content from the raw material with additional insights
+    - Supporting data, examples, and research findings
     - Strong conclusion with clear takeaways
     - Proper formatting for newsletter/Substack publication
     - Consistent brand voice throughout
