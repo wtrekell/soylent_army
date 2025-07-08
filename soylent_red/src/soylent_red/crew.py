@@ -2,7 +2,15 @@ from crewai import Agent, Crew, Process, Task, LLM
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import List
-from crewai_tools import SerperDevTool, WebsiteSearchTool
+# Removed broken crewai_tools imports
+# Using working SerperDevTool from central tools collection
+import sys
+import os
+sys.path.append('/Users/williamtrekell/Documents/git_repos/soylent_army')
+from tools.serper_dev_tool.serper_dev_tool import SerperDevTool
+from tools.file_read_tool.file_read_tool import FileReadTool
+from tools.file_writer_tool.file_writer_tool import FileWriterTool
+from tools.directory_read_tool.directory_read_tool import DirectoryReadTool
 from .tools.content_tools import (
     BrandStyleGuideTool, WebResearchTool, SEOAnalysisTool, 
     ContentQualityTool, SubstackFormatterTool
@@ -23,7 +31,10 @@ class SoylentRed():
         self.brand_tool = BrandStyleGuideTool()
         self.research_tool = WebResearchTool()
         self.serper_tool = SerperDevTool()
-        self.website_search_tool = WebsiteSearchTool()
+        self.file_read_tool = FileReadTool()
+        self.file_write_tool = FileWriterTool()
+        self.directory_read_tool = DirectoryReadTool()
+        # Removed broken website_search_tool for now
         self.seo_tool = SEOAnalysisTool()
         self.quality_tool = ContentQualityTool()
         self.formatter_tool = SubstackFormatterTool()
@@ -32,7 +43,7 @@ class SoylentRed():
     def brand_strategist(self) -> Agent:
         return Agent(
             config=self.agents_config['brand_strategist'],
-            tools=[self.brand_tool, self.quality_tool],
+            tools=[self.brand_tool, self.quality_tool, self.directory_read_tool],
             llm=self.llm,
             verbose=True
         )
@@ -41,7 +52,7 @@ class SoylentRed():
     def content_researcher(self) -> Agent:
         return Agent(
             config=self.agents_config['content_researcher'],
-            tools=[self.research_tool, self.serper_tool, self.website_search_tool],
+            tools=[self.research_tool, self.serper_tool, self.file_write_tool],
             llm=self.llm,
             verbose=True
         )
@@ -50,7 +61,7 @@ class SoylentRed():
     def article_writer(self) -> Agent:
         return Agent(
             config=self.agents_config['article_writer'],
-            tools=[self.brand_tool, self.quality_tool, self.formatter_tool],
+            tools=[self.brand_tool, self.quality_tool, self.formatter_tool, self.file_read_tool, self.file_write_tool],
             llm=self.llm,
             verbose=True
         )
@@ -68,7 +79,7 @@ class SoylentRed():
     def editor(self) -> Agent:
         return Agent(
             config=self.agents_config['editor'],
-            tools=[self.quality_tool, self.formatter_tool, self.brand_tool],
+            tools=[self.quality_tool, self.formatter_tool, self.brand_tool, self.directory_read_tool],
             llm=self.llm,
             verbose=True
         )

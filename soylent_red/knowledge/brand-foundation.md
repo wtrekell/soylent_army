@@ -1,3 +1,11 @@
+---
+tags:
+  - personal
+  - brand
+  - foundation
+updated: "20250614"
+---
+
 # Brand Foundation & Tone Guide
 
 ## Core Identity

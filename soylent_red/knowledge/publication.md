@@ -1,10 +1,3 @@
----
-tags:
-  - s&e
-  - brand
-  - foundation
-updated: "20250601"
----
 # Syntax & Empathy
 ## Niche
 **AI and Prompt Engineering for UX Designers**
