@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Console Dashboard - Configurable</title>
+    
+    <!-- Cloudscape Integration Styles -->
+    <link rel="stylesheet" href="../css/cloudscape-highcharts-integration.css">
+    
+    <!-- Highcharts -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/modules/sunburst.js"></script>
+    
+    <!-- Custom Cloudscape Theme -->
+    <script src="../js/cloudscape-highcharts-theme.js"></script>
+    
+    <style>
+        body {
+            font-family: "Amazon Ember", "Helvetica Neue", Roboto, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fafbfc;
+            color: #16191f;
+            min-height: 100vh;
+        }
+        
+        /* AWS Console Header */
+        .aws-header {
+            background: #232f3e;
+            color: #ffffff;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 48px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .aws-header-left {
+            display: flex;
+            align-items: center;
+        }
+        
+        .aws-logo {
+            color: #ff9900;
+            font-size: 20px;
+            font-weight: bold;
+            margin-right: 32px;
+        }
+        
+        .aws-nav {
+            display: flex;
+            gap: 24px;
+            font-size: 14px;
+        }
+        
+        .aws-nav a {
+            color: #ffffff;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        
+        .aws-nav a:hover {
+            opacity: 1;
+        }
+        
+        .aws-nav a.active {
+            opacity: 1;
+            border-bottom: 2px solid #ff9900;
+            padding-bottom: 2px;
+        }
+        
+        /* Configuration Controls */
+        .config-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .config-button {
+            background: #0972d3;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .config-button:hover {
+            background: #0866c7;
+        }
+        
+        .config-button.secondary {
+            background: transparent;
+            border: 1px solid #ffffff;
+            opacity: 0.8;
+        }
+        
+        .config-button.secondary:hover {
+            opacity: 1;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        /* Configuration Panel */
+        .config-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: #ffffff;
+            box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .config-panel.open {
+            right: 0;
+        }
+        
+        .config-header {
+            background: #232f3e;
+            color: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .config-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .close-config {
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .config-content {
+            padding: 20px;
+        }
+        
+        .config-section {
+            margin-bottom: 32px;
+        }
+        
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0 0 16px 0;
+            color: #16191f;
+        }
+        
+        .preset-button {
+            width: 100%;
+            background: #ffffff;
+            border: 2px solid #d5dbdb;
+            padding: 16px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s;
+        }
+        
+        .preset-button:hover {
+            border-color: #0972d3;
+            box-shadow: 0 2px 4px rgba(9,114,211,0.1);
+        }
+        
+        .preset-button.active {
+            border-color: #0972d3;
+            background: #f0f7ff;
+        }
+        
+        .preset-title {
+            font-weight: 700;
+            margin: 0 0 4px 0;
+            color: #16191f;
+        }
+        
+        .preset-description {
+            font-size: 14px;
+            color: #5f636e;
+            margin: 0;
+        }
+        
+        .chart-selector {
+            border: 1px solid #d5dbdb;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+        
+        .chart-selector-header {
+            background: #f2f3f3;
+            padding: 12px 16px;
+            font-weight: 600;
+            color: #16191f;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .remove-chart {
+            background: #df4020;
+            color: #ffffff;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        
+        .chart-options {
+            padding: 16px;
+        }
+        
+        .chart-option {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+        
+        .chart-option input {
+            margin-right: 8px;
+        }
+        
+        .add-chart-button {
+            width: 100%;
+            background: #0e8238;
+            color: #ffffff;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 16px;
+        }
+        
+        .add-chart-button:hover {
+            background: #0d7230;
+        }
+        
+        /* Main Content */
+        .dashboard-container {
+            display: flex;
+            min-height: calc(100vh - 48px);
+            transition: margin-right 0.3s ease;
+        }
+        
+        .dashboard-container.config-open {
+            margin-right: 400px;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: #ffffff;
+            border-right: 1px solid #d5dbdb;
+            padding: 20px 0;
+        }
+        
+        .sidebar-section {
+            margin-bottom: 24px;
+        }
+        
+        .sidebar-header {
+            padding: 0 20px 8px 20px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #16191f;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .sidebar-item {
+            padding: 8px 20px;
+            color: #5f636e;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+        
+        .sidebar-item:hover {
+            background-color: #f2f3f3;
+            color: #16191f;
+        }
+        
+        .sidebar-item.active {
+            background-color: #0972d3;
+            color: #ffffff;
+        }
+        
+        /* Main Dashboard */
+        .main-content {
+            flex: 1;
+            padding: 24px;
+            overflow-y: auto;
+        }
+        
+        .page-header {
+            margin-bottom: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .page-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            color: #16191f;
+        }
+        
+        .page-subtitle {
+            font-size: 14px;
+            color: #5f636e;
+            margin: 0;
+        }
+        
+        /* Dashboard Cards Grid */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .dashboard-card {
+            background: #ffffff;
+            border: 1px solid #d5dbdb;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .card-header {
+            padding: 20px 20px 16px 20px;
+            border-bottom: 1px solid #eaeded;
+        }
+        
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0 0 4px 0;
+            color: #16191f;
+        }
+        
+        .card-subtitle {
+            font-size: 14px;
+            color: #5f636e;
+            margin: 0;
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        /* Status Cards */
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        
+        .status-card {
+            background: #ffffff;
+            border: 1px solid #d5dbdb;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .status-value {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .status-label {
+            font-size: 14px;
+            color: #5f636e;
+            margin-bottom: 4px;
+        }
+        
+        .status-change {
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .status-change.positive {
+            color: #0e8238;
+        }
+        
+        .status-change.negative {
+            color: #df4020;
+        }
+        
+        .status-change.neutral {
+            color: #5f636e;
+        }
+        
+        /* Chart containers */
+        .chart-container {
+            height: 300px;
+            margin-top: 16px;
+        }
+        
+        .chart-full {
+            height: 400px;
+        }
+        
+        /* Export Controls */
+        .export-controls {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .export-button {
+            background: #ffffff;
+            border: 1px solid #d5dbdb;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .export-button:hover {
+            border-color: #0972d3;
+            color: #0972d3;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .config-panel {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .dashboard-container.config-open {
+                margin-right: 0;
+            }
+            
+            .dashboard-container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #d5dbdb;
+            }
+            
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .status-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Hidden class for dynamic charts */
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- AWS Console Header -->
+    <header class="aws-header">
+        <div class="aws-header-left">
+            <div class="aws-logo">AWS</div>
+            <nav class="aws-nav">
+                <a href="#" class="active">Dashboard</a>
+                <a href="#">EC2</a>
+                <a href="#">S3</a>
+                <a href="#">RDS</a>
+                <a href="#">Lambda</a>
+                <a href="#">CloudWatch</a>
+            </nav>
+        </div>
+        <div class="config-controls">
+            <div class="export-controls">
+                <button class="export-button" onclick="exportDashboard('png')">Export PNG</button>
+                <button class="export-button" onclick="exportDashboard('pdf')">Export PDF</button>
+            </div>
+            <button class="config-button secondary" onclick="saveDashboard()">Save Layout</button>
+            <button class="config-button" onclick="toggleConfig()">Configure Dashboard</button>
+        </div>
+    </header>
+
+    <!-- Configuration Panel -->
+    <div class="config-panel" id="configPanel">
+        <div class="config-header">
+            <h2 class="config-title">Dashboard Configuration</h2>
+            <button class="close-config" onclick="toggleConfig()">×</button>
+        </div>
+        <div class="config-content">
+            <!-- Presets Section -->
+            <div class="config-section">
+                <h3 class="section-title">Dashboard Presets</h3>
+                <button class="preset-button" onclick="loadPreset('executive')">
+                    <div class="preset-title">Executive Overview</div>
+                    <div class="preset-description">High-level metrics and cost analysis for leadership presentations</div>
+                </button>
+                <button class="preset-button" onclick="loadPreset('technical')">
+                    <div class="preset-title">Technical Deep Dive</div>
+                    <div class="preset-description">Detailed performance metrics and resource utilization</div>
+                </button>
+                <button class="preset-button" onclick="loadPreset('security')">
+                    <div class="preset-title">Security & Compliance</div>
+                    <div class="preset-description">Security alerts, compliance status, and access monitoring</div>
+                </button>
+                <button class="preset-button" onclick="loadPreset('cost')">
+                    <div class="preset-title">Cost Optimization</div>
+                    <div class="preset-description">Detailed cost breakdown and optimization opportunities</div>
+                </button>
+            </div>
+
+            <!-- Chart Configuration -->
+            <div class="config-section">
+                <h3 class="section-title">Chart Configuration</h3>
+                <div id="chartSelectors">
+                    <!-- Chart selectors will be dynamically populated -->
+                </div>
+                <button class="add-chart-button" onclick="addChart()">+ Add Chart</button>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="config-section">
+                <h3 class="section-title">Quick Actions</h3>
+                <button class="config-button" style="width: 100%; margin-bottom: 12px;" onclick="resetDashboard()">Reset to Default</button>
+                <button class="config-button secondary" style="width: 100%;" onclick="clearAllCharts()">Clear All Charts</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="dashboard-container" id="dashboardContainer">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-header">Favorites</div>
+                <a href="#" class="sidebar-item active">Dashboard</a>
+                <a href="#" class="sidebar-item">EC2 Instances</a>
+                <a href="#" class="sidebar-item">S3 Buckets</a>
+                <a href="#" class="sidebar-item">Lambda Functions</a>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-header">Compute</div>
+                <a href="#" class="sidebar-item">EC2</a>
+                <a href="#" class="sidebar-item">Lambda</a>
+                <a href="#" class="sidebar-item">ECS</a>
+                <a href="#" class="sidebar-item">EKS</a>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-header">Storage</div>
+                <a href="#" class="sidebar-item">S3</a>
+                <a href="#" class="sidebar-item">EBS</a>
+                <a href="#" class="sidebar-item">EFS</a>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-header">Database</div>
+                <a href="#" class="sidebar-item">RDS</a>
+                <a href="#" class="sidebar-item">DynamoDB</a>
+                <a href="#" class="sidebar-item">ElastiCache</a>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-header">Management</div>
+                <a href="#" class="sidebar-item">CloudWatch</a>
+                <a href="#" class="sidebar-item">CloudTrail</a>
+                <a href="#" class="sidebar-item">Cost Explorer</a>
+            </div>
+        </aside>
+
+        <!-- Main Dashboard Content -->
+        <main class="main-content">
+            <div class="page-header">
+                <div>
+                    <h1 class="page-title">AWS Console Dashboard</h1>
+                    <p class="page-subtitle">Overview of your AWS resources and services in US East (N. Virginia)</p>
+                </div>
+            </div>
+
+            <!-- Status Overview Cards -->
+            <div class="status-grid">
+                <div class="status-card">
+                    <div class="status-value" style="color: #0972d3;">24</div>
+                    <div class="status-label">Running EC2 Instances</div>
+                    <div class="status-change positive">↑ 12% this month</div>
+                </div>
+                
+                <div class="status-card">
+                    <div class="status-value" style="color: #0e8238;">847 GB</div>
+                    <div class="status-label">S3 Storage Used</div>
+                    <div class="status-change positive">↑ 5.2% this month</div>
+                </div>
+                
+                <div class="status-card">
+                    <div class="status-value" style="color: #8c4fff;">156</div>
+                    <div class="status-label">Lambda Invocations (24h)</div>
+                    <div class="status-change neutral">→ Stable</div>
+                </div>
+                
+                <div class="status-card">
+                    <div class="status-value" style="color: #ff8800;">$1,247</div>
+                    <div class="status-label">Monthly Cost (Current)</div>
+                    <div class="status-change negative">↑ 8.1% vs last month</div>
+                </div>
+            </div>
+
+            <!-- Dynamic Charts Dashboard -->
+            <div class="dashboard-grid" id="chartGrid">
+                <!-- Charts will be dynamically populated -->
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Chart Definitions Library
+        const chartLibrary = {
+            serviceHealth: {
+                title: 'Service Health',
+                subtitle: 'Current status of your AWS services',
+                render: (containerId) => {
+                    Highcharts.chart(containerId, {
+                        chart: { type: 'pie', height: 250 },
+                        title: { text: 'Service Status Distribution', style: { fontSize: '14px' } },
+                        tooltip: { pointFormat: '{series.name}: <b>{point.y} services</b> ({point.percentage:.1f}%)' },
+                        plotOptions: {
+                            pie: {
+                                allowPointSelect: true,
+                                cursor: 'pointer',
+                                innerSize: '60%',
+                                dataLabels: { enabled: false },
+                                showInLegend: true
+                            }
+                        },
+                        legend: { align: 'right', verticalAlign: 'middle', layout: 'vertical', itemStyle: { fontSize: '12px' } },
+                        series: [{
+                            name: 'Services',
+                            colorByPoint: true,
+                            data: [
+                                { name: 'Healthy', y: 18, color: '#0e8238' },
+                                { name: 'Warning', y: 3, color: '#ff8800' },
+                                { name: 'Error', y: 2, color: '#df4020' }
+                            ]
+                        }]
+                    });
+                }
+            },
+            costBreakdown: {
+                title: 'Cost Breakdown',
+                subtitle: 'Service costs for current month',
+                render: (containerId) => {
+                    Highcharts.chart(containerId, {
+                        chart: { type: 'pie', height: 250 },
+                        title: { text: 'Monthly Costs', style: { fontSize: '14px' } },
+                        tooltip: { pointFormat: '{series.name}: <b>${point.y}</b> ({point.percentage:.1f}%)' },
+                        plotOptions: {
+                            pie: {
+                                allowPointSelect: true,
+                                cursor: 'pointer',
+                                dataLabels: { enabled: true, format: '<b>{point.name}</b>: ${point.y}', style: { fontSize: '11px' } }
+                            }
+                        },
+                        series: [{
+                            name: 'Cost',
+                            colorByPoint: true,
+                            data: [
+                                { name: 'EC2', y: 687 },
+                                { name: 'S3', y: 234 },
+                                { name: 'RDS', y: 156 },
+                                { name: 'Lambda', y: 89 },
+                                { name: 'Other', y: 81 }
+                            ]
+                        }]
+                    });
+                }
+            },
+            cloudWatchMetrics: {
+                title: 'CloudWatch Metrics',
+                subtitle: 'Key performance indicators over the last 24 hours',
+                render: (containerId) => {
+                    Highcharts.chart(containerId, {
+                        chart: { type: 'line', height: 250 },
+                        title: { text: 'Key Metrics (24h)', style: { fontSize: '14px' } },
+                        xAxis: { categories: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'], title: { text: 'Time' } },
+                        yAxis: { title: { text: 'Percentage (%)' } },
+                        tooltip: { shared: true, valueSuffix: '%' },
+                        series: [
+                            { name: 'CPU Utilization', data: [45, 52, 68, 75, 82, 58] },
+                            { name: 'Memory Usage', data: [32, 38, 45, 52, 61, 44] },
+                            { name: 'Disk I/O', data: [18, 22, 28, 35, 42, 28] }
+                        ]
+                    });
+                }
+            },
+            resourceUtilization: {
+                title: 'Resource Utilization',
+                subtitle: 'Current resource usage across services',
+                render: (containerId) => {
+                    Highcharts.chart(containerId, {
+                        chart: { type: 'bar', height: 250 },
+                        title: { text: 'Current Utilization', style: { fontSize: '14px' } },
+                        xAxis: { categories: ['EC2 CPU', 'S3 Storage', 'RDS Connections', 'Lambda Memory', 'EBS IOPS'], title: { text: null } },
+                        yAxis: { min: 0, max: 100, title: { text: 'Utilization (%)' } },
+                        tooltip: { valueSuffix: '%' },
+                        plotOptions: { bar: { dataLabels: { enabled: true, format: '{y}%' } } },
+                        series: [{ name: 'Current Usage', data: [72, 45, 89, 34, 67], showInLegend: false }]
+                    });
+                }
+            },
+            networkTraffic: {
+                title: 'Network Traffic & Request Volume',
+                subtitle: 'Detailed view of network activity and API requests over the past 7 days',
+                render: (containerId) => {
+                    Highcharts.chart(containerId, {
+                        chart: { type: 'areaspline', height: 400 },
+                        title: { text: 'Network Traffic & API Requests (7 Days)' },
+                        subtitle: { text: 'Real-time monitoring of network activity and API usage patterns' },
+                        xAxis: { categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'], title: { text: 'Day of Week' } },
+                        yAxis: [
+                            { title: { text: 'Network Traffic (GB)' }, labels: { format: '{value} GB' } },
+                            { title: { text: 'API Requests (Thousands)' }, labels: { format: '{value}K' }, opposite: true }
+                        ],
+                        tooltip: { shared: true },
+                        plotOptions: { areaspline: { fillOpacity: 0.3, marker: { enabled: true, radius: 4 } } },
+                        series: [
+                            { name: 'Inbound Traffic', yAxis: 0, data: [145, 189, 234, 287, 312, 267, 198], tooltip: { valueSuffix: ' GB' } },
+                            { name: 'Outbound Traffic', yAxis: 0, data: [178, 234, 289, 321, 356, 298, 234], tooltip: { valueSuffix: ' GB' } },
+                            { name: 'API Requests', yAxis: 1, type: 'spline', data: [42, 67, 89, 124, 167, 145, 98], tooltip: { valueSuffix: 'K requests' } },
+                            { name: 'Lambda Invocations', yAxis: 1, type: 'spline', data: [23, 34, 45, 67, 89, 78, 56], tooltip: { valueSuffix: 'K invocations' } }
+                        ]
+                    });
+                }
+            },
+            securityAlerts: {
+                title: 'Security & Compliance',
+                subtitle: 'Security alerts and compliance status',
+                render: (containerId) => {
+                    Highcharts.chart(containerId, {
+                        chart: { type: 'column', height: 250 },
+                        title: { text: 'Security Events (30 Days)', style: { fontSize: '14px' } },
+                        xAxis: { categories: ['GuardDuty', 'Config', 'CloudTrail', 'IAM', 'VPC'] },
+                        yAxis: { title: { text: 'Event Count' } },
+                        series: [
+                            { name: 'High Priority', data: [2, 0, 1, 0, 0], color: '#df4020' },
+                            { name: 'Medium Priority', data: [5, 3, 4, 2, 1], color: '#ff8800' },
+                            { name: 'Low Priority', data: [12, 8, 15, 6, 4], color: '#0e8238' }
+                        ]
+                    });
+                }
+            },
+            costTrends: {
+                title: 'Cost Trends',
+                subtitle: 'Monthly cost trends by service',
+                render: (containerId) => {
+                    Highcharts.chart(containerId, {
+                        chart: { type: 'area', height: 250 },
+                        title: { text: 'Cost Trends (6 Months)', style: { fontSize: '14px' } },
+                        xAxis: { categories: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] },
+                        yAxis: { title: { text: 'Cost ($)' } },
+                        tooltip: { shared: true, valueSuffix: '$' },
+                        plotOptions: { area: { stacking: 'normal' } },
+                        series: [
+                            { name: 'EC2', data: [500, 550, 600, 650, 675, 687] },
+                            { name: 'S3', data: [180, 190, 210, 220, 230, 234] },
+                            { name: 'RDS', data: [120, 130, 140, 150, 155, 156] },
+                            { name: 'Other', data: [80, 85, 88, 90, 92, 95] }
+                        ]
+                    });
+                }
+            },
+            performanceMetrics: {
+                title: 'Performance Metrics',
+                subtitle: 'Application performance and response times',
+                render: (containerId) => {
+                    Highcharts.chart(containerId, {
+                        chart: { type: 'spline', height: 250 },
+                        title: { text: 'Response Times', style: { fontSize: '14px' } },
+                        xAxis: { categories: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'] },
+                        yAxis: { title: { text: 'Response Time (ms)' } },
+                        series: [
+                            { name: 'API Gateway', data: [120, 135, 180, 210, 195, 150] },
+                            { name: 'Lambda Cold Start', data: [800, 750, 900, 1100, 950, 700] },
+                            { name: 'RDS Query Time', data: [45, 52, 68, 85, 72, 58] }
+                        ]
+                    });
+                }
+            },
+            networkSecurity: {
+                title: 'Network Security Analysis',
+                subtitle: 'Incoming traffic breakdown by geographic origin and endpoints',
+                render: (containerId) => {
+                    Highcharts.chart(containerId, {
+                        chart: { type: 'sunburst', height: 350 },
+                        title: { text: 'Incoming Traffic Analysis', style: { fontSize: '14px' } },
+                        subtitle: { text: 'Geographic distribution and endpoint analysis' },
+                        tooltip: {
+                            formatter: function() {
+                                // Easter egg for endpoint level (innermost level - check if it has a grandparent)
+                                let currentPoint = this.point;
+                                let parentPoint = currentPoint.parent ? this.series.data.find(p => p.id === currentPoint.parent) : null;
+                                let isEndpoint = parentPoint && parentPoint.parent;
+                                
+                                if (isEndpoint) {
+                                    return '<b>' + this.point.name + '</b><br>' +
+                                           'Requests: <b>' + this.point.value + '</b><br>' +
+                                           '<i style="color: #ff9900;">Somebody is a lot better with machines than people.<br>Oddly, Bandit (my pup), he did this for me.</i>';
+                                }
+                                return '<b>' + this.point.name + '</b><br>' +
+                                       'Requests: <b>' + this.point.value + '</b>';
+                            }
+                        },
+                        plotOptions: {
+                            sunburst: {
+                                allowDrillToNode: true,
+                                cursor: 'pointer',
+                                dataLabels: {
+                                    format: '{point.name}',
+                                    filter: {
+                                        property: 'innerArcLength',
+                                        operator: '>',
+                                        value: 16
+                                    }
+                                },
+                                levels: [{
+                                    level: 1,
+                                    levelIsConstant: false,
+                                    dataLabels: {
+                                        filter: {
+                                            property: 'outerArcLength',
+                                            operator: '>',
+                                            value: 64
+                                        }
+                                    }
+                                }, {
+                                    level: 2,
+                                    colorByPoint: true
+                                }, {
+                                    level: 3,
+                                    colorVariation: {
+                                        key: 'brightness',
+                                        to: -0.5
+                                    }
+                                }]
+                            }
+                        },
+                        series: [{
+                            type: 'sunburst',
+                            data: [
+                                // North America
+                                { id: 'na', parent: '', name: 'North America', value: 1250 },
+                                { id: 'us', parent: 'na', name: 'United States', value: 1000 },
+                                { id: 'ca', parent: 'na', name: 'Canada', value: 200 },
+                                { id: 'mx', parent: 'na', name: 'Mexico', value: 50 },
+                                
+                                // US Endpoints
+                                { id: 'us-web', parent: 'us', name: 'web.example.com', value: 450 },
+                                { id: 'us-api', parent: 'us', name: 'api.example.com', value: 350 },
+                                { id: 'us-cdn', parent: 'us', name: 'cdn.example.com', value: 200 },
+                                
+                                // Canada Endpoints  
+                                { id: 'ca-web', parent: 'ca', name: 'ca.example.com', value: 120 },
+                                { id: 'ca-api', parent: 'ca', name: 'api-ca.example.com', value: 80 },
+                                
+                                // Europe
+                                { id: 'eu', parent: '', name: 'Europe', value: 800 },
+                                { id: 'uk', parent: 'eu', name: 'United Kingdom', value: 300 },
+                                { id: 'de', parent: 'eu', name: 'Germany', value: 250 },
+                                { id: 'fr', parent: 'eu', name: 'France', value: 150 },
+                                { id: 'nl', parent: 'eu', name: 'Netherlands', value: 100 },
+                                
+                                // EU Endpoints
+                                { id: 'uk-web', parent: 'uk', name: 'uk.example.com', value: 180 },
+                                { id: 'uk-api', parent: 'uk', name: 'api-uk.example.com', value: 120 },
+                                { id: 'de-web', parent: 'de', name: 'de.example.com', value: 150 },
+                                { id: 'de-api', parent: 'de', name: 'api-de.example.com', value: 100 },
+                                { id: 'fr-web', parent: 'fr', name: 'fr.example.com', value: 90 },
+                                { id: 'fr-api', parent: 'fr', name: 'api-fr.example.com', value: 60 },
+                                
+                                // Asia Pacific
+                                { id: 'ap', parent: '', name: 'Asia Pacific', value: 650 },
+                                { id: 'jp', parent: 'ap', name: 'Japan', value: 200 },
+                                { id: 'au', parent: 'ap', name: 'Australia', value: 180 },
+                                { id: 'sg', parent: 'ap', name: 'Singapore', value: 150 },
+                                { id: 'in', parent: 'ap', name: 'India', value: 120 },
+                                
+                                // AP Endpoints
+                                { id: 'jp-web', parent: 'jp', name: 'jp.example.com', value: 120 },
+                                { id: 'jp-api', parent: 'jp', name: 'api-jp.example.com', value: 80 },
+                                { id: 'au-web', parent: 'au', name: 'au.example.com', value: 100 },
+                                { id: 'au-api', parent: 'au', name: 'api-au.example.com', value: 80 },
+                                { id: 'sg-web', parent: 'sg', name: 'sg.example.com', value: 90 },
+                                { id: 'sg-api', parent: 'sg', name: 'api-sg.example.com', value: 60 },
+                                
+                                // Unknown/Suspicious
+                                { id: 'unknown', parent: '', name: 'Unknown/Suspicious', value: 120 },
+                                { id: 'tor', parent: 'unknown', name: 'Tor Exit Nodes', value: 45 },
+                                { id: 'proxy', parent: 'unknown', name: 'Proxy Networks', value: 35 },
+                                { id: 'suspicious', parent: 'unknown', name: 'Flagged IPs', value: 40 },
+                                
+                                // Suspicious endpoints (these trigger the easter egg)
+                                { id: 'tor-scan', parent: 'tor', name: 'Port Scanner', value: 20 },
+                                { id: 'tor-brute', parent: 'tor', name: 'Brute Force', value: 15 },
+                                { id: 'tor-recon', parent: 'tor', name: 'Reconnaissance', value: 10 },
+                                { id: 'proxy-bot', parent: 'proxy', name: 'Bot Traffic', value: 20 },
+                                { id: 'proxy-ddos', parent: 'proxy', name: 'DDoS Attempt', value: 15 },
+                                { id: 'sus-malware', parent: 'suspicious', name: 'Malware C&C', value: 25 },
+                                { id: 'sus-phish', parent: 'suspicious', name: 'Phishing Attempt', value: 15 }
+                            ]
+                        }]
+                    });
+                }
+            }
+        };
+
+        // Dashboard State
+        let currentCharts = ['serviceHealth', 'costBreakdown', 'cloudWatchMetrics', 'resourceUtilization'];
+        let isConfigOpen = false;
+
+        // Dashboard Presets
+        const presets = {
+            executive: {
+                name: 'Executive Overview',
+                charts: ['costBreakdown', 'costTrends', 'resourceUtilization', 'networkTraffic']
+            },
+            technical: {
+                name: 'Technical Deep Dive',
+                charts: ['cloudWatchMetrics', 'performanceMetrics', 'resourceUtilization', 'networkTraffic']
+            },
+            security: {
+                name: 'Security & Compliance',
+                charts: ['networkSecurity', 'securityAlerts', 'serviceHealth', 'networkTraffic']
+            },
+            cost: {
+                name: 'Cost Optimization',
+                charts: ['costBreakdown', 'costTrends', 'resourceUtilization', 'serviceHealth']
+            }
+        };
+
+        // Initialize Dashboard
+        function initDashboard() {
+            renderCharts();
+            updateChartSelectors();
+        }
+
+        // Render Charts
+        function renderCharts() {
+            const chartGrid = document.getElementById('chartGrid');
+            chartGrid.innerHTML = '';
+
+            currentCharts.forEach((chartKey, index) => {
+                const chart = chartLibrary[chartKey];
+                if (!chart) return;
+
+                const chartCard = document.createElement('div');
+                chartCard.className = 'dashboard-card';
+                chartCard.innerHTML = `
+                    <div class="card-header">
+                        <h2 class="card-title">${chart.title}</h2>
+                        <p class="card-subtitle">${chart.subtitle}</p>
+                    </div>
+                    <div class="card-content">
+                        <div id="chart-${index}" class="chart-container"></div>
+                    </div>
+                `;
+                chartGrid.appendChild(chartCard);
+
+                // Render chart after DOM update
+                setTimeout(() => chart.render(`chart-${index}`), 100);
+            });
+        }
+
+        // Configuration Panel Functions
+        function toggleConfig() {
+            const panel = document.getElementById('configPanel');
+            const container = document.getElementById('dashboardContainer');
+            
+            isConfigOpen = !isConfigOpen;
+            
+            if (isConfigOpen) {
+                panel.classList.add('open');
+                container.classList.add('config-open');
+            } else {
+                panel.classList.remove('open');
+                container.classList.remove('config-open');
+            }
+        }
+
+        function loadPreset(presetKey) {
+            const preset = presets[presetKey];
+            if (!preset) return;
+
+            currentCharts = [...preset.charts];
+            renderCharts();
+            updateChartSelectors();
+
+            // Update active preset button
+            document.querySelectorAll('.preset-button').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function updateChartSelectors() {
+            const container = document.getElementById('chartSelectors');
+            container.innerHTML = '';
+
+            currentCharts.forEach((chartKey, index) => {
+                const chart = chartLibrary[chartKey];
+                if (!chart) return;
+
+                const selector = document.createElement('div');
+                selector.className = 'chart-selector';
+                selector.innerHTML = `
+                    <div class="chart-selector-header">
+                        Chart ${index + 1}: ${chart.title}
+                        <button class="remove-chart" onclick="removeChart(${index})">Remove</button>
+                    </div>
+                    <div class="chart-options">
+                        ${Object.keys(chartLibrary).map(key => `
+                            <label class="chart-option">
+                                <input type="radio" name="chart-${index}" value="${key}" ${key === chartKey ? 'checked' : ''} onchange="changeChart(${index}, '${key}')">
+                                ${chartLibrary[key].title}
+                            </label>
+                        `).join('')}
+                    </div>
+                `;
+                container.appendChild(selector);
+            });
+        }
+
+        function addChart() {
+            if (currentCharts.length >= 8) {
+                alert('Maximum of 8 charts allowed');
+                return;
+            }
+            
+            // Add the first available chart that's not already in use
+            const availableCharts = Object.keys(chartLibrary).filter(key => !currentCharts.includes(key));
+            if (availableCharts.length > 0) {
+                currentCharts.push(availableCharts[0]);
+                renderCharts();
+                updateChartSelectors();
+            }
+        }
+
+        function removeChart(index) {
+            currentCharts.splice(index, 1);
+            renderCharts();
+            updateChartSelectors();
+        }
+
+        function changeChart(index, chartKey) {
+            currentCharts[index] = chartKey;
+            renderCharts();
+            updateChartSelectors();
+        }
+
+        function resetDashboard() {
+            currentCharts = ['serviceHealth', 'costBreakdown', 'cloudWatchMetrics', 'resourceUtilization'];
+            renderCharts();
+            updateChartSelectors();
+        }
+
+        function clearAllCharts() {
+            currentCharts = [];
+            renderCharts();
+            updateChartSelectors();
+        }
+
+        // Export Functions
+        function saveDashboard() {
+            const config = {
+                charts: currentCharts,
+                timestamp: new Date().toISOString()
+            };
+            
+            localStorage.setItem('awsDashboardConfig', JSON.stringify(config));
+            alert('Dashboard configuration saved!');
+        }
+
+        function loadSavedDashboard() {
+            const saved = localStorage.getItem('awsDashboardConfig');
+            if (saved) {
+                const config = JSON.parse(saved);
+                currentCharts = config.charts;
+                renderCharts();
+                updateChartSelectors();
+            }
+        }
+
+        function exportDashboard(format) {
+            // Simple export functionality - in a real implementation, this would generate actual files
+            const chartElements = document.querySelectorAll('.chart-container');
+            
+            if (format === 'png') {
+                alert(`Exporting ${chartElements.length} charts as PNG images...`);
+            } else if (format === 'pdf') {
+                alert(`Generating PDF report with ${chartElements.length} charts...`);
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initDashboard();
+            loadSavedDashboard();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+[project]
+name = "agent_orange"
+version = "0.1.0"
+description = "agent_orange using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]>=0.140.0,<1.0.0",
+    "requests",
+    "beautifulsoup4",
+    "pathlib",
+]
+
+[project.scripts]
+agent_orange = "agent_orange.main:run"
+run_crew = "agent_orange.main:run"
+train = "agent_orange.main:train"
+replay = "agent_orange.main:replay"
+test = "agent_orange.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

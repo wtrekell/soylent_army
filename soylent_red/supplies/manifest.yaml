@@ -1,0 +1,34 @@
+# manifest.yaml
+
+title: "The Count That Couldn’t"
+context: "The 1st of 6 or more articles. The intial attempt at what become an adventure across mutliple approaches."
+summary: |
+  An article on the shortcomings of a word-count analyzer could not detect a complete the semantic analysis necessary to report the use of AI for ethical transparency.
+
+brand: "Syntax & Empathy"
+personas:
+  - "alex_rodriguez"
+  - "jordan_park"
+  - "rohan_gupta"
+  # (Add as many as needed)
+
+source_files:
+  - "0510-chatgpt-ai-script-debugging-analysis.md"
+  - "ChatGPT-Python File Analysis.md"
+  - "fimport os.py"
+  # (List all raw material files for this article, by filename. These must be present.)
+
+required_sections:
+  - "title_and_intro"
+  - "context_section"
+  - "core_body_narrative"
+  - "closing_section:"
+  # (List sections you expect in the article—optional, but enforces structure.)
+
+notes: |
+notes: |
+  # (Optional: Any special instructions for the AI or reminders to yourself. This field is for comments, warnings, context, or “do not miss this” notes.)
+  - Use all files in knowledge/examples/ as style and tone reference for this draft.
+  - Match structure and section depth to these examples unless instructed otherwise.
+  - Remember to flag any content requiring my personal commentary as TODO.
+  - Use supplied materials only—do not fabricate context.

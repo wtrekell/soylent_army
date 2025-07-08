@@ -112,7 +112,7 @@ class SoylentRed():
     def editing_task(self) -> Task:
         return Task(
             config=self.tasks_config['editing_task'],
-            output_file='final_article.md'
+            output_file='supplies/final_article.md'
         )
 
     @crew

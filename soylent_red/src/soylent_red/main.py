@@ -2,6 +2,7 @@
 import sys
 import warnings
 import os
+import yaml
 
 from soylent_red.crew import SoylentRed
 
@@ -9,26 +10,87 @@ warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
 def run():
     """
-    Run the crew with user-provided content file path.
-    Usage: crewai run "path/to/content/file.md"
+    Run the crew with user-provided content file path or manifest.
+    Usage: crewai run "path/to/content/file.md" or "path/to/manifest.yaml"
     """
     if len(sys.argv) < 2:
-        file_path = input("Enter the relative path to content file: ")
+        file_path = input("Enter the relative path to content file or manifest: ")
     else:
         file_path = " ".join(sys.argv[1:])
     
     # Validate file path
     if not os.path.exists(file_path):
-        raise FileNotFoundError(f"Content file not found: {file_path}")
+        raise FileNotFoundError(f"File not found: {file_path}")
     
-    # Read file content
+    # Check if it's a YAML manifest or content file
+    if file_path.endswith('.yaml') or file_path.endswith('.yml'):
+        inputs = process_manifest(file_path)
+    else:
+        inputs = process_content_file(file_path)
+    
+    try:
+        result = SoylentRed().crew().kickoff(inputs=inputs)
+        print(f"\n✅ Article completed successfully!")
+        print(f"📁 Source: {file_path}")
+        print(f"📄 Output saved to: supplies/final_article.md")
+        return result
+    except Exception as e:
+        raise Exception(f"An error occurred while running the crew: {e}")
+
+
+def process_manifest(manifest_path):
+    """Process YAML manifest file and extract content from source files."""
+    try:
+        with open(manifest_path, 'r', encoding='utf-8') as f:
+            manifest = yaml.safe_load(f)
+    except Exception as e:
+        raise Exception(f"Error reading manifest file: {e}")
+    
+    # Get directory of manifest for relative paths
+    manifest_dir = os.path.dirname(manifest_path)
+    
+    # Combine content from source files
+    combined_content = ""
+    source_files = manifest.get('source_files', [])
+    
+    for source_file in source_files:
+        source_path = os.path.join(manifest_dir, source_file)
+        if os.path.exists(source_path):
+            try:
+                with open(source_path, 'r', encoding='utf-8') as f:
+                    content = f.read()
+                    combined_content += f"\n\n## Content from {source_file}\n\n{content}"
+            except Exception as e:
+                print(f"Warning: Could not read {source_file}: {e}")
+        else:
+            print(f"Warning: Source file not found: {source_file}")
+    
+    # Build comprehensive inputs
+    inputs = {
+        'content_file_path': manifest_path,
+        'raw_content': combined_content,
+        'source_filename': os.path.basename(manifest_path),
+        'title': manifest.get('title', 'Untitled Article'),
+        'context': manifest.get('context', ''),
+        'summary': manifest.get('summary', ''),
+        'brand': manifest.get('brand', 'Syntax & Empathy'),
+        'personas': manifest.get('personas', []),
+        'required_sections': manifest.get('required_sections', []),
+        'notes': manifest.get('notes', ''),
+        'manifest_instructions': yaml.dump(manifest, default_flow_style=False)
+    }
+    
+    return inputs
+
+
+def process_content_file(file_path):
+    """Process regular content file."""
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             raw_content = f.read()
     except Exception as e:
         raise Exception(f"Error reading content file: {e}")
     
-    # Extract filename for reference
     filename = os.path.basename(file_path)
     
     inputs = {
@@ -37,14 +99,8 @@ def run():
         'source_filename': filename,
     }
     
-    try:
-        result = SoylentRed().crew().kickoff(inputs=inputs)
-        print(f"\n✅ Article completed successfully!")
-        print(f"📁 Source: {file_path}")
-        print(f"📄 Output saved to: final_article.md")
-        return result
-    except Exception as e:
-        raise Exception(f"An error occurred while running the crew: {e}")
+    return inputs
+    
 
 
 def train():

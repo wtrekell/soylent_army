@@ -1,0 +1,5 @@
+User is the original designer of the Cloudscape Design System from over a decade ago.
+User wants to extract and analyze the current state of their evolved design system.
+User is focused on visual/cosmetic aspects (HTML/CSS) rather than functionality.
+User needs tools to help with reskinning and creating new component variations.
+User wants to reconnect with their own design system that has evolved over time.

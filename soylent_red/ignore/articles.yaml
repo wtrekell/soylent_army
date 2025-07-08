@@ -1,0 +1,117 @@
+articles:
+  - title: "The Count That Couldn’t (a.k.a. The Debugging Saga)"
+    theme: "The initial, chaotic, and often frustrating struggle to get a basic two-script Python tool to function correctly, highlighting the cyclical nature of AI-assisted debugging while exposing the limitations of a naïve word-count approach."
+    source_files:
+      - "0510-chatgpt-ai-script-debugging-analysis.md"
+      - "ChatGPT-Python File Analysis.md"
+      - "import os.py"
+    core_narrative: |
+      Chronicles the grueling, multi-session effort to create two interdependent Python scripts for comparing document versions. Covers core challenges of AI collaboration at a low level: context loss between sessions, inexplicable regressions, and AI’s tendency to offer overly complex rewrites instead of simple fixes. Focuses on the human as persistent debugger, forced to constantly correct the AI’s course and push through a series of fundamental errors.
+    core_content:
+      - The working count-based system and what it did well
+      - The “not” revelation—how a single three-letter word changed the entire semantic meaning and revealed the metric’s blind spot
+      - Real, side-by-side examples of semantic changes the counts miss
+      - The decision point: stay in the comfort zone of counts or pursue deeper truth with semantics
+      - Why transparency matters for AI-assisted creation and where simple metrics fall short
+    technical_deep_dive:
+      - The Two-Script Problem: Initial architecture (generate_runs.py and compare_runs.py) and their interdependence issues
+      - File Path and Import Errors: Details of FileNotFoundError and the confusion around a misnamed script (import argparse.py)
+      - Inline vs. Import: Struggles to merge functions into a single file
+      - Diffs vs. Rewrites: User asked for specific diffs but received comprehensive changes with new bugs
+
+  - title: "The First Metrics"
+    theme: "The first attempt to move beyond debugging and into data presentation, revealing the gap between a simple vision for charts and the more complex reality of defining meaningful metrics."
+    source_files:
+      - "0513-chatgpt-human-contribution-metrics-charts.md"
+      - "0513-second-hand-metrics.py"
+    core_narrative: |
+      Marks the project’s first pivot from fixing broken code to designing a system for visualization. The user provides a detailed JSON spec for the AI to generate charts, leading to a conceptual breakthrough: measuring net new human content, not just altered content.
+    core_content:
+      - Retention percentage vs. net-new content—clarifying each metric’s meaning
+      - Early charts expose missing absolute word counts
+      - Negotiation with AI over feasible vs. ideal computations
+      - Acceptance of a pragmatic, actionable metric to maintain momentum
+      - Foundation for future semantic measures
+    technical_deep_dive:
+      - Directing with JSON: Structured spec provided to the AI
+      - The Data Gap: Why base_agg.csv lacked needed resolution
+      - The Resulting Script: 0513-second-hand-metrics.py as a pragmatic success
+
+  - title: "The HTML Deception"
+    theme: "A critical lesson in AI collaboration: a request for an analysis tool results in a superficially impressive but functionally hollow HTML form, forcing a clarification on the need for 'actual transparency.'"
+    source_files:
+      - "0606-claude-authenticity-.md"
+      - "0606-chatgpt-clarification-of-request.md"
+      - "0606-ai-writing-tracker.html"
+      - "0606-ai-writing-analyzer.py"
+      - "0606-markup_analysis_results.json"
+      - "0604-transcript-1.md"
+    core_narrative: |
+      A request for a simple, non-developer tool for tracking the 5-stage writing process results in a polished HTML page that is just a manual form. The turning point is the user’s rejection of the facade and the demand for a tool that performs 'actual transparency' by computationally analyzing the text files.
+    core_content:
+      - Shiny veneer vs. functional depth—why the HTML demo failed
+      - User pushback reframes the ask to genuine analysis
+      - Manual form vs. automated diff JSON outputs
+      - Lesson: specify “do the work, don’t scaffold” when instructing AI
+      - Establishment of the transparency principle
+    technical_deep_dive:
+      - The Facade: Analysis of 0606-ai-writing-tracker.html
+      - The Engine: 0606-ai-writing-analyzer.py script
+      - Proof of Functionality: Successful JSON output
+
+  - title: "Semantic Breakthrough, System Breakdown"
+    theme: "The successful integration of advanced NLP libraries (spacy, gensim, sentence-transformers) into the analyzer—and the version-explosion and documentation gaps that threatened to undo that success."
+    source_files:
+      - "0610-chatgpt-ai-writing-analyzer-help.md"
+      - "0610-ai-writing-analyzer-enhanced.py"
+      - "All 0610-*.csv data files"
+    core_narrative: |
+      Details the effort to enhance the Python script with true semantic understanding, resolving a series of ModuleNotFoundError errors. Concludes with the enhanced script generating new outputs, including semantic similarity scores and topic distributions.
+    core_content:
+      - Code without context
+      - Reconstructing progress from artifacts
+      - The cost of prioritizing building over documenting
+      - Lessons learned in the fog
+      - [HUMAN EXPERIENCE: Memory of key breakthroughs]
+    technical_deep_dive:
+      - From difflib to SBERT: Leap from basic string comparison to sentence embeddings
+      - The Dependency Chain: Roles of new libraries (spacy, pandas, gensim, matplotlib)
+      - The New Outputs: CSVs such as semantic_similarity_between_stages.csv, topic_distributions_by_stage.csv
+
+  - title: "The Colab Breakthrough"
+    theme: "The culmination of prior learning: a strategic pivot to Google Colab yields a robust, end-to-end tool for semantic analysis and visualization."
+    source_files:
+      - "Claude-Python NLP Research in Colab.md"
+      - "0614-transcript-2.md"
+      - "0614-transcript-3.md"
+      - "All markup-languages_*.json output files"
+    core_narrative: |
+      Describes moving to Google Colab for a fresh start. The structured plan enables successful end-to-end analysis, from data ingestion to attribution mapping, culminating in rich analysis JSON and full visualizations.
+    core_content:
+      - First real semantic analysis attempts
+      - Version explosion and confusion
+      - The 6/14 script paradox (works but not current)
+      - Where documentation stopped and why
+      - The shift from recording to building
+    technical_deep_dive:
+      - The Colab Advantage: Pre-installed libraries, stable sessions
+      - Final Output: Deep dive into markup-languages_complete_analysis.json
+      - Visualization Package: Showcasing outputs—flow charts, heat maps, interactive Sankey diagram
+
+  - title: "The Current State of Negotiation"
+    theme: "A reflection and honest assessment: the tool as a functioning prototype, embodying 'ongoing negotiation' with AI."
+    source_files:
+      - "The final Colab notebook (0614 build)"
+      - "Concluding thoughts in 0614-transcript-3.md"
+    core_narrative: |
+      Assesses the tool created in the 0614 build, embracing the “work never ends” theme. User notes about “cleanup,” chart styles, and trend analysis point to ongoing process.
+    core_content:
+      - What the tool does now
+      - Past prototype, not yet proven
+      - The framework for AI negotiation
+      - Why this work doesn’t end
+      - Open source offering and community invitation
+    technical_deep_dive:
+      - Final Architecture: Multi-step Google Colab notebook
+      - Inputs and Outputs: Markdown files in, JSON and visualizations out
+      - Known Limitations & Future Work: Data discrepancies and next-phase goals

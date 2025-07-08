@@ -3867,6 +3867,7 @@ dependencies = [
     { name = "beautifulsoup4" },
     { name = "crewai", extra = ["tools"] },
     { name = "crewai-tools" },
+    { name = "pyyaml" },
     { name = "requests" },
 ]
 
@@ -3875,6 +3876,7 @@ requires-dist = [
     { name = "beautifulsoup4" },
     { name = "crewai", extras = ["tools"], specifier = ">=0.140.0,<1.0.0" },
     { name = "crewai-tools" },
+    { name = "pyyaml" },
     { name = "requests" },
 ]
 

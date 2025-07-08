@@ -2,18 +2,44 @@ brand_strategy_task:
   description: >
     Analyze the provided raw content from "{source_filename}" and develop a comprehensive brand strategy approach for transforming it into a polished article.
     
+    {%- if title %}
+    Article Title: {title}
+    {%- endif %}
+    {%- if context %}
+    Article Context: {context}
+    {%- endif %}
+    {%- if summary %}
+    Article Summary: {summary}
+    {%- endif %}
+    {%- if brand %}
+    Target Brand: {brand}
+    {%- endif %}
+    {%- if personas %}
+    Target Personas: {personas}
+    {%- endif %}
+    {%- if required_sections %}
+    Required Sections: {required_sections}
+    {%- endif %}
+    {%- if notes %}
+    Special Instructions: {notes}
+    {%- endif %}
+    
     Raw content to analyze:
     {raw_content}
     
     Your responsibilities include:
     1. Review the raw content to understand its core themes and messages
-    2. Review existing brand guidelines and voice documentation
-    3. Identify key brand messaging pillars that should be emphasized
-    4. Determine the appropriate tone and style for the target audience
-    5. Create content positioning strategy that aligns with brand goals
-    6. Establish key themes and messaging frameworks for the article
-    7. Identify brand differentiators to highlight in the content
-    8. Suggest how to structure and enhance the raw content
+    2. Review existing brand guidelines and voice documentation for {brand}
+    3. Consider the target personas: {personas}
+    4. Identify key brand messaging pillars that should be emphasized
+    5. Determine the appropriate tone and style for the target audience
+    6. Create content positioning strategy that aligns with brand goals
+    7. Establish key themes and messaging frameworks for the article
+    8. Identify brand differentiators to highlight in the content
+    9. Suggest how to structure and enhance the raw content
+    {%- if required_sections %}
+    10. Ensure the structure includes these required sections: {required_sections}
+    {%- endif %}
     
     Use the Brand Style Guide tool to reference existing brand guidelines and ensure consistency.
     Output should include specific brand voice guidelines, key messaging points, and content strategy recommendations.
@@ -66,6 +92,28 @@ research_task:
 writing_task:
   description: >
     Transform the raw content from "{source_filename}" into a compelling, well-structured article that aligns with the brand strategy and incorporates research findings.
+    
+    {%- if title %}
+    Target Title: {title}
+    {%- endif %}
+    {%- if context %}
+    Article Context: {context}
+    {%- endif %}
+    {%- if summary %}
+    Article Summary: {summary}
+    {%- endif %}
+    {%- if brand %}
+    Brand: {brand}
+    {%- endif %}
+    {%- if personas %}
+    Target Personas: {personas}
+    {%- endif %}
+    {%- if required_sections %}
+    Required Article Sections: {required_sections}
+    {%- endif %}
+    {%- if notes %}
+    Special Writing Instructions: {notes}
+    {%- endif %}
     
     Raw content to transform:
     {raw_content}
