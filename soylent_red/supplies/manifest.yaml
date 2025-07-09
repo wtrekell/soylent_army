@@ -15,7 +15,7 @@ personas:
 source_files:
   - "0510-chatgpt-ai-script-debugging-analysis.md"
   - "ChatGPT-Python File Analysis.md"
-  - "fimport os.py"
+  - "import os.py"
   # (List all raw material files for this article, by filename. These must be present.)
 
 required_sections:
@@ -26,9 +26,11 @@ required_sections:
   # (List sections you expect in the article—optional, but enforces structure.)
 
 notes: |
-notes: |
   # (Optional: Any special instructions for the AI or reminders to yourself. This field is for comments, warnings, context, or “do not miss this” notes.)
-  - Use all files in knowledge/examples/ as style and tone reference for this draft.
+  - Use all files in knowledge/examples/ as reference to style, tone, and the approximate length of content for this draft.
+  - CRITICAL: DO NOT write as "I" - this fabricates personal experiences. Use [AUTHOR: add personal example] annotations instead.
   - Match structure and section depth to these examples unless instructed otherwise.
+  - When personal experience would strengthen content, annotate with [TODO: author experience needed].
   - Remember to flag any content requiring my personal commentary as TODO.
-  - Use supplied materials only—do not fabricate context.
+  - Use supplied materials only—do not fabricate context, examples, or personal anecdotes.
+  - Focus on documented techniques and research findings rather than invented personal stories.

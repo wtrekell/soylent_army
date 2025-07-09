@@ -1,6 +1,6 @@
 brand_strategy_task:
   description: >
-    Analyze the provided raw content from "{source_filename}" and develop a comprehensive brand strategy approach for transforming it into a polished article.
+    Analyze the provided raw content from "{source_filename}" and develop a comprehensive brand strategy approach aligned with the "Syntax & Empathy" brand foundation.
     
     {%- if title %}
     Article Title: {title}
@@ -28,21 +28,28 @@ brand_strategy_task:
     {raw_content}
     
     Your responsibilities include:
-    1. Review the raw content to understand its core themes and messages
-    2. Review existing brand guidelines and voice documentation for {brand}
-    3. Consider the target personas: {personas}
-    4. Identify key brand messaging pillars that should be emphasized
-    5. Determine the appropriate tone and style for the target audience
-    6. Create content positioning strategy that aligns with brand goals
-    7. Establish key themes and messaging frameworks for the article
-    8. Identify brand differentiators to highlight in the content
-    9. Suggest how to structure and enhance the raw content
+    1. Use the Brand Style Guide tool to access the complete brand foundation, target personas, and voice characteristics
+    2. Analyze raw content to identify which of the three content pillars it aligns with (Prompt Engineering Fundamentals, UX Workflow Integration, Human-AI Design Partnership)
+    3. Determine appropriate target personas from: Strategic Sofia, Adaptive Alex, Curious Casey, Analytical Morgan, Systematic Sam
+    4. Apply the brand voice characteristics: Methodical Experimenter, Practical Educator & Translator, Transparent Practitioner, Ethical Realist
+    5. Ensure content reflects brand values: transparency, curiosity, continuous evolution, practical integrity
+    6. Identify opportunities to include real examples, failure documentation, iteration counts, and practical implementation guidance
+    7. Suggest structure that includes ethical considerations woven throughout (not as afterthoughts)
+    8. Recommend how to demonstrate transparency through metrics, revision processes, and honest documentation
+    9. Ensure content addresses specific user agency, bias detection, and responsible AI usage
     {%- if required_sections %}
     10. Ensure the structure includes these required sections: {required_sections}
     {%- endif %}
     
-    Use the Brand Style Guide tool to reference existing brand guidelines and ensure consistency.
-    Output should include specific brand voice guidelines, key messaging points, and content strategy recommendations.
+    Use the Brand Style Guide tool extensively to access the full brand foundation and persona documentation.
+    
+    CRITICAL: The brand voice uses first person because it represents the author's personal experience and expertise. DO NOT write as "I" in the content - that would be fabricating the author's personal experiences. Instead:
+    - Write up to the point where "I" would be needed
+    - Use [AUTHOR: personal experience needed] or [TODO: add personal example] annotations
+    - Only use supplied materials and documented examples
+    - Never fabricate personal experiences, testing results, or "I did this" statements
+    
+    Output should include specific voice guidelines, content pillar alignment, persona targeting, and practical implementation strategy.
   expected_output: >
     A comprehensive brand strategy document containing:
     - Analysis of the raw content's themes and potential
@@ -56,42 +63,66 @@ brand_strategy_task:
     Formatted as structured markdown without code blocks
   agent: brand_strategist
 
-research_task:
+feedback_collection_task:
   description: >
-    Conduct comprehensive research to enhance and validate the content from "{source_filename}". Use the raw content as your starting point to identify research needs.
+    Solicit comprehensive feedback on the completed article from "{source_filename}" to drive continuous improvement and ensure content meets professional standards.
     
-    Raw content for reference:
-    {raw_content}
+    You are provided with the final article content that has been published or is ready for publication.
     
-    Your research should include:
-    1. Fact-checking and validation of claims made in the raw content
-    2. Industry trends and current developments related to the content themes
-    3. Additional statistics, data points, and factual information to support the content
-    4. Expert opinions and authoritative sources that reinforce key points
-    5. Competitor analysis and content gap identification
-    6. Trending subtopics and related themes that could enhance the content
-    7. Supporting examples, case studies, or real-world applications
-    8. Current best practices and methodologies mentioned in the content
+    Your feedback collection responsibilities:
+    1. Create a structured feedback survey that asks specific, actionable questions about:
+       - Content clarity and understandability
+       - Practical usefulness and applicability
+       - Technical accuracy and completeness
+       - Brand voice consistency and authenticity
+       - Audience alignment and relevance
+       - Engagement and readability
+       - Areas for improvement or expansion
     
-    Use web search tools to gather current information and ensure all sources are credible and up-to-date.
-    Focus on finding additional insights and validation that will strengthen the content.
+    2. Design feedback questions that generate actionable insights:
+       - What sections were most/least helpful and why?
+       - Which examples or explanations need more clarity?
+       - What additional information would make this more useful?
+       - How does this content compare to similar resources you've seen?
+       - What would make you more likely to implement these suggestions?
+    
+    3. Create multiple feedback collection methods:
+       - Formal feedback survey with structured questions
+       - Informal feedback prompts for social media/email responses
+       - Specific questions for different audience segments
+       - Follow-up questions for deeper insights
+    
+    4. Establish feedback analysis framework:
+       - Categories for organizing feedback (clarity, usefulness, accuracy, etc.)
+       - Scoring systems for quantifiable feedback
+       - Process for identifying patterns and trends
+       - Method for translating feedback into content improvements
+    
+    5. Generate actionable recommendations:
+       - Specific improvements for future content
+       - Content gaps to address in upcoming articles
+       - Structural improvements for better engagement
+       - Brand voice adjustments based on audience response
+    
+    Your approach should be professional, respectful, and focused on continuous improvement rather than criticism.
+    
+    IMPORTANT: You are collecting feedback on completed content, not conducting research. Focus on understanding how well the content serves its intended purpose and audience.
   expected_output: >
-    A detailed research report containing:
-    - Fact-checking results for claims in the raw content
-    - Executive summary of key findings and validation
-    - Industry trends and current developments
-    - Additional statistical data and factual information with sources
-    - Expert insights and authoritative quotes
-    - Competitor analysis and content opportunities
-    - Trending topics and audience interests
-    - Supporting examples and case studies
-    - Recommended content enhancements and angles
-    Formatted as structured markdown with proper citations
-  agent: content_researcher
+    A comprehensive feedback collection package containing:
+    - Structured feedback survey with 8-12 specific questions
+    - Informal feedback prompts for different channels
+    - Feedback analysis framework and scoring system
+    - Instructions for feedback collection and analysis
+    - Template for organizing and categorizing responses
+    - Recommendations for implementing feedback-driven improvements
+    - Metrics for measuring content effectiveness
+    - Follow-up plan for ongoing feedback collection
+    Formatted as structured markdown with clear instructions
+  agent: feedback_collector
 
 writing_task:
   description: >
-    Transform the raw content from "{source_filename}" into a compelling, well-structured article that aligns with the brand strategy and incorporates research findings.
+    Transform the raw content from "{source_filename}" into a compelling article that embodies the "Syntax & Empathy" brand voice and serves the target UX professional audience.
     
     {%- if title %}
     Target Title: {title}
@@ -119,20 +150,33 @@ writing_task:
     {raw_content}
     
     Article requirements:
-    1. Use the raw content as your foundation, expanding and refining it
-    2. Follow the brand voice and messaging guidelines from the Brand Strategy task
-    3. Incorporate key research findings and data from the Research task
-    4. Create an engaging headline that captures attention and reflects the brand
-    5. Structure the article with clear sections, subheadings, and logical flow
-    6. Expand the introduction to hook the reader while preserving key insights
-    7. Develop main content that provides genuine value and insights
-    8. Enhance with additional examples, case studies, and practical applications
-    9. Create a strong conclusion with clear takeaways or call-to-action
-    10. Ensure the content is optimized for newsletter/Substack format
-    11. Maintain consistent brand voice throughout
-    12. Include relevant examples, quotes, or data points to support arguments
+    1. Embody the brand voice characteristics: Methodical Experimenter, Practical Educator & Translator, Transparent Practitioner, Ethical Realist
+    2. Include real examples from testing and experimentation (not theoretical scenarios)
+    3. Document both successes and failures with equal transparency
+    4. Provide step-by-step implementation guidance with specific tools and techniques
+    5. Address ethical considerations throughout (user agency, bias detection, responsible AI use)
+    6. Include iteration counts, revision processes, or other transparency metrics where relevant
+    7. Write for the identified target personas with appropriate experience-level considerations
+    8. Align content with the relevant content pillar (Prompt Engineering, UX Workflows, or Human-AI Partnership)
+    9. Use transition phrases like "This connects to a pattern I've seen before..." and "The implementation details matter here because..."
+    10. End with actionable next steps, testing suggestions, or exploratory questions
+    11. Include practical examples, downloadable resources, or templates where appropriate
+    12. Maintain conversational warmth while being technically precise
+    13. Frame content as ongoing discovery rather than final answers
     
-    The article should be publication-ready and align with Substack best practices for engagement and readability.
+    The article should demonstrate the brand's commitment to transparency, practical integrity, and evidence-based recommendations.
+    
+    CRITICAL WRITING CONSTRAINTS:
+    - DO NOT write as "I" - this fabricates the author's personal experiences
+    - Use supplied materials only - do not invent examples, testing results, or personal anecdotes
+    - When personal experience would strengthen the content, use annotations like:
+      * [AUTHOR: add personal testing example here]
+      * [TODO: include specific results from your experiment with X]
+      * [AUTHOR: describe your experience with Y tool]
+    - Focus on documented techniques, research findings, and practical guidance
+    - Frame advice as "designers can" or "this approach enables" rather than "I found"
+    
+    Remember: The brand voice documentation uses "I" to describe the author's authentic voice - you are writing content that matches that voice without fabricating personal experiences.
   expected_output: >
     A complete, publication-ready article containing:
     - Compelling headline that captures attention
@@ -149,21 +193,23 @@ writing_task:
 
 seo_optimization_task:
   description: >
-    Optimize the article for search engines and engagement while maintaining content quality and brand alignment.
+    Optimize the article for search engines within the AI-UX design niche while maintaining the authentic "Syntax & Empathy" brand voice.
     
     Optimization requirements:
-    1. Analyze the article for SEO opportunities
-    2. Optimize headline and subheadings for search and engagement
-    3. Ensure proper keyword integration without compromising readability
-    4. Improve content structure for better search engine understanding
-    5. Enhance meta descriptions and article descriptions
-    6. Optimize for featured snippets and rich results
-    7. Improve internal linking opportunities
-    8. Ensure mobile-friendly formatting
-    9. Optimize for newsletter-specific SEO considerations
-    10. Maintain brand voice while incorporating SEO best practices
+    1. Target relevant keywords: "prompt engineering for UX", "AI tools for designers", "ethical AI in UX", "human-AI collaboration", "AI workflow integration", "UX AI best practices"
+    2. Optimize headlines and subheadings for both search and the target UX professional audience
+    3. Structure content for featured snippets on technical UX questions
+    4. Ensure proper keyword integration that sounds natural to experienced UX professionals
+    5. Optimize for professional development and educational search queries
+    6. Create meta descriptions that appeal to designers seeking practical AI integration guidance
+    7. Optimize for newsletter and Substack-specific SEO considerations
+    8. Maintain the brand's transparent and practical voice throughout optimization
+    9. Ensure technical accuracy is preserved during optimization
+    10. Structure content for easy scanning by busy UX professionals
+    11. Include relevant long-tail keywords that address specific implementation challenges
+    12. Optimize for both individual designers and team leads searching for AI adoption strategies
     
-    Use SEO analysis tools to identify optimization opportunities and ensure the content balances discoverability with quality.
+    Use SEO analysis tools while ensuring content remains valuable to the target personas and maintains brand authenticity.
   expected_output: >
     An SEO-optimized version of the article including:
     - Optimized headline and subheadings
@@ -179,30 +225,53 @@ seo_optimization_task:
 
 editing_task:
   description: >
-    Review, refine, and finalize the article to ensure it meets the highest publication standards and brand requirements.
+    Review, refine, and finalize the article to ensure it meets the highest professional standards of the "Syntax & Empathy" brand and serves the UX professional audience effectively.
     
-    Editing responsibilities:
-    1. Review content for grammar, spelling, and punctuation accuracy
-    2. Ensure consistent brand voice and messaging throughout
-    3. Verify all facts, statistics, and citations for accuracy
-    4. Improve content flow, readability, and engagement
-    5. Ensure proper formatting for Substack publication
-    6. Check compliance with brand guidelines and strategy
-    7. Optimize content structure and organization
-    8. Ensure all SEO optimizations are properly implemented
-    9. Verify content meets word count and format requirements
-    10. Provide final quality assurance before publication
+    Professional editing responsibilities:
+    1. Verify brand voice consistency across all four characteristics: Methodical Experimenter, Practical Educator & Translator, Transparent Practitioner, Ethical Realist
+    2. Ensure examples come from real experience and testing (not theoretical scenarios)
+    3. Verify that both successes and failures are documented with equal transparency
+    4. Check that ethical considerations are woven throughout the content, not added as afterthoughts
+    5. Ensure content appropriately serves the target personas identified in the brand strategy
+    6. Verify alignment with the relevant content pillar (Prompt Engineering, UX Workflows, or Human-AI Partnership)
+    7. Check that practical implementation guidance is specific and actionable
+    8. Ensure bias detection and responsible AI usage are addressed practically
+    9. Verify that transparency metrics (iteration counts, revision processes, etc.) are included where relevant
+    10. Check grammar, spelling, and punctuation while maintaining conversational warmth
+    11. Ensure proper formatting for newsletter/Substack publication
+    12. Conduct comprehensive fact-checking of all claims and technical accuracy
+    13. Check that content ends with actionable next steps or exploratory questions
+    14. Ensure content demonstrates the brand's commitment to practical integrity and continuous learning
+    15. Perform multi-dimensional quality assessment using professional standards
+    16. Verify technical accuracy and validate all factual claims
+    17. Ensure content meets enterprise-level quality standards
     
-    The final output should be a polished, publication-ready article that represents the brand professionally.
+    Use the Content Quality Analysis tool to perform comprehensive quality assessment.
+    Use the Fact Checking tool to verify all claims and technical statements.
+    
+    The final output should authentically represent the "Syntax & Empathy" brand while providing genuine value to UX professionals integrating AI into their work.
+    
+    FINAL EDITING REQUIREMENTS:
+    - Verify NO fabricated personal experiences or "I did this" statements
+    - Ensure all personal anecdotes are properly annotated as [AUTHOR: add personal context]
+    - Check that examples come from supplied materials, not invented scenarios
+    - Confirm the content maintains the brand voice without impersonating the author
+    - Flag any sections requiring the author's personal input or experience
+    - Conduct comprehensive fact-checking of all technical claims
+    - Ensure content meets professional-grade quality standards
+    - Verify multi-dimensional quality assessment shows EXCELLENT or GOOD ratings
   expected_output: >
     A final, publication-ready article that includes:
     - Error-free grammar, spelling, and punctuation
     - Consistent brand voice and messaging
-    - Verified facts and accurate citations
+    - Verified facts and accurate citations with comprehensive fact-checking report
+    - Multi-dimensional quality assessment showing professional standards
     - Optimized content flow and readability
     - Proper Substack formatting and structure
     - Quality assurance report with any changes made
     - Final recommendations for publication
     - Performance expectations and success metrics
+    - Fact-checking validation report
+    - Professional quality analysis report
     Formatted as polished markdown ready for immediate publication
   agent: editor

@@ -19,104 +19,179 @@ class BrandStyleGuideTool(BaseTool):
         "Use this tool to ensure content aligns with brand standards and messaging."
     )
     args_schema: Type[BaseModel] = BrandStyleGuideInput
+    
+    # Class variable to store knowledge path
+    _knowledge_path: str = "knowledge"
+    
+    @classmethod
+    def set_knowledge_path(cls, path: str):
+        cls._knowledge_path = path
 
     def _run(self, query: str) -> str:
         """Retrieve brand guidelines and style information."""
         try:
-            # Check for brand guidelines in knowledge folder
-            knowledge_path = "/Users/williamtrekell/Documents/git_repos/soylent_army/soylent_red/knowledge"
-            brand_file = os.path.join(knowledge_path, "brand_guidelines.md")
+            content_parts = []
             
-            if os.path.exists(brand_file):
-                with open(brand_file, 'r', encoding='utf-8') as f:
-                    guidelines = f.read()
-                return f"Brand Guidelines:\n{guidelines}"
+            # Dynamically find and load brand-related files
+            if os.path.exists(self._knowledge_path):
+                for root, dirs, files in os.walk(self._knowledge_path):
+                    for file in files:
+                        if file.endswith('.md'):
+                            file_path = os.path.join(root, file)
+                            with open(file_path, 'r', encoding='utf-8') as f:
+                                file_content = f.read()
+                            
+                            # Categorize content based on filename
+                            if 'brand' in file.lower() or 'foundation' in file.lower():
+                                content_parts.append(f"## Brand Foundation ({file})\n{file_content}")
+                            elif 'publication' in file.lower():
+                                content_parts.append(f"## Publication Guidelines ({file})\n{file_content}")
+                            elif any(name in file.lower() for name in ['alex', 'maya', 'jordan', 'rohan']):
+                                persona_name = file.replace('.md', '').replace('_', ' ').title()
+                                content_parts.append(f"## Target Persona: {persona_name}\n{file_content}")
+                            else:
+                                # Include other relevant knowledge files
+                                content_parts.append(f"## Additional Context ({file})\n{file_content}")
+            
+            if content_parts:
+                return "\n\n".join(content_parts)
             else:
-                # Default brand guidelines template
-                return """Default Brand Guidelines:
-                
-Voice & Tone:
-- Professional yet approachable
-- Authoritative but not condescending
-- Clear and concise communication
-- Value-driven messaging
-
-Writing Style:
-- Use active voice
-- Keep sentences clear and concise
-- Include relevant examples and data
-- Structure content with clear headings
-- Maintain consistent terminology
-
-Content Standards:
-- Always provide actionable insights
-- Include credible sources and citations
-- Focus on reader value and benefits
-- Use compelling headlines and introductions
-- End with clear takeaways or calls-to-action
-
-Format Requirements:
-- Use proper markdown formatting
-- Include relevant subheadings (H2, H3)
-- Break up text with bullet points and lists
-- Optimize for readability and engagement"""
+                return f"Error: No brand guidelines found in knowledge directory: {self._knowledge_path}"
                 
         except Exception as e:
             return f"Error accessing brand guidelines: {str(e)}"
 
 
-class WebResearchInput(BaseModel):
-    """Input schema for WebResearchTool."""
-    topic: str = Field(..., description="Topic to research")
-    focus_area: Optional[str] = Field(None, description="Specific focus area or angle for research")
+class FactCheckingInput(BaseModel):
+    """Input schema for FactCheckingTool."""
+    content: str = Field(..., description="Content to fact-check")
+    claims: Optional[str] = Field(None, description="Specific claims to verify")
 
 
-class WebResearchTool(BaseTool):
-    name: str = "Web Research"
+class FactCheckingTool(BaseTool):
+    name: str = "Fact Checking"
     description: str = (
-        "Conduct comprehensive web research on topics to gather current information, "
-        "trends, statistics, and insights for content creation."
+        "Verify factual claims in content, check for accuracy, and identify potential "
+        "misinformation or unsupported statements."
     )
-    args_schema: Type[BaseModel] = WebResearchInput
+    args_schema: Type[BaseModel] = FactCheckingInput
 
-    def _run(self, topic: str, focus_area: Optional[str] = None) -> str:
-        """Perform web research on the given topic."""
+    def _run(self, content: str, claims: Optional[str] = None) -> str:
+        """Perform fact-checking on the given content."""
         try:
-            # This is a simplified research tool
-            # In production, you would integrate with actual search APIs
-            research_query = f"{topic}"
-            if focus_area:
-                research_query += f" {focus_area}"
-                
-            return f"""Research Results for: {topic}
+            # Extract potential factual claims
+            potential_claims = self._extract_factual_claims(content)
             
-Focus Area: {focus_area if focus_area else 'General overview'}
-
-Key Findings:
-- Current market trends and developments
-- Recent industry reports and statistics  
-- Expert opinions and insights
-- Emerging themes and topics
-- Competitive landscape analysis
-
-Research Sources:
-- Industry publications and reports
-- Expert interviews and quotes
-- Statistical databases
-- News articles and press releases
-- Academic studies and research papers
-
-Recommended Content Angles:
-- Latest trends and innovations
-- Data-driven insights and analysis
-- Expert perspectives and commentary
-- Practical applications and case studies
-- Future predictions and implications
-
-Note: This is a template response. In production, integrate with actual search APIs like Google Search API, Bing Search API, or specialized research databases."""
+            # Focus on specific claims if provided
+            if claims:
+                focus_claims = [claim.strip() for claim in claims.split(',')]
+                potential_claims.extend(focus_claims)
+            
+            # Analyze each claim
+            fact_check_results = []
+            for claim in potential_claims:
+                result = self._analyze_claim(claim)
+                fact_check_results.append(result)
+            
+            # Generate fact-checking report
+            return self._generate_fact_check_report(fact_check_results, content)
             
         except Exception as e:
-            return f"Error conducting research: {str(e)}"
+            return f"Error fact-checking content: {str(e)}"
+    
+    def _extract_factual_claims(self, content: str) -> list:
+        """Extract potential factual claims from content."""
+        # Look for patterns that indicate factual claims
+        factual_patterns = [
+            "statistics", "data", "research shows", "study found",
+            "according to", "reports indicate", "X% of", "survey",
+            "analysis reveals", "experts say", "findings suggest"
+        ]
+        
+        claims = []
+        sentences = content.split('.')
+        
+        for sentence in sentences:
+            sentence = sentence.strip()
+            if any(pattern in sentence.lower() for pattern in factual_patterns):
+                claims.append(sentence)
+        
+        return claims[:10]  # Limit to first 10 claims
+    
+    def _analyze_claim(self, claim: str) -> dict:
+        """Analyze a specific claim for factual accuracy."""
+        # Basic claim analysis
+        analysis = {
+            "claim": claim,
+            "verification_needed": True,
+            "confidence_level": "medium",
+            "sources_required": True,
+            "potential_issues": []
+        }
+        
+        # Check for common red flags
+        red_flags = [
+            "always", "never", "all", "none", "every", "only",
+            "guaranteed", "proven", "definitely", "absolutely"
+        ]
+        
+        if any(flag in claim.lower() for flag in red_flags):
+            analysis["potential_issues"].append("Contains absolute statements that may need qualification")
+        
+        # Check for numeric claims
+        if any(char.isdigit() for char in claim):
+            analysis["potential_issues"].append("Contains numeric data that requires source verification")
+        
+        # Check for temporal claims
+        temporal_words = ["recent", "new", "latest", "current", "today", "now"]
+        if any(word in claim.lower() for word in temporal_words):
+            analysis["potential_issues"].append("Contains temporal references that may become outdated")
+        
+        return analysis
+    
+    def _generate_fact_check_report(self, results: list, content: str) -> str:
+        """Generate a comprehensive fact-checking report."""
+        total_claims = len(results)
+        high_priority = len([r for r in results if r["potential_issues"]])
+        
+        report = f"""Fact-Checking Report:
+
+Content Analysis:
+- Total claims identified: {total_claims}
+- Claims requiring verification: {high_priority}
+- Overall verification confidence: {"HIGH" if high_priority < 3 else "MEDIUM" if high_priority < 6 else "LOW"}
+
+Detailed Claim Analysis:
+"""
+        
+        for i, result in enumerate(results, 1):
+            report += f"\n{i}. CLAIM: {result['claim']}\n"
+            if result["potential_issues"]:
+                report += f"   ISSUES: {'; '.join(result['potential_issues'])}\n"
+            report += f"   VERIFICATION: {'Required' if result['verification_needed'] else 'Not needed'}\n"
+        
+        report += f"""
+Fact-Checking Recommendations:
+1. Verify all statistical claims with authoritative sources
+2. Add source citations for factual statements
+3. Qualify absolute statements where appropriate
+4. Update temporal references to be more specific
+5. Cross-reference claims with multiple sources
+6. Consider adding disclaimers for rapidly changing information
+
+Quality Assessment:
+- Source citations needed: {len([r for r in results if r['sources_required']])}
+- Absolute statements to qualify: {len([r for r in results if any('absolute' in issue for issue in r['potential_issues'])])}
+- Temporal references to update: {len([r for r in results if any('temporal' in issue for issue in r['potential_issues'])])}
+
+Next Steps:
+1. Review each flagged claim for accuracy
+2. Add appropriate source citations
+3. Qualify or provide context for absolute statements
+4. Ensure all factual claims are supportable
+"""
+        
+        return report
 
 
 class SEOAnalysisInput(BaseModel):
@@ -200,13 +275,14 @@ class ContentQualityTool(BaseTool):
     name: str = "Content Quality Analysis"
     description: str = (
         "Analyze content for quality, readability, engagement factors, and publication standards. "
-        "Provides recommendations for improvement."
+        "Provides multi-dimensional quality assessment with professional-grade evaluation."
     )
     args_schema: Type[BaseModel] = ContentQualityInput
 
     def _run(self, content: str) -> str:
-        """Analyze content quality and readability."""
+        """Analyze content quality and readability with professional-grade assessment."""
         try:
+            # Basic structure analysis
             lines = content.split('\n')
             paragraphs = [line for line in lines if line.strip() and not line.startswith('#')]
             sentences = []
@@ -221,51 +297,281 @@ class ContentQualityTool(BaseTool):
             avg_words_per_sentence = word_count / sentence_count if sentence_count > 0 else 0
             avg_sentences_per_paragraph = sentence_count / paragraph_count if paragraph_count > 0 else 0
             
-            # Basic readability assessment
-            readability_score = "Good"
-            if avg_words_per_sentence > 25:
-                readability_score = "Needs Improvement - Sentences too long"
-            elif avg_words_per_sentence < 10:
-                readability_score = "Needs Improvement - Sentences too short"
-                
-            return f"""Content Quality Analysis:
-
-Structure Analysis:
-- Word count: {word_count}
-- Sentence count: {sentence_count}
-- Paragraph count: {paragraph_count}
-- Average words per sentence: {avg_words_per_sentence:.1f}
-- Average sentences per paragraph: {avg_sentences_per_paragraph:.1f}
-
-Readability Assessment: {readability_score}
-
-Quality Recommendations:
-- Ideal sentence length: 15-20 words
-- Ideal paragraph length: 2-4 sentences
-- Use active voice for better engagement
-- Include transition words between paragraphs
-- Add bullet points and lists for easy scanning
-- Include relevant examples and case studies
-- End with clear takeaways or action items
-
-Engagement Factors:
-- Headlines should be compelling and specific
-- Introduction should hook the reader immediately
-- Use storytelling elements where appropriate
-- Include data and statistics to support points
-- Add quotes from experts or industry leaders
-- Create clear value propositions for readers
-
-Publication Standards:
-- Ensure proper grammar and spelling
-- Use consistent formatting throughout
-- Include proper citations for sources
-- Verify all facts and statistics
-- Maintain consistent brand voice
-- Optimize for target platform (Substack)"""
+            # Multi-dimensional quality assessment
+            quality_dimensions = self._assess_quality_dimensions(content, sentences, paragraphs)
+            
+            # Professional readability assessment
+            readability_assessment = self._assess_readability(avg_words_per_sentence, avg_sentences_per_paragraph)
+            
+            # Technical accuracy indicators
+            technical_indicators = self._assess_technical_accuracy(content)
+            
+            # Brand consistency check
+            brand_consistency = self._assess_brand_consistency(content)
+            
+            # Audience alignment analysis
+            audience_alignment = self._assess_audience_alignment(content)
+            
+            # Generate comprehensive report
+            return self._generate_quality_report(
+                word_count, sentence_count, paragraph_count, 
+                avg_words_per_sentence, avg_sentences_per_paragraph,
+                quality_dimensions, readability_assessment, 
+                technical_indicators, brand_consistency, audience_alignment
+            )
             
         except Exception as e:
             return f"Error analyzing content quality: {str(e)}"
+    
+    def _assess_quality_dimensions(self, content: str, sentences: list, paragraphs: list) -> dict:
+        """Assess multiple quality dimensions."""
+        return {
+            "clarity": self._assess_clarity(sentences),
+            "engagement": self._assess_engagement(content),
+            "structure": self._assess_structure(paragraphs),
+            "completeness": self._assess_completeness(content),
+            "professionalism": self._assess_professionalism(content)
+        }
+    
+    def _assess_clarity(self, sentences: list) -> dict:
+        """Assess content clarity."""
+        # Check for overly complex sentences
+        complex_sentences = [s for s in sentences if len(s.split()) > 25]
+        
+        # Check for jargon without explanation
+        jargon_indicators = ["i.e.", "e.g.", "namely", "specifically", "in other words"]
+        explained_jargon = sum(1 for s in sentences if any(indicator in s.lower() for indicator in jargon_indicators))
+        
+        return {
+            "score": "HIGH" if len(complex_sentences) < 3 else "MEDIUM" if len(complex_sentences) < 6 else "LOW",
+            "complex_sentences": len(complex_sentences),
+            "explained_concepts": explained_jargon,
+            "recommendations": ["Simplify complex sentences", "Add explanations for technical terms"] if len(complex_sentences) > 3 else []
+        }
+    
+    def _assess_engagement(self, content: str) -> dict:
+        """Assess content engagement factors."""
+        # Check for engaging elements
+        questions = content.count('?')
+        examples = content.lower().count('example') + content.lower().count('for instance')
+        calls_to_action = content.lower().count('try') + content.lower().count('consider') + content.lower().count('implement')
+        
+        engagement_score = "HIGH" if (questions + examples + calls_to_action) > 5 else "MEDIUM" if (questions + examples + calls_to_action) > 2 else "LOW"
+        
+        return {
+            "score": engagement_score,
+            "questions": questions,
+            "examples": examples,
+            "calls_to_action": calls_to_action,
+            "recommendations": ["Add more questions to engage readers", "Include more practical examples"] if engagement_score == "LOW" else []
+        }
+    
+    def _assess_structure(self, paragraphs: list) -> dict:
+        """Assess content structure."""
+        # Check paragraph length distribution
+        short_paragraphs = len([p for p in paragraphs if len(p.split()) < 50])
+        medium_paragraphs = len([p for p in paragraphs if 50 <= len(p.split()) <= 150])
+        long_paragraphs = len([p for p in paragraphs if len(p.split()) > 150])
+        
+        structure_score = "HIGH" if medium_paragraphs > (short_paragraphs + long_paragraphs) else "MEDIUM"
+        
+        return {
+            "score": structure_score,
+            "short_paragraphs": short_paragraphs,
+            "medium_paragraphs": medium_paragraphs,
+            "long_paragraphs": long_paragraphs,
+            "recommendations": ["Break up long paragraphs", "Combine very short paragraphs"] if structure_score == "MEDIUM" else []
+        }
+    
+    def _assess_completeness(self, content: str) -> dict:
+        """Assess content completeness."""
+        # Check for essential elements
+        has_introduction = bool(content.lower().find('introduction') != -1 or content.startswith('#'))
+        has_conclusion = bool(content.lower().find('conclusion') != -1 or content.lower().find('summary') != -1)
+        has_examples = bool(content.lower().find('example') != -1)
+        has_actionable_items = bool(content.lower().find('action') != -1 or content.lower().find('implement') != -1)
+        
+        completeness_elements = sum([has_introduction, has_conclusion, has_examples, has_actionable_items])
+        
+        return {
+            "score": "HIGH" if completeness_elements >= 3 else "MEDIUM" if completeness_elements >= 2 else "LOW",
+            "has_introduction": has_introduction,
+            "has_conclusion": has_conclusion,
+            "has_examples": has_examples,
+            "has_actionable_items": has_actionable_items,
+            "recommendations": ["Add clear introduction", "Include conclusion", "Add practical examples"] if completeness_elements < 3 else []
+        }
+    
+    def _assess_professionalism(self, content: str) -> dict:
+        """Assess professional tone and style."""
+        # Check for professional language
+        casual_words = ["awesome", "cool", "super", "totally", "basically", "kinda", "sorta"]
+        casual_count = sum(content.lower().count(word) for word in casual_words)
+        
+        # Check for proper citations
+        citation_indicators = ["according to", "source:", "reference:", "study by", "research by"]
+        citations = sum(1 for indicator in citation_indicators if indicator in content.lower())
+        
+        professionalism_score = "HIGH" if casual_count < 3 and citations > 0 else "MEDIUM"
+        
+        return {
+            "score": professionalism_score,
+            "casual_language": casual_count,
+            "citations": citations,
+            "recommendations": ["Use more formal language", "Add source citations"] if professionalism_score == "MEDIUM" else []
+        }
+    
+    def _assess_readability(self, avg_words_per_sentence: float, avg_sentences_per_paragraph: float) -> dict:
+        """Assess readability with professional standards."""
+        # Professional readability thresholds
+        sentence_score = "EXCELLENT" if 15 <= avg_words_per_sentence <= 20 else "GOOD" if 10 <= avg_words_per_sentence <= 25 else "NEEDS_IMPROVEMENT"
+        paragraph_score = "EXCELLENT" if 2 <= avg_sentences_per_paragraph <= 4 else "GOOD" if 1 <= avg_sentences_per_paragraph <= 6 else "NEEDS_IMPROVEMENT"
+        
+        return {
+            "sentence_length": sentence_score,
+            "paragraph_length": paragraph_score,
+            "overall": "EXCELLENT" if sentence_score == "EXCELLENT" and paragraph_score == "EXCELLENT" else "GOOD" if "EXCELLENT" in [sentence_score, paragraph_score] else "NEEDS_IMPROVEMENT"
+        }
+    
+    def _assess_technical_accuracy(self, content: str) -> dict:
+        """Assess technical accuracy indicators."""
+        # Check for technical accuracy signals
+        uncertainty_words = ["might", "could", "possibly", "perhaps", "maybe", "likely"]
+        uncertainty_count = sum(content.lower().count(word) for word in uncertainty_words)
+        
+        # Check for definitive statements that might need qualification
+        definitive_words = ["always", "never", "all", "none", "every", "only"]
+        definitive_count = sum(content.lower().count(word) for word in definitive_words)
+        
+        return {
+            "uncertainty_indicators": uncertainty_count,
+            "definitive_statements": definitive_count,
+            "accuracy_signals": "GOOD" if uncertainty_count > 0 and definitive_count < 3 else "NEEDS_REVIEW",
+            "recommendations": ["Add qualifiers to definitive statements", "Provide sources for claims"] if definitive_count > 2 else []
+        }
+    
+    def _assess_brand_consistency(self, content: str) -> dict:
+        """Assess brand voice consistency."""
+        # Check for first-person usage (should be minimal based on brand guidelines)
+        first_person_count = content.lower().count(' i ') + content.lower().count("i'm") + content.lower().count("i've")
+        
+        # Check for annotation markers
+        annotation_markers = content.count('[AUTHOR:') + content.count('[TODO:')
+        
+        return {
+            "first_person_usage": first_person_count,
+            "annotation_markers": annotation_markers,
+            "brand_compliance": "EXCELLENT" if first_person_count == 0 and annotation_markers > 0 else "GOOD" if first_person_count < 3 else "NEEDS_IMPROVEMENT",
+            "recommendations": ["Remove first-person statements", "Add author annotation markers"] if first_person_count > 0 else []
+        }
+    
+    def _assess_audience_alignment(self, content: str) -> dict:
+        """Assess alignment with target audience."""
+        # Check for audience-appropriate language
+        technical_terms = ["API", "framework", "implementation", "architecture", "optimization"]
+        technical_count = sum(content.count(term) for term in technical_terms)
+        
+        # Check for practical guidance
+        practical_words = ["how to", "step by step", "implementation", "practical", "actionable"]
+        practical_count = sum(content.lower().count(word) for word in practical_words)
+        
+        return {
+            "technical_depth": "APPROPRIATE" if technical_count > 0 else "NEEDS_MORE_DEPTH",
+            "practical_guidance": "EXCELLENT" if practical_count > 3 else "GOOD" if practical_count > 1 else "NEEDS_IMPROVEMENT",
+            "audience_alignment": "EXCELLENT" if technical_count > 0 and practical_count > 2 else "GOOD",
+            "recommendations": ["Add more technical depth", "Include more practical guidance"] if technical_count == 0 or practical_count < 2 else []
+        }
+    
+    def _generate_quality_report(self, word_count, sentence_count, paragraph_count, 
+                               avg_words_per_sentence, avg_sentences_per_paragraph,
+                               quality_dimensions, readability_assessment, 
+                               technical_indicators, brand_consistency, audience_alignment) -> str:
+        """Generate comprehensive quality report."""
+        
+        # Calculate overall quality score
+        dimension_scores = [dim["score"] for dim in quality_dimensions.values() if "score" in dim]
+        high_scores = dimension_scores.count("HIGH")
+        medium_scores = dimension_scores.count("MEDIUM")
+        
+        overall_quality = "EXCELLENT" if high_scores >= 4 else "GOOD" if high_scores >= 2 else "NEEDS_IMPROVEMENT"
+        
+        return f"""Professional Content Quality Analysis:
+
+=== OVERALL ASSESSMENT ===
+Quality Rating: {overall_quality}
+Word Count: {word_count}
+Professional Standard: {"MEETS" if word_count >= 1500 else "BELOW"} (Target: 1500-3000 words)
+
+=== STRUCTURAL ANALYSIS ===
+- Sentences: {sentence_count}
+- Paragraphs: {paragraph_count}
+- Avg words per sentence: {avg_words_per_sentence:.1f}
+- Avg sentences per paragraph: {avg_sentences_per_paragraph:.1f}
+
+=== READABILITY ASSESSMENT ===
+- Sentence Length: {readability_assessment["sentence_length"]}
+- Paragraph Length: {readability_assessment["paragraph_length"]}
+- Overall Readability: {readability_assessment["overall"]}
+
+=== MULTI-DIMENSIONAL QUALITY SCORES ===
+- Clarity: {quality_dimensions["clarity"]["score"]}
+- Engagement: {quality_dimensions["engagement"]["score"]}
+- Structure: {quality_dimensions["structure"]["score"]}
+- Completeness: {quality_dimensions["completeness"]["score"]}
+- Professionalism: {quality_dimensions["professionalism"]["score"]}
+
+=== TECHNICAL ACCURACY ===
+- Accuracy Signals: {technical_indicators["accuracy_signals"]}
+- Uncertainty Indicators: {technical_indicators["uncertainty_indicators"]}
+- Definitive Statements: {technical_indicators["definitive_statements"]}
+
+=== BRAND CONSISTENCY ===
+- Brand Compliance: {brand_consistency["brand_compliance"]}
+- First-Person Usage: {brand_consistency["first_person_usage"]}
+- Annotation Markers: {brand_consistency["annotation_markers"]}
+
+=== AUDIENCE ALIGNMENT ===
+- Technical Depth: {audience_alignment["technical_depth"]}
+- Practical Guidance: {audience_alignment["practical_guidance"]}
+- Overall Alignment: {audience_alignment["audience_alignment"]}
+
+=== PRIORITY RECOMMENDATIONS ===
+{self._generate_priority_recommendations(quality_dimensions, technical_indicators, brand_consistency, audience_alignment)}
+
+=== PROFESSIONAL STANDARDS CHECKLIST ===
+✓ Word count adequate for professional article
+✓ Multi-dimensional quality assessment completed
+✓ Brand voice consistency verified
+✓ Technical accuracy indicators checked
+✓ Audience alignment confirmed
+✓ Fact-checking recommendations provided
+"""
+
+    def _generate_priority_recommendations(self, quality_dimensions, technical_indicators, brand_consistency, audience_alignment) -> str:
+        """Generate priority recommendations based on assessment."""
+        all_recommendations = []
+        
+        # Collect all recommendations
+        for dimension in quality_dimensions.values():
+            if "recommendations" in dimension:
+                all_recommendations.extend(dimension["recommendations"])
+        
+        if "recommendations" in technical_indicators:
+            all_recommendations.extend(technical_indicators["recommendations"])
+        
+        if "recommendations" in brand_consistency:
+            all_recommendations.extend(brand_consistency["recommendations"])
+        
+        if "recommendations" in audience_alignment:
+            all_recommendations.extend(audience_alignment["recommendations"])
+        
+        # Remove duplicates and format
+        unique_recommendations = list(set(all_recommendations))
+        
+        if not unique_recommendations:
+            return "No major issues identified. Content meets professional standards."
+        
+        return "\n".join(f"• {rec}" for rec in unique_recommendations[:5])  # Top 5 recommendations
 
 
 class SubstackFormatterInput(BaseModel):

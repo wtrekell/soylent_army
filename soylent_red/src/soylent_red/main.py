@@ -3,8 +3,9 @@ import sys
 import warnings
 import os
 import yaml
+from pathlib import Path
 
-from soylent_red.crew import SoylentRed
+from .crew import SoylentRed
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
@@ -18,9 +19,15 @@ def run():
     else:
         file_path = " ".join(sys.argv[1:])
     
+    # Convert to Path object and resolve relative to current working directory
+    file_path = Path(file_path).resolve()
+    
     # Validate file path
-    if not os.path.exists(file_path):
+    if not file_path.exists():
         raise FileNotFoundError(f"File not found: {file_path}")
+    
+    # Convert back to string for compatibility
+    file_path = str(file_path)
     
     # Check if it's a YAML manifest or content file
     if file_path.endswith('.yaml') or file_path.endswith('.yml'):
@@ -29,10 +36,16 @@ def run():
         inputs = process_content_file(file_path)
     
     try:
-        result = SoylentRed().crew().kickoff(inputs=inputs)
+        crew_instance = SoylentRed()
+        result = crew_instance.crew().kickoff(inputs=inputs)
+        
+        # Dynamic output path
+        output_dir = crew_instance.project_root / "supplies"
+        output_file = output_dir / "final_article.md"
+        
         print(f"\n✅ Article completed successfully!")
         print(f"📁 Source: {file_path}")
-        print(f"📄 Output saved to: supplies/final_article.md")
+        print(f"📄 Output saved to: {output_file}")
         return result
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
@@ -47,15 +60,15 @@ def process_manifest(manifest_path):
         raise Exception(f"Error reading manifest file: {e}")
     
     # Get directory of manifest for relative paths
-    manifest_dir = os.path.dirname(manifest_path)
+    manifest_dir = Path(manifest_path).parent
     
     # Combine content from source files
     combined_content = ""
     source_files = manifest.get('source_files', [])
     
     for source_file in source_files:
-        source_path = os.path.join(manifest_dir, source_file)
-        if os.path.exists(source_path):
+        source_path = manifest_dir / source_file
+        if source_path.exists():
             try:
                 with open(source_path, 'r', encoding='utf-8') as f:
                     content = f.read()
@@ -63,13 +76,15 @@ def process_manifest(manifest_path):
             except Exception as e:
                 print(f"Warning: Could not read {source_file}: {e}")
         else:
-            print(f"Warning: Source file not found: {source_file}")
+            print(f"Warning: Source file not found: {source_path}")
+            print(f"  Looking in directory: {manifest_dir}")
+            print(f"  Available files: {list(manifest_dir.glob('*'))}")
     
     # Build comprehensive inputs
     inputs = {
-        'content_file_path': manifest_path,
+        'content_file_path': str(manifest_path),
         'raw_content': combined_content,
-        'source_filename': os.path.basename(manifest_path),
+        'source_filename': Path(manifest_path).name,
         'title': manifest.get('title', 'Untitled Article'),
         'context': manifest.get('context', ''),
         'summary': manifest.get('summary', ''),
@@ -91,7 +106,7 @@ def process_content_file(file_path):
     except Exception as e:
         raise Exception(f"Error reading content file: {e}")
     
-    filename = os.path.basename(file_path)
+    filename = Path(file_path).name
     
     inputs = {
         'content_file_path': file_path,
