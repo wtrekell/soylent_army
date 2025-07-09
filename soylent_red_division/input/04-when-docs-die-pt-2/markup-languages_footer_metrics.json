@@ -1,0 +1,22 @@
+{
+  "article_name": "markup-languages",
+  "word_progression": {
+    "draft": 863,
+    "final": 892,
+    "change_percentage": 3.4
+  },
+  "content_retention": {
+    "overall_similarity": 43.1,
+    "content_origins": {
+      "edited": 85.7,
+      "draft": 2.4
+    }
+  },
+  "modification_summary": {
+    "High Similarity": 7.1,
+    "Medium Similarity": 40.5,
+    "Low Similarity": 40.5,
+    "New Content": 11.9
+  },
+  "generated_at": "2025-06-14T16:55:32.125180"
+}

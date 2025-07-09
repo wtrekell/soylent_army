@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Delta Analyzer - Syntax & Empathy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: #F7FBFD;
+            min-height: 100vh;
+            padding: 20px;
+            color: #515861;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .brand-logo {
+            max-height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #515861;
+            margin-bottom: 30px;
+        }
+
+        .checkpoint-section {
+            margin-bottom: 30px;
+        }
+
+        .checkpoint-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .checkpoint-input {
+            background: #F9FCFE;
+            border: 2px solid #E1F0F3;
+            border-radius: 15px;
+            padding: 20px;
+            transition: border-color 0.3s ease;
+        }
+
+        .checkpoint-input:hover {
+            border-color: #6AA3AF;
+        }
+
+        .checkpoint-input.active {
+            border-color: #EB9847;
+            box-shadow: 0 0 0 3px rgba(235, 152, 71, 0.1);
+        }
+
+        .checkpoint-label {
+            font-weight: 700;
+            color: #6AA3AF;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkpoint-number {
+            background: #6AA3AF;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            border: 2px solid #E1F0F3;
+            border-radius: 12px;
+            padding: 15px;
+            font-size: 14px;
+            font-family: 'Lora', serif;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+            background: white;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #6AA3AF;
+            box-shadow: 0 0 0 3px rgba(106, 163, 175, 0.1);
+        }
+
+        .analyze-btn {
+            display: block;
+            width: 250px;
+            margin: 30px auto;
+            padding: 15px 30px;
+            background: #6AA3AF;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: 'Lora', serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(106, 163, 175, 0.3);
+        }
+
+        .analyze-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(106, 163, 175, 0.4);
+        }
+
+        .analyze-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .results-section {
+            margin-top: 40px;
+            padding: 30px;
+            background: #F9FCFE;
+            border-radius: 20px;
+            border: 2px solid #E1F0F3;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .results-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #6AA3AF;
+            margin-bottom: 10px;
+        }
+
+        .checkpoint-analysis {
+            margin-bottom: 40px;
+        }
+
+        .checkpoint-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #A3759C;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #E1F0F3;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .metric-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid #E1F0F3;
+            transition: all 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .metric-card.words {
+            border-color: #6AA3AF;
+            background: #F9FCFE;
+        }
+
+        .metric-card.sentences {
+            border-color: #EB9847;
+            background: #FEF9F5;
+        }
+
+        .metric-card.paragraphs {
+            border-color: #A3759C;
+            background: #F9F6F8;
+        }
+
+        .metric-card.retention {
+            border-color: #8BC34A;
+            background: #F7FCF0;
+        }
+
+        .metric-card.semantic {
+            border-color: #FF7043;
+            background: #FFF3F0;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #515861;
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #515861;
+        }
+
+        .metric-change {
+            font-size: 0.8rem;
+            color: #515861;
+        }
+
+        .summary-section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            border: 2px solid #E1F0F3;
+        }
+
+        .summary-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #6AA3AF;
+            margin-bottom: 15px;
+        }
+
+        .overall-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .overall-stat {
+            text-align: center;
+            padding: 15px;
+            background: #F9FCFE;
+            border-radius: 10px;
+            border: 1px solid #E1F0F3;
+        }
+
+        .overall-stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #EB9847;
+        }
+
+        .overall-stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #6AA3AF;
+        }
+
+        .spinner {
+            border: 4px solid #E1F0F3;
+            border-top: 4px solid #6AA3AF;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .workflow-viz {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .workflow-steps {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .workflow-step {
+            background: white;
+            border: 2px solid #E1F0F3;
+            border-radius: 12px;
+            padding: 15px 20px;
+            font-weight: 700;
+            color: #6AA3AF;
+            position: relative;
+        }
+
+        .workflow-step.ai {
+            background: #F9FCFE;
+            border-color: #6AA3AF;
+        }
+
+        .workflow-step.human {
+            background: #FEF9F5;
+            border-color: #EB9847;
+        }
+
+        .workflow-arrow {
+            color: #A3759C;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .checkpoint-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .brand {
+                font-size: 2rem;
+            }
+
+            .workflow-steps {
+                flex-direction: column;
+            }
+
+            .workflow-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="" alt="Syntax & Empathy Logo" class="brand-logo" />
+            <div class="subtitle">Document Delta Analyzer - AI Collaboration Transparency Tool</div>
+        </div>
+        
+        <div class="workflow-viz">
+            <div class="workflow-steps">
+                <div class="workflow-step ai">AI Draft</div>
+                <div class="workflow-arrow">→</div>
+                <div class="workflow-step ai">AI Refined</div>
+                <div class="workflow-arrow">→</div>
+                <div class="workflow-step human">Human Edited</div>
+                <div class="workflow-arrow">→</div>
+                <div class="workflow-step human">Final Version</div>
+            </div>
+        </div>
+        
+        <div class="checkpoint-section">
+            <div class="checkpoint-grid">
+                <div class="checkpoint-input">
+                    <div class="checkpoint-label">
+                        <div class="checkpoint-number">1</div>
+                        AI Draft (Baseline)
+                    </div>
+                    <div class="file-input">
+                        <input type="file" id="file1" accept=".txt,.docx,.pdf" />
+                    </div>
+                    <textarea id="doc1" placeholder="Paste your AI-generated draft here..."></textarea>
+                </div>
+                
+                <div class="checkpoint-input">
+                    <div class="checkpoint-label">
+                        <div class="checkpoint-number">2</div>
+                        AI Refined Version
+                    </div>
+                    <div class="file-input">
+                        <input type="file" id="file2" accept=".txt,.docx,.pdf" />
+                    </div>
+                    <textarea id="doc2" placeholder="Paste your refined AI version here..."></textarea>
+                </div>
+                
+                <div class="checkpoint-input">
+                    <div class="checkpoint-label">
+                        <div class="checkpoint-number">3</div>
+                        Human Edited Version
+                    </div>
+                    <div class="file-input">
+                        <input type="file" id="file3" accept=".txt,.docx,.pdf" />
+                    </div>
+                    <textarea id="doc3" placeholder="Paste your human-edited version here..."></textarea>
+                </div>
+                
+                <div class="checkpoint-input">
+                    <div class="checkpoint-label">
+                        <div class="checkpoint-number">4</div>
+                        Final Version
+                    </div>
+                    <div class="file-input">
+                        <input type="file" id="file4" accept=".txt,.docx,.pdf" />
+                    </div>
+                    <textarea id="doc4" placeholder="Paste your final version here..."></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <button class="analyze-btn" onclick="analyzeCheckpoints()">
+            🔍 Analyze Collaboration Workflow
+        </button>
+        
+        <div id="results" class="results-section" style="display: none;">
+            <div id="loading" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Analyzing your collaboration workflow...</p>
+            </div>
+            
+            <div id="analysis" style="display: none;">
+                <div class="results-header">
+                    <div class="results-title">Collaboration Analysis</div>
+                </div>
+                
+                <div id="checkpoint-analyses"></div>
+                
+                <div class="summary-section">
+                    <div class="summary-title">Overall Workflow Summary</div>
+                    <p id="workflow-summary"></p>
+                    <div class="overall-stats">
+                        <div class="overall-stat">
+                            <div class="overall-stat-value" id="total-word-change">-</div>
+                            <div class="overall-stat-label">Total Word Change</div>
+                        </div>
+                        <div class="overall-stat">
+                            <div class="overall-stat-value" id="ai-human-ratio">-</div>
+                            <div class="overall-stat-label">AI vs Human Impact</div>
+                        </div>
+                        <div class="overall-stat">
+                            <div class="overall-stat-value" id="final-retention">-</div>
+                            <div class="overall-stat-label">Original Content Retained</div>
+                        </div>
+                        <div class="overall-stat">
+                            <div class="overall-stat-value" id="total-semantic-change">-</div>
+                            <div class="overall-stat-label">Total Semantic Evolution</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // File reading functionality
+        ['file1', 'file2', 'file3', 'file4'].forEach((fileId, index) => {
+            document.getElementById(fileId).addEventListener('change', function(e) {
+                readFile(e.target.files[0], `doc${index + 1}`);
+            });
+        });
+        
+        function readFile(file, targetId) {
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById(targetId).value = e.target.result;
+                
+                // Highlight active input
+                const inputs = document.querySelectorAll('.checkpoint-input');
+                inputs.forEach(input => input.classList.remove('active'));
+                document.getElementById(targetId).closest('.checkpoint-input').classList.add('active');
+            };
+            reader.readAsText(file);
+        }
+
+        // Text analysis functions (same as before)
+        function countWords(text) {
+            if (!text || text.trim().length === 0) return 0;
+            return text.trim().split(/\s+/).filter(word => word.length > 0).length;
+        }
+
+        function countSentences(text) {
+            if (!text || text.trim().length === 0) return 0;
+            
+            const sentences = text
+                .replace(/\s+/g, ' ')
+                .split(/[.!?]+/)
+                .map(s => s.trim())
+                .filter(s => s.length > 0 && /[a-zA-Z]/.test(s));
+            
+            return sentences.length;
+        }
+
+        function countParagraphs(text) {
+            if (!text || text.trim().length === 0) return 0;
+            
+            const normalizedText = text.trim();
+            const doubleBreaks = normalizedText
+                .split(/\n\s*\n/)
+                .map(p => p.trim())
+                .filter(p => p.length > 0);
+            
+            const singleBreaks = normalizedText
+                .split(/\n/)
+                .map(p => p.trim())
+                .filter(p => p.length > 0);
+            
+            const sentences = normalizedText.split(/[.!?]+/).filter(s => s.trim().length > 0);
+            
+            if (doubleBreaks.length > 1) {
+                return doubleBreaks.length;
+            } else if (singleBreaks.length > 1 && singleBreaks.length < sentences.length) {
+                return singleBreaks.length;
+            } else {
+                return 1;
+            }
+        }
+
+        function getWords(text) {
+            return text.toLowerCase()
+                .replace(/[^\w\s]/g, ' ')
+                .split(/\s+/)
+                .filter(word => word.length > 0);
+        }
+
+        function calculateWordRetention(original, modified) {
+            const originalWords = new Set(getWords(original));
+            const modifiedWords = new Set(getWords(modified));
+            
+            let retained = 0;
+            modifiedWords.forEach(word => {
+                if (originalWords.has(word)) retained++;
+            });
+            
+            return originalWords.size > 0 ? (retained / originalWords.size * 100) : 0;
+        }
+
+        function calculateSemanticChange(original, modified) {
+            const originalSentences = original.split(/[.!?]+/).filter(s => s.trim().length > 0);
+            const modifiedSentences = modified.split(/[.!?]+/).filter(s => s.trim().length > 0);
+            
+            let totalChange = 0;
+            const maxLength = Math.max(originalSentences.length, modifiedSentences.length);
+            
+            for (let i = 0; i < maxLength; i++) {
+                const origSent = originalSentences[i] || '';
+                const modSent = modifiedSentences[i] || '';
+                const similarity = calculateSimilarity(origSent, modSent);
+                const change = 1 - similarity;
+                totalChange += change;
+            }
+            
+            const avgChange = maxLength > 0 ? (totalChange / maxLength) * 100 : 0;
+            return Math.min(avgChange, 100);
+        }
+
+        function calculateSimilarity(str1, str2) {
+            if (!str1 && !str2) return 1;
+            if (!str1 || !str2) return 0;
+            
+            const words1 = getWords(str1);
+            const words2 = getWords(str2);
+            
+            if (words1.length === 0 && words2.length === 0) return 1;
+            if (words1.length === 0 || words2.length === 0) return 0;
+            
+            const set1 = new Set(words1);
+            const set2 = new Set(words2);
+            
+            const intersection = new Set([...set1].filter(x => set2.has(x)));
+            const union = new Set([...set1, ...set2]);
+            
+            return intersection.size / union.size;
+        }
+
+        function analyzeCheckpoint(doc1, doc2, fromLabel, toLabel) {
+            const analysis = {
+                from: fromLabel,
+                to: toLabel,
+                metrics: {}
+            };
+
+            // Calculate all metrics
+            const words1 = countWords(doc1);
+            const words2 = countWords(doc2);
+            const sentences1 = countSentences(doc1);
+            const sentences2 = countSentences(doc2);
+            const paragraphs1 = countParagraphs(doc1);
+            const paragraphs2 = countParagraphs(doc2);
+
+            analysis.metrics = {
+                words: { from: words1, to: words2, delta: words2 - words1 },
+                sentences: { from: sentences1, to: sentences2, delta: sentences2 - sentences1 },
+                paragraphs: { from: paragraphs1, to: paragraphs2, delta: paragraphs2 - paragraphs1 },
+                retention: calculateWordRetention(doc1, doc2),
+                semanticChange: calculateSemanticChange(doc1, doc2)
+            };
+
+            return analysis;
+        }
+
+        function createCheckpointHTML(analysis) {
+            const { from, to, metrics } = analysis;
+            
+            return `
+                <div class="checkpoint-analysis">
+                    <div class="checkpoint-title">${from} → ${to}</div>
+                    <div class="metrics-grid">
+                        <div class="metric-card words">
+                            <div class="metric-label">Words</div>
+                            <div class="metric-value">${metrics.words.to}</div>
+                            <div class="metric-change">${metrics.words.delta >= 0 ? '+' : ''}${metrics.words.delta} from ${metrics.words.from}</div>
+                        </div>
+                        <div class="metric-card sentences">
+                            <div class="metric-label">Sentences</div>
+                            <div class="metric-value">${metrics.sentences.to}</div>
+                            <div class="metric-change">${metrics.sentences.delta >= 0 ? '+' : ''}${metrics.sentences.delta} from ${metrics.sentences.from}</div>
+                        </div>
+                        <div class="metric-card paragraphs">
+                            <div class="metric-label">Paragraphs</div>
+                            <div class="metric-value">${metrics.paragraphs.to}</div>
+                            <div class="metric-change">${metrics.paragraphs.delta >= 0 ? '+' : ''}${metrics.paragraphs.delta} from ${metrics.paragraphs.from}</div>
+                        </div>
+                        <div class="metric-card retention">
+                            <div class="metric-label">Word Retention</div>
+                            <div class="metric-value">${metrics.retention.toFixed(1)}%</div>
+                            <div class="metric-change">Content preserved</div>
+                        </div>
+                        <div class="metric-card semantic">
+                            <div class="metric-label">Semantic Change</div>
+                            <div class="metric-value">${metrics.semanticChange.toFixed(1)}%</div>
+                            <div class="metric-change">Meaning evolution</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // NEW, UPDATED analyzeCheckpoints function
+    async function analyzeCheckpoints() {
+        const docs = [
+            document.getElementById('doc1').value.trim(),
+            document.getElementById('doc2').value.trim(),
+            document.getElementById('doc3').value.trim(),
+            document.getElementById('doc4').value.trim()
+        ];
+        
+        const labels = ['AI Draft', 'AI Refined', 'Human Edited', 'Final Version'];
+
+        if (docs.some(doc => !doc)) {
+            alert('Please fill in all four document versions.');
+            return;
+        }
+
+        const resultsSection = document.getElementById('results');
+        const loadingDiv = document.getElementById('loading');
+        const analysisDiv = document.getElementById('analysis');
+        const analyzeBtn = document.querySelector('.analyze-btn');
+
+        // Show loading state and disable button
+        resultsSection.style.display = 'block';
+        loadingDiv.style.display = 'block';
+        analysisDiv.style.display = 'none';
+        analyzeBtn.disabled = true;
+        analyzeBtn.innerHTML = "🧠 Analyzing...";
+
+        try {
+            // This is the new part: Call the backend!
+            const response = await fetch('http://127.0.0.1:5000/analyze', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    doc1: docs[0],
+                    doc2: docs[1],
+                    doc3: docs[2],
+                    doc4: docs[3]
+                }),
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            // The backend returns the full analysis
+            const analyses = await response.json();
+
+            // The rest of this function is for displaying the data, same as before
+            const checkpointHTML = analyses.map(createCheckpointHTML).join('');
+            document.getElementById('checkpoint-analyses').innerHTML = checkpointHTML;
+            
+            // Calculate overall summary from the accurate data
+            const totalWords = count_words_simple(docs[3]) - count_words_simple(docs[0]);
+            const finalRetention = calculate_word_retention_simple(docs[0], docs[3]);
+            const totalSemanticChange = await calculate_total_semantic_change(docs[0], docs[3]);
+
+            const aiWordChanges = Math.abs(analyses[0].metrics.words.delta);
+            const humanWordChanges = Math.abs(analyses[1].metrics.words.delta);
+            const totalChanges = aiWordChanges + humanWordChanges;
+            const aiHumanRatio = totalChanges > 0 ? (humanWordChanges / totalChanges * 100) : 50;
+
+            document.getElementById('total-word-change').textContent = `${totalWords >= 0 ? '+' : ''}${totalWords}`;
+            document.getElementById('ai-human-ratio').textContent = `${aiHumanRatio.toFixed(0)}% Human`;
+            document.getElementById('final-retention').textContent = `${finalRetention.toFixed(1)}%`;
+            document.getElementById('total-semantic-change').textContent = `${totalSemanticChange.toFixed(1)}%`;
+
+            generateWorkflowSummary(totalSemanticChange, finalRetention, aiHumanRatio);
+            
+            // Show results
+            loadingDiv.style.display = 'none';
+            analysisDiv.style.display = 'block';
+            resultsSection.scrollIntoView({ behavior: 'smooth' });
+
+        } catch (error) {
+            console.error("Analysis failed:", error);
+            alert("Analysis failed. Make sure the Python backend server is running and there are no errors in the terminal.");
+            loadingDiv.style.display = 'none';
+        } finally {
+            // Re-enable button
+            analyzeBtn.disabled = false;
+            analyzeBtn.innerHTML = "🔍 Analyze Collaboration Workflow";
+        }
+    }
+    
+    // You can keep createCheckpointHTML as it is, since it just displays data.
+    // Here are a few simple helper functions needed for the summary,
+    // as the main calculations are now on the server.
+    function count_words_simple(text) {
+        return text.trim().split(/\s+/).filter(Boolean).length;
+    }
+
+    function calculate_word_retention_simple(original, modified) {
+        const originalWords = new Set(original.toLowerCase().match(/\b\w+\b/g) || []);
+        const modifiedWords = new Set(modified.toLowerCase().match(/\b\w+\b/g) || []);
+        if (originalWords.size === 0) return 0;
+        const retained = new Set([...originalWords].filter(x => modifiedWords.has(x)));
+        return (retained.size / originalWords.size) * 100;
+    }
+
+    async function calculate_total_semantic_change(doc1, doc4) {
+        // We can make a mini-call for this one value if needed, or derive it.
+        // For simplicity, let's just use the final checkpoint's semantic change as a proxy.
+        // A more robust way would be to have the backend calculate this explicitly.
+        // Or, we can do a quick, less accurate version here to avoid another server call.
+        // Let's call the server for an accurate value:
+        const response = await fetch('http://127.0.0.1:5000/analyze', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({doc1: doc1, doc2: doc4})
+        });
+        const result = await response.json();
+        return result[0].metrics.semanticChange;
+    }
+
+    function generateWorkflowSummary(totalSemanticChange, finalRetention, aiHumanRatio) {
+        let summary = `This analysis tracks your collaborative writing process across 4 checkpoints. `;
+        if (totalSemanticChange > 70) {
+            summary += `The content underwent substantial evolution (${totalSemanticChange.toFixed(1)}% semantic change), `;
+        } else if (totalSemanticChange > 40) {
+            summary += `The content underwent moderate evolution (${totalSemanticChange.toFixed(1)}% semantic change), `;
+        } else {
+            summary += `The content underwent light refinement (${totalSemanticChange.toFixed(1)}% semantic change), `;
+        }
+        summary += `with ${finalRetention.toFixed(1)}% of the original draft's vocabulary preserved in the final version. `;
+        if (aiHumanRatio > 60) {
+            summary += `Human editing contributed the majority of the structural changes.`;
+        } else if (aiHumanRatio < 40) {
+            summary += `AI refinement contributed the majority of the structural changes.`;
+        } else {
+            summary += `AI and human contributions were relatively balanced throughout the process.`;
+        }
+        document.getElementById('workflow-summary').textContent = summary;
+    }
+    
+    // NOTE: Keep your 'createCheckpointHTML' function exactly as it was. It's only for displaying data.
+    function createCheckpointHTML(analysis) {
+        const { from, to, metrics } = analysis;
+        return `
+            <div class="checkpoint-analysis">
+                <div class="checkpoint-title">${from} → ${to}</div>
+                <div class="metrics-grid">
+                    <div class="metric-card words">
+                        <div class="metric-label">Words</div>
+                        <div class="metric-value">${metrics.words.to}</div>
+                        <div class="metric-change">${metrics.words.delta >= 0 ? '+' : ''}${metrics.words.delta} from ${metrics.words.from}</div>
+                    </div>
+                    <div class="metric-card sentences">
+                        <div class="metric-label">Sentences</div>
+                        <div class="metric-value">${metrics.sentences.to}</div>
+                        <div class="metric-change">${metrics.sentences.delta >= 0 ? '+' : ''}${metrics.sentences.delta} from ${metrics.sentences.from}</div>
+                    </div>
+                    <div class="metric-card paragraphs">
+                        <div class="metric-label">Paragraphs</div>
+                        <div class="metric-value">${metrics.paragraphs.to}</div>
+                        <div class="metric-change">${metrics.paragraphs.delta >= 0 ? '+' : ''}${metrics.paragraphs.delta} from ${metrics.paragraphs.from}</div>
+                    </div>
+                    <div class="metric-card retention">
+                        <div class="metric-label">Word Retention</div>
+                        <div class="metric-value">${metrics.retention.toFixed(1)}%</div>
+                        <div class="metric-change">Content preserved</div>
+                    </div>
+                    <div class="metric-card semantic">
+                        <div class="metric-label">Semantic Change</div>
+                        <div class="metric-value">${metrics.semanticChange.toFixed(1)}%</div>
+                        <div class="metric-change">Meaning evolution</div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    </script>
+</body>
+</html>

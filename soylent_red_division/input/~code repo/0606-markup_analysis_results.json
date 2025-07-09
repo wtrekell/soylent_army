@@ -1,0 +1,584 @@
+{
+  "project": "Markup Analysis Project",
+  "timestamp": "2025-06-15T01:24:16.147447",
+  "stages": {
+    "Stage 2\u21923: Draft to Refined": {
+      "stage": "Stage 2\u21923: Draft to Refined",
+      "character_count": {
+        "before": 5667,
+        "after": 7301,
+        "change": 1634,
+        "change_percent": 28.833598023645667
+      },
+      "word_count": {
+        "before": 886,
+        "after": 1154,
+        "change": 268,
+        "change_percent": 30.248306997742663
+      },
+      "similarity_score": 7.59,
+      "change_operations": {
+        "insertions": 14,
+        "deletions": 8,
+        "replacements": 71,
+        "total": 93
+      },
+      "word_level_changes": {
+        "added": 1066,
+        "removed": 798,
+        "most_added": [
+          [
+            "the",
+            51
+          ],
+          [
+            "a",
+            38
+          ],
+          [
+            "to",
+            33
+          ],
+          [
+            "i",
+            28
+          ],
+          [
+            "ai",
+            25
+          ]
+        ],
+        "most_removed": [
+          [
+            "the",
+            38
+          ],
+          [
+            "i",
+            33
+          ],
+          [
+            "to",
+            17
+          ],
+          [
+            "and",
+            16
+          ],
+          [
+            "ai",
+            15
+          ]
+        ]
+      },
+      "vocabulary": {
+        "new_unique_words": 261,
+        "removed_unique_words": 200,
+        "vocabulary_before": 420,
+        "vocabulary_after": 481
+      },
+      "structure": {
+        "paragraphs_before": 32,
+        "paragraphs_after": 37,
+        "avg_sentence_length_before": 16.3,
+        "avg_sentence_length_after": 17.1
+      },
+      "semantic_shift": {
+        "top_themes_before": [
+          [
+            "diagram",
+            12
+          ],
+          [
+            "process",
+            9
+          ],
+          [
+            "workflow",
+            8
+          ],
+          [
+            "structure",
+            6
+          ],
+          [
+            "about",
+            6
+          ]
+        ],
+        "top_themes_after": [
+          [
+            "diagram",
+            14
+          ],
+          [
+            "mermaid",
+            11
+          ],
+          [
+            "what",
+            10
+          ],
+          [
+            "diagramming",
+            7
+          ],
+          [
+            "approach",
+            7
+          ]
+        ],
+        "emerging_themes": [
+          [
+            "mermaid",
+            11
+          ],
+          [
+            "what",
+            10
+          ],
+          [
+            "diagramming",
+            7
+          ],
+          [
+            "approach",
+            7
+          ],
+          [
+            "your",
+            7
+          ]
+        ],
+        "diminishing_themes": [
+          [
+            "process",
+            9
+          ],
+          [
+            "workflow",
+            8
+          ],
+          [
+            "structure",
+            6
+          ],
+          [
+            "about",
+            6
+          ],
+          [
+            "work",
+            6
+          ]
+        ]
+      }
+    },
+    "Stage 3\u21924: Refined to Edited": {
+      "stage": "Stage 3\u21924: Refined to Edited",
+      "character_count": {
+        "before": 7301,
+        "after": 7575,
+        "change": 274,
+        "change_percent": 3.7529105601972335
+      },
+      "word_count": {
+        "before": 1154,
+        "after": 1088,
+        "change": -66,
+        "change_percent": -5.719237435008666
+      },
+      "similarity_score": 29.87,
+      "change_operations": {
+        "insertions": 16,
+        "deletions": 20,
+        "replacements": 70,
+        "total": 106
+      },
+      "word_level_changes": {
+        "added": 497,
+        "removed": 563,
+        "most_added": [
+          [
+            "the",
+            21
+          ],
+          [
+            "ai",
+            15
+          ],
+          [
+            "this",
+            9
+          ],
+          [
+            "when",
+            9
+          ],
+          [
+            "for",
+            8
+          ]
+        ],
+        "most_removed": [
+          [
+            "the",
+            33
+          ],
+          [
+            "to",
+            21
+          ],
+          [
+            "i",
+            19
+          ],
+          [
+            "a",
+            16
+          ],
+          [
+            "it",
+            10
+          ]
+        ]
+      },
+      "vocabulary": {
+        "new_unique_words": 144,
+        "removed_unique_words": 117,
+        "vocabulary_before": 481,
+        "vocabulary_after": 508
+      },
+      "structure": {
+        "paragraphs_before": 37,
+        "paragraphs_after": 43,
+        "avg_sentence_length_before": 17.1,
+        "avg_sentence_length_after": 20.1
+      },
+      "semantic_shift": {
+        "top_themes_before": [
+          [
+            "diagram",
+            14
+          ],
+          [
+            "mermaid",
+            11
+          ],
+          [
+            "what",
+            10
+          ],
+          [
+            "diagramming",
+            7
+          ],
+          [
+            "approach",
+            7
+          ]
+        ],
+        "top_themes_after": [
+          [
+            "when",
+            13
+          ],
+          [
+            "mermaid",
+            12
+          ],
+          [
+            "diagram",
+            12
+          ],
+          [
+            "diagramming",
+            11
+          ],
+          [
+            "your",
+            10
+          ]
+        ],
+        "emerging_themes": [
+          [
+            "when",
+            13
+          ],
+          [
+            "diagramming",
+            11
+          ],
+          [
+            "initial",
+            7
+          ],
+          [
+            "tools",
+            6
+          ],
+          [
+            "about",
+            6
+          ]
+        ],
+        "diminishing_themes": [
+          [
+            "what",
+            10
+          ],
+          [
+            "tool",
+            6
+          ],
+          [
+            "script",
+            6
+          ]
+        ]
+      }
+    },
+    "Stage 4\u21925: Edited to Final": {
+      "stage": "Stage 4\u21925: Edited to Final",
+      "character_count": {
+        "before": 7575,
+        "after": 6327,
+        "change": -1248,
+        "change_percent": -16.475247524752476
+      },
+      "word_count": {
+        "before": 1088,
+        "after": 896,
+        "change": -192,
+        "change_percent": -17.647058823529413
+      },
+      "similarity_score": 4.32,
+      "change_operations": {
+        "insertions": 6,
+        "deletions": 5,
+        "replacements": 19,
+        "total": 30
+      },
+      "word_level_changes": {
+        "added": 452,
+        "removed": 644,
+        "most_added": [
+          [
+            "the",
+            20
+          ],
+          [
+            "ai",
+            11
+          ],
+          [
+            "to",
+            11
+          ],
+          [
+            "your",
+            11
+          ],
+          [
+            "i",
+            9
+          ]
+        ],
+        "most_removed": [
+          [
+            "the",
+            30
+          ],
+          [
+            "ai",
+            20
+          ],
+          [
+            "a",
+            18
+          ],
+          [
+            "to",
+            14
+          ],
+          [
+            "of",
+            10
+          ]
+        ]
+      },
+      "vocabulary": {
+        "new_unique_words": 127,
+        "removed_unique_words": 206,
+        "vocabulary_before": 508,
+        "vocabulary_after": 429
+      },
+      "structure": {
+        "paragraphs_before": 43,
+        "paragraphs_after": 43,
+        "avg_sentence_length_before": 20.1,
+        "avg_sentence_length_after": 20.8
+      },
+      "semantic_shift": {
+        "top_themes_before": [
+          [
+            "when",
+            13
+          ],
+          [
+            "mermaid",
+            12
+          ],
+          [
+            "diagram",
+            12
+          ],
+          [
+            "diagramming",
+            11
+          ],
+          [
+            "your",
+            10
+          ]
+        ],
+        "top_themes_after": [
+          [
+            "mermaid",
+            12
+          ],
+          [
+            "your",
+            12
+          ],
+          [
+            "when",
+            10
+          ],
+          [
+            "diagram",
+            9
+          ],
+          [
+            "approach",
+            9
+          ]
+        ],
+        "emerging_themes": [
+          [
+            "tool",
+            6
+          ],
+          [
+            "than",
+            6
+          ],
+          [
+            "script",
+            6
+          ]
+        ],
+        "diminishing_themes": [
+          [
+            "diagramming",
+            11
+          ],
+          [
+            "tools",
+            6
+          ],
+          [
+            "about",
+            6
+          ],
+          [
+            "complex",
+            6
+          ]
+        ]
+      }
+    }
+  },
+  "overall": {
+    "stage": "Overall",
+    "character_count": {
+      "before": 5667,
+      "after": 6327,
+      "change": 660,
+      "change_percent": 11.646373742721018
+    },
+    "word_count": {
+      "before": 886,
+      "after": 896,
+      "change": 10,
+      "change_percent": 1.1286681715575622
+    },
+    "similarity_score": 4.02,
+    "change_operations": {
+      "insertions": 7,
+      "deletions": 5,
+      "replacements": 66,
+      "total": 78
+    },
+    "word_level_changes": {
+      "added": 864,
+      "removed": 854,
+      "most_added": [
+        [
+          "the",
+          34
+        ],
+        [
+          "ai",
+          23
+        ],
+        [
+          "a",
+          19
+        ],
+        [
+          "to",
+          16
+        ],
+        [
+          "for",
+          12
+        ]
+      ],
+      "most_removed": [
+        [
+          "the",
+          43
+        ],
+        [
+          "i",
+          33
+        ],
+        [
+          "to",
+          17
+        ],
+        [
+          "and",
+          16
+        ],
+        [
+          "ai",
+          16
+        ]
+      ]
+    },
+    "vocabulary": {
+      "new_unique_words": 263,
+      "removed_unique_words": 254,
+      "vocabulary_before": 420,
+      "vocabulary_after": 429
+    },
+    "structure": {
+      "paragraphs_before": 32,
+      "paragraphs_after": 43,
+      "avg_sentence_length_before": 16.3,
+      "avg_sentence_length_after": 20.8
+    }
+  }
+}

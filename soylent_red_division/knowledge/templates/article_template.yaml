@@ -1,0 +1,86 @@
+title_and_intro:
+  description: |
+    **Task**: Generate a Title and Opening Section for an article on "{topic}".
+
+    **Guidelines**:
+    1.  **Title**: Create a clear, engaging, and problem-oriented title that addresses a specific challenge or opportunity for the {audience}.
+    2.  **Opening Section**: Write a concise, high-impact opening. Based on the type of article being written, choose ONE of the following approaches:
+
+        * **A: The Relatable Problem**
+            * **When to use**: Best for guides, how-to articles, or problem/solution content.
+            * **Action**: Start with a common challenge in "{topic}". Describe a relatable pain point ({pain_point}) and the negative outcomes it causes. Incorporate a human touch by mentioning a personal observation that motivated this investigation: "{human_insight}".
+
+        * **B: The TL;DR Summary**
+            * **When to use**: Ideal for technical deep-dives, articles presenting experimental results, or data-heavy analysis.
+            * **Action**: Provide a 2-3 sentence summary of the main argument and key takeaway. State that the analysis is based on systematic testing and mention the central insight.
+
+        * **C: The Bold Statement**
+            * **When to use**: Perfect for thought leadership pieces, opinion articles, or narrative-driven content that aims to challenge the reader's perspective.
+            * **Action**: Start with a provocative or counter-intuitive observation about "{topic}". Contrast this with a common narrative or misconception.
+
+  expected_output: |
+    A complete title and opening section for the article, following the most appropriate option for the content type. The tone should be engaging and relevant to the target audience.
+
+context_section:
+  description: |
+    **Task**: Write the Context Section for the article on "{topic}".
+
+    **Guidelines**:
+    1.  **Establish Importance**: Explain why "{topic}" is important. Identify a gap in current practices related to this topic.
+    2.  **Highlight Problems**: Mention 1-2 specific problems or risks, such as: {persona_problems}.
+    3.  **Set the Stage**: Explain that effective solutions require moving beyond surface-level advice. Describe the methodology that guided this exploration: "{methodology}". The goal is to show how structuring the process can lead to better outcomes.
+  expected_output: |
+    A well-defined context section that explains the importance of the topic, outlines key problems, and introduces the methodology used for the investigation.
+
+core_body_guide:
+  description: |
+    **Task**: Write the Core Body of the article on "{topic}" as a Step-by-Step Guide. This format is best for instructional or how-to articles.
+
+    **Guidelines**:
+    1.  **Structure**: Create a series of steps with action-oriented titles.
+    2.  **Content**: For each step, provide the objective, a code snippet or prompt example, and a human reaction or unexpected finding.
+    3.  **Details**: Use these details to build the guide:
+        * **Steps**: {steps}
+        * **Human Reactions**: {human_reactions}
+  expected_output: |
+    A detailed, step-by-step guide that is easy to follow. Each step should include a title, objective, code example, and a human reaction, as specified.
+
+core_body_comparison:
+  description: |
+    **Task**: Write the Core Body of the article on "{topic}" as a Comparative Analysis. This format is best for articles that evaluate different tools, frameworks, or concepts.
+
+    **Guidelines**:
+    1.  **Structure**: For each concept, provide a clear heading, a detailed description, and a list of key strengths.
+    2.  **Motivation**: Conclude the comparison with a human experience that illustrates the importance of choosing the right approach: "{human_experience}".
+    3.  **Details**: Use these details to build the analysis:
+        * **Concepts**: {concepts}
+  expected_output: |
+    A well-structured comparative analysis of the provided concepts. Each concept should be clearly explained with its strengths, followed by a concluding human experience.
+
+core_body_narrative:
+  description: |
+    **Task**: Write the Core Body of the article on "{topic}" as an Experiment Narrative. This format is best for sharing results from testing, research, or a unique project.
+
+    **Guidelines**:
+    1.  **Hypothesis and Setup**: State the core question being tested: "{hypothesis}". Describe the methodology and tools used: "{methodology}".
+    2.  **Results and Reaction**: Document the results, including any unexpected findings ("{human_reaction}").
+    3.  **Insight**: Explain what the outcome implies for the industry: "{human_insight}".
+  expected_output: |
+    An engaging experiment narrative that includes the hypothesis, setup, results, and key insights. The narrative should be compelling and highlight the significance of the findings.
+
+closing_section:
+  description: |
+    **Task**: Write the Closing Section for the article on "{topic}".
+
+    **Guidelines**:
+    Based on the article's purpose, choose ONE of the following concluding approaches:
+
+    * **A: Actionable Next Steps**
+        * **When to use**: Best for guides, how-to articles, or any content that provides a direct solution that readers can implement.
+        * **Action**: Provide a quick decision guide ({decision_guide}) for applying the findings. Mention the next area of exploration: "{ongoing_investigation}".
+
+    * **B: Summary of Key Learnings**
+        * **When to use**: Ideal for thought leadership, narrative, or analytical pieces where the primary goal is to shift the reader's perspective.
+        * **Action**: State the core takeaway: "{key_takeaway}". Explain the bigger picture or the fundamental shift needed to move forward: "{bigger_picture}".
+  expected_output: |
+    A strong concluding section that provides actionable advice or a summary of key learnings, tailored to the overall style of the article.

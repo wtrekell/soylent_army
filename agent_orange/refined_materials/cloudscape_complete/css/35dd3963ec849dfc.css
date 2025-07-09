@@ -1,1 +1,0 @@
-.awsui-util-show-in-dark-mode{display:none}@supports (--css-variable-support-check:#000){@media not print{.awsui-dark-mode .awsui-util-show-in-dark-mode{display:initial}.awsui-dark-mode .awsui-util-hide-in-dark-mode{display:none}}}

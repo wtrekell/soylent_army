@@ -1,0 +1,146 @@
+# Central LLM Configuration
+# This file defines LLM assignments for roles and tasks across all environments
+# 
+# CONFIGURATION HIERARCHY:
+# 1. Task-level LLM definitions (highest priority) - defined in tasks.yaml
+# 2. Role-based LLM definitions (this file) - defined below
+# 3. Crew-level default LLM (lowest priority) - fallback only
+#
+# WHEN TASK DEFINES LLM: The task's LLM definition takes precedence over role-based configuration
+# WHEN TASK UNDEFINED: Use the role-based LLM definition from this file
+# FAILOVER: If primary LLM fails, automatically fallback to backup LLM
+
+# Role-based LLM Configuration
+role_llm_mapping:
+  writer:
+    primary:
+      model: "claude-3-5-sonnet-20241022"  # Claude 4 Sonnet
+      provider: "anthropic"
+      temperature: 0.1
+      max_tokens: 8192
+      timeout: 120
+      description: "Claude 4 Sonnet - Optimal for creative writing, brand voice, and complex content creation"
+    
+    backup:
+      model: "gemini-2.0-flash-exp"  # Gemini 2.5 Pro equivalent
+      provider: "google"
+      temperature: 0.1
+      max_tokens: 8192
+      timeout: 120
+      description: "Gemini 2.5 Pro - Reliable backup for content generation with strong reasoning"
+    
+    # Additional failover options if needed
+    tertiary:
+      model: "gpt-4o-mini"
+      provider: "openai"
+      temperature: 0.1
+      max_tokens: 8192
+      timeout: 120
+      description: "GPT-4o Mini - Final fallback option"
+
+  # Template for additional roles (researcher, editor, etc.)
+  researcher:
+    primary:
+      model: "gpt-4o-mini"
+      provider: "openai"
+      temperature: 0.1
+      max_tokens: 4096
+      timeout: 90
+      description: "GPT-4o Mini - Good for research and data analysis"
+    
+    backup:
+      model: "claude-3-5-haiku-20241022"
+      provider: "anthropic"
+      temperature: 0.1
+      max_tokens: 4096
+      timeout: 90
+      description: "Claude 3.5 Haiku - Fast and efficient for research tasks"
+
+  editor:
+    primary:
+      model: "claude-3-5-sonnet-20241022"
+      provider: "anthropic"
+      temperature: 0.05  # Lower temperature for editing precision
+      max_tokens: 8192
+      timeout: 120
+      description: "Claude 4 Sonnet - Excellent for editing and refinement"
+    
+    backup:
+      model: "gpt-4o-mini"
+      provider: "openai"
+      temperature: 0.05
+      max_tokens: 8192
+      timeout: 120
+      description: "GPT-4o Mini - Reliable editing capabilities"
+
+# Default LLM Configuration (used when role not found)
+default_llm:
+  model: "gpt-4o-mini"
+  provider: "openai"
+  temperature: 0.1
+  max_tokens: 4096
+  timeout: 90
+  description: "Default fallback LLM"
+
+# Failover Configuration
+failover_settings:
+  max_retries: 3
+  retry_delay: 2  # seconds
+  timeout_multiplier: 1.5  # increase timeout on retry
+  enable_logging: true
+  
+  # Error conditions that trigger failover
+  failover_triggers:
+    - "connection_error"
+    - "timeout"
+    - "rate_limit_exceeded" 
+    - "api_error"
+    - "authentication_error"
+    - "model_unavailable"
+
+# Task-Level LLM Override Instructions
+task_llm_override:
+  description: |
+    Tasks can override role-based LLM configuration by defining an 'llm' section in tasks.yaml:
+    
+    Example in tasks.yaml:
+    ```yaml
+    special_writing_task:
+      description: "Task description here..."
+      llm:
+        model: "claude-3-5-sonnet-20241022"
+        provider: "anthropic"
+        temperature: 0.2
+        max_tokens: 8192
+        reason: "Requires creative writing capabilities"
+      expected_output: "Output description..."
+      agent: writer
+    ```
+    
+    When a task defines an LLM configuration:
+    1. The task's LLM configuration takes HIGHEST PRIORITY
+    2. Role-based configuration is ignored for that specific task
+    3. Failover still applies if the task's primary LLM fails
+    4. The 'reason' field should explain why this override is necessary
+  
+  priority_order: |
+    LLM Selection Priority (highest to lowest):
+    1. Task-level LLM definition (in tasks.yaml)
+    2. Role-based LLM definition (this file)
+    3. Crew-level default LLM (emergency fallback)
+
+# Environment Variables (referenced but not defined here)
+environment_variables:
+  description: |
+    This configuration file is environment-agnostic. API keys and credentials 
+    should be provided via environment variables:
+    
+    Required Environment Variables:
+    - ANTHROPIC_API_KEY: For Claude models
+    - GOOGLE_API_KEY: For Gemini models  
+    - OPENAI_API_KEY: For OpenAI models
+    
+    Optional Environment Variables:
+    - LLM_TIMEOUT_OVERRIDE: Override default timeouts
+    - LLM_ENABLE_FAILOVER: Enable/disable failover (default: true)
+    - LLM_LOG_LEVEL: Logging level for LLM operations

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Writing Process Tracker</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        
+        .stage {
+            background: #ecf0f1;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .stage h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        
+        .input-group {
+            margin: 10px 0;
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+        
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        
+        button:hover {
+            background: #2980b9;
+        }
+        
+        .save-button {
+            background: #27ae60;
+        }
+        
+        .save-button:hover {
+            background: #229954;
+        }
+        
+        .clear-button {
+            background: #e74c3c;
+        }
+        
+        .clear-button:hover {
+            background: #c0392b;
+        }
+        
+        .report {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            border: 1px solid #dee2e6;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .metric-card {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .metric-label {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        #savedProjects {
+            margin-top: 20px;
+        }
+        
+        .project-item {
+            background: #f8f9fa;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .project-item:hover {
+            background: #e9ecef;
+        }
+        
+        .delete-project {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Writing Process Tracker</h1>
+        
+        <div class="input-group">
+            <label for="projectName">Project Name:</label>
+            <input type="text" id="projectName" placeholder="Enter article title or project name">
+        </div>
+        
+        <div class="stage">
+            <h3>Stage 1: Research</h3>
+            <div class="input-group">
+                <label for="researchPrompts">Number of AI prompts used:</label>
+                <input type="number" id="researchPrompts" min="0" value="0">
+            </div>
+            <div class="input-group">
+                <label for="researchTime">Time spent (minutes):</label>
+                <input type="number" id="researchTime" min="0" value="0">
+            </div>
+            <div class="input-group">
+                <label for="researchNotes">Notes:</label>
+                <textarea id="researchNotes" placeholder="Key sources, AI tools used, etc."></textarea>
+            </div>
+        </div>
+        
+        <div class="stage">
+            <h3>Stage 2: Initial Draft</h3>
+            <div class="input-group">
+                <label for="draftPrompts">Number of AI prompts used:</label>
+                <input type="number" id="draftPrompts" min="0" value="0">
+            </div>
+            <div class="input-group">
+                <label for="draftWords">Word count generated:</label>
+                <input type="number" id="draftWords" min="0" value="0">
+            </div>
+            <div class="input-group">
+                <label for="draftTime">Time spent (minutes):</label>
+                <input type="number" id="draftTime" min="0" value="0">
+            </div>
+            <div class="input-group">
+                <label for="draftNotes">Notes:</label>
+                <textarea id="draftNotes" placeholder="AI model used, approach, etc."></textarea>
+            </div>
+        </div>
+        
+        <div class="stage">
+            <h3>Stage 3: AI-Assisted Refinement</h3>
+            <div class="input-group">
+                <label for="refinePrompts">Number of AI prompts used:</label>
+                <input type="number" id="refinePrompts" min="0" value="0">
+            </div>
+            <div class="input-group">
+                <label for="refineChanges">Estimated % of content changed:</label>
+                <input type="number" id="refineChanges" min="0" max="100" value="0">
+            </div>
+            <div class="input-group">
+                <label for="refineTime">Time spent (minutes):</label>
+                <input type="number" id="refineTime" min="0" value="0">
+            </div>
+            <div class="input-group">
+                <label for="refineNotes">Notes:</label>
+                <textarea id="refineNotes" placeholder="Types of changes made, focus areas, etc."></textarea>
+            </div>
+        </div>
+        
+        <div class="stage">
+            <h3>Stage 4: Word Processor Editing</h3>
+            <div class="input-group">
+                <label for="editPrompts">Number of AI assists:</label>
+                <input type="number" id="editPrompts" min="0" value="0">
+            </div>
+            <div class="input-group">
+                <label for="editTime">Time spent (minutes):</label>
+                <input type="number" id="editTime" min="0" value="0">
+            </div>
+            <div class="input-group">
+                <label for="editNotes">Notes:</label>
+                <textarea id="editNotes" placeholder="AI tools used, types of assistance, etc."></textarea>
+            </div>
+        </div>
+        
+        <div class="stage">
+            <h3>Stage 5: Final Human Edit</h3>
+            <div class="input-group">
+                <label for="finalWords">Final word count:</label>
+                <input type="number" id="finalWords" min="0" value="0">
+            </div>
+            <div class="input-group">
+                <label for="finalTime">Time spent (minutes):</label>
+                <input type="number" id="finalTime" min="0" value="0">
+            </div>
+            <div class="input-group">
+                <label for="finalNotes">Notes:</label>
+                <textarea id="finalNotes" placeholder="Final observations, quality assessment, etc."></textarea>
+            </div>
+        </div>
+        
+        <div style="margin-top: 30px;">
+            <button onclick="generateReport()">Generate Report</button>
+            <button class="save-button" onclick="saveProject()">Save Project</button>
+            <button class="clear-button" onclick="clearForm()">Clear Form</button>
+        </div>
+        
+        <div id="savedProjects"></div>
+        
+        <div id="reportSection"></div>
+    </div>
+    
+    <script>
+        // Load saved projects on page load
+        window.onload = function() {
+            displaySavedProjects();
+        };
+        
+        function calculateMetrics() {
+            const totalPrompts = 
+                parseInt(document.getElementById('researchPrompts').value) +
+                parseInt(document.getElementById('draftPrompts').value) +
+                parseInt(document.getElementById('refinePrompts').value) +
+                parseInt(document.getElementById('editPrompts').value);
+            
+            const totalTime = 
+                parseInt(document.getElementById('researchTime').value) +
+                parseInt(document.getElementById('draftTime').value) +
+                parseInt(document.getElementById('refineTime').value) +
+                parseInt(document.getElementById('editTime').value) +
+                parseInt(document.getElementById('finalTime').value);
+            
+            const aiTime = totalTime - parseInt(document.getElementById('finalTime').value);
+            const aiPercentage = totalTime > 0 ? ((aiTime / totalTime) * 100).toFixed(1) : 0;
+            
+            return {
+                totalPrompts,
+                totalTime,
+                aiTime,
+                aiPercentage,
+                finalWords: parseInt(document.getElementById('finalWords').value),
+                draftWords: parseInt(document.getElementById('draftWords').value)
+            };
+        }
+        
+        function generateReport() {
+            const projectName = document.getElementById('projectName').value || 'Untitled Project';
+            const metrics = calculateMetrics();
+            const timestamp = new Date().toLocaleString();
+            
+            const report = `AI WRITING PROCESS REPORT
+========================
+Project: ${projectName}
+Generated: ${timestamp}
+
+OVERVIEW METRICS
+---------------
+Total AI Prompts: ${metrics.totalPrompts}
+Total Time: ${metrics.totalTime} minutes (${(metrics.totalTime / 60).toFixed(1)} hours)
+AI-Assisted Time: ${metrics.aiTime} minutes (${metrics.aiPercentage}% of total)
+Human-Only Time: ${document.getElementById('finalTime').value} minutes
+Final Word Count: ${metrics.finalWords}
+
+STAGE-BY-STAGE BREAKDOWN
+-----------------------
+
+STAGE 1 - Research
+• AI Prompts: ${document.getElementById('researchPrompts').value}
+• Time: ${document.getElementById('researchTime').value} minutes
+• Notes: ${document.getElementById('researchNotes').value || 'None'}
+
+STAGE 2 - Initial Draft
+• AI Prompts: ${document.getElementById('draftPrompts').value}
+• Words Generated: ${document.getElementById('draftWords').value}
+• Time: ${document.getElementById('draftTime').value} minutes
+• Notes: ${document.getElementById('draftNotes').value || 'None'}
+
+STAGE 3 - AI-Assisted Refinement
+• AI Prompts: ${document.getElementById('refinePrompts').value}
+• Content Changed: ${document.getElementById('refineChanges').value}%
+• Time: ${document.getElementById('refineTime').value} minutes
+• Notes: ${document.getElementById('refineNotes').value || 'None'}
+
+STAGE 4 - Word Processor Editing
+• AI Assists: ${document.getElementById('editPrompts').value}
+• Time: ${document.getElementById('editTime').value} minutes
+• Notes: ${document.getElementById('editNotes').value || 'None'}
+
+STAGE 5 - Final Human Edit
+• Final Word Count: ${document.getElementById('finalWords').value}
+• Time: ${document.getElementById('finalTime').value} minutes
+• Notes: ${document.getElementById('finalNotes').value || 'None'}
+
+TRANSPARENCY STATEMENT
+--------------------
+This article was created using AI assistance across ${metrics.totalPrompts} prompts, 
+representing ${metrics.aiPercentage}% of the total ${metrics.totalTime}-minute writing process. 
+The final edit was completed entirely by human review.`;
+            
+            // Display report with metrics visualization
+            document.getElementById('reportSection').innerHTML = `
+                <h2>Generated Report</h2>
+                <div class="metrics">
+                    <div class="metric-card">
+                        <div class="metric-value">${metrics.totalPrompts}</div>
+                        <div class="metric-label">Total AI Prompts</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">${metrics.aiPercentage}%</div>
+                        <div class="metric-label">AI-Assisted Time</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">${(metrics.totalTime / 60).toFixed(1)}h</div>
+                        <div class="metric-label">Total Time</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">${metrics.finalWords}</div>
+                        <div class="metric-label">Final Words</div>
+                    </div>
+                </div>
+                <div class="report">${report}</div>
+                <button onclick="copyReport()">Copy Report to Clipboard</button>
+                <button onclick="downloadReport('${projectName}')">Download Report</button>
+            `;
+        }
+        
+        function copyReport() {
+            const reportText = document.querySelector('.report').textContent;
+            navigator.clipboard.writeText(reportText).then(() => {
+                alert('Report copied to clipboard!');
+            });
+        }
+        
+        function downloadReport(projectName) {
+            const reportText = document.querySelector('.report').textContent;
+            const blob = new Blob([reportText], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${projectName.replace(/[^a-z0-9]/gi, '_')}_AI_Report.txt`;
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+        
+        function saveProject() {
+            const projectName = document.getElementById('projectName').value || 'Untitled Project';
+            const projectData = {
+                name: projectName,
+                timestamp: new Date().toISOString(),
+                data: {
+                    researchPrompts: document.getElementById('researchPrompts').value,
+                    researchTime: document.getElementById('researchTime').value,
+                    researchNotes: document.getElementById('researchNotes').value,
+                    draftPrompts: document.getElementById('draftPrompts').value,
+                    draftWords: document.getElementById('draftWords').value,
+                    draftTime: document.getElementById('draftTime').value,
+                    draftNotes: document.getElementById('draftNotes').value,
+                    refinePrompts: document.getElementById('refinePrompts').value,
+                    refineChanges: document.getElementById('refineChanges').value,
+                    refineTime: document.getElementById('refineTime').value,
+                    refineNotes: document.getElementById('refineNotes').value,
+                    editPrompts: document.getElementById('editPrompts').value,
+                    editTime: document.getElementById('editTime').value,
+                    editNotes: document.getElementById('editNotes').value,
+                    finalWords: document.getElementById('finalWords').value,
+                    finalTime: document.getElementById('finalTime').value,
+                    finalNotes: document.getElementById('finalNotes').value
+                }
+            };
+            
+            // Get existing projects
+            let projects = JSON.parse(localStorage.getItem('aiWritingProjects') || '[]');
+            projects.push(projectData);
+            localStorage.setItem('aiWritingProjects', JSON.stringify(projects));
+            
+            alert('Project saved successfully!');
+            displaySavedProjects();
+        }
+        
+        function displaySavedProjects() {
+            const projects = JSON.parse(localStorage.getItem('aiWritingProjects') || '[]');
+            const container = document.getElementById('savedProjects');
+            
+            if (projects.length === 0) {
+                container.innerHTML = '';
+                return;
+            }
+            
+            container.innerHTML = '<h2>Saved Projects</h2>';
+            projects.forEach((project, index) => {
+                const projectDiv = document.createElement('div');
+                projectDiv.className = 'project-item';
+                projectDiv.innerHTML = `
+                    <span onclick="loadProject(${index})">${project.name} - ${new Date(project.timestamp).toLocaleDateString()}</span>
+                    <button class="delete-project" onclick="deleteProject(${index})">Delete</button>
+                `;
+                container.appendChild(projectDiv);
+            });
+        }
+        
+        function loadProject(index) {
+            const projects = JSON.parse(localStorage.getItem('aiWritingProjects') || '[]');
+            const project = projects[index];
+            
+            document.getElementById('projectName').value = project.name;
+            
+            // Load all the data
+            Object.keys(project.data).forEach(key => {
+                document.getElementById(key).value = project.data[key];
+            });
+            
+            alert('Project loaded!');
+        }
+        
+        function deleteProject(index) {
+            if (!confirm('Are you sure you want to delete this project?')) return;
+            
+            let projects = JSON.parse(localStorage.getItem('aiWritingProjects') || '[]');
+            projects.splice(index, 1);
+            localStorage.setItem('aiWritingProjects', JSON.stringify(projects));
+            displaySavedProjects();
+        }
+        
+        function clearForm() {
+            if (!confirm('Are you sure you want to clear all fields?')) return;
+            
+            document.querySelectorAll('input, textarea').forEach(element => {
+                if (element.type === 'number') {
+                    element.value = '0';
+                } else {
+                    element.value = '';
+                }
+            });
+            document.getElementById('reportSection').innerHTML = '';
+        }
+    </script>
+</body>
+</html>

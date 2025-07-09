@@ -1,0 +1,86 @@
+{
+  "checkpoint_name": "steps_1_2",
+  "timestamp": "2025-06-14T16:03:47.536178",
+  "article_metadata": {
+    "article_name": "markup-languages",
+    "input_path": "/content/drive/MyDrive/Google Drive/syntaxandempathy/30-articles/ai-vs-human",
+    "processing_timestamp": "2025-06-14T16:03:47.523436",
+    "versions_found": [
+      "draft",
+      "refined",
+      "edited",
+      "final"
+    ],
+    "validation_status": "passed",
+    "validation_results": {
+      "has_draft": true,
+      "has_final": true,
+      "missing_required": [],
+      "versions_found": [
+        "edited",
+        "draft",
+        "refined",
+        "final"
+      ],
+      "is_valid": true
+    }
+  },
+  "processing_summary": {
+    "draft": {
+      "character_count": 5535,
+      "word_count": 863,
+      "sentence_count": 47,
+      "paragraph_count": 29,
+      "avg_sentence_length": 115.40425531914893,
+      "avg_paragraph_length": 188.93103448275863
+    },
+    "refined": {
+      "character_count": 7213,
+      "word_count": 1128,
+      "sentence_count": 60,
+      "paragraph_count": 31,
+      "avg_sentence_length": 117.88333333333334,
+      "avg_paragraph_length": 230.74193548387098
+    },
+    "edited": {
+      "character_count": 7479,
+      "word_count": 1066,
+      "sentence_count": 45,
+      "paragraph_count": 35,
+      "avg_sentence_length": 141.24444444444444,
+      "avg_paragraph_length": 211.74285714285713
+    },
+    "final": {
+      "character_count": 6258,
+      "word_count": 892,
+      "sentence_count": 42,
+      "paragraph_count": 38,
+      "avg_sentence_length": 117.54761904761905,
+      "avg_paragraph_length": 162.73684210526315
+    }
+  },
+  "validation_results": {
+    "has_draft": true,
+    "has_final": true,
+    "missing_required": [],
+    "versions_found": [
+      "edited",
+      "draft",
+      "refined",
+      "final"
+    ],
+    "is_valid": true
+  },
+  "article_summary": {
+    "article_name": "markup-languages",
+    "input_path": "/content/drive/MyDrive/Google Drive/syntaxandempathy/30-articles/ai-vs-human",
+    "versions_count": 4,
+    "validation_status": "passed",
+    "file_sizes": {
+      "draft": 5667,
+      "refined": 7301,
+      "edited": 7575,
+      "final": 6327
+    }
+  }
+}

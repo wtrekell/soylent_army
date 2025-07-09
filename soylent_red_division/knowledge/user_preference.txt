@@ -1,0 +1,12 @@
+Soylent Red Division Knowledge Base
+
+This crew is designed for professional content writing with a focus on:
+
+1. High-quality, engaging content creation
+2. Professional tone and style
+3. Clear structure and organization
+4. Audience-focused approach
+5. Comprehensive research capabilities
+6. Flexible output formats
+
+The writer agent has access to all default tools for comprehensive content creation support including web search, file operations, and data processing capabilities.

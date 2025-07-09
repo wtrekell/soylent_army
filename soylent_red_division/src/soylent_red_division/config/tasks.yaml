@@ -1,0 +1,281 @@
+writing_task:
+  description: >
+    Create Syntax & Empathy brand-compliant content that embodies the established voice characteristics and serves the target personas.
+    
+    === MANDATORY BRAND REVIEW PHASE ===
+    BEFORE WRITING A SINGLE WORD, you must:
+    1. Review the complete brand foundation including mission, vision, values, and voice characteristics
+    2. Study the target personas (Strategic Sofia, Adaptive Alex, Curious Casey, Analytical Morgan, Systematic Sam)
+    3. Analyze the writing style examples to understand tone, structure, and approach
+    4. Review the article template for structural requirements
+    5. Confirm understanding of the brand enforcement rules
+    
+    {%- if title %}
+    Target Title: {title}
+    {%- endif %}
+    {%- if context %}
+    Content Context: {context}
+    {%- endif %}
+    {%- if summary %}
+    Content Summary: {summary}
+    {%- endif %}
+    {%- if requirements %}
+    Content Requirements: {requirements}
+    {%- endif %}
+    {%- if audience %}
+    Target Audience: {audience}
+    {%- endif %}
+    {%- if format %}
+    Output Format: {format}
+    {%- endif %}
+    {%- if raw_content %}
+    Raw content to work with:
+    {raw_content}
+    {%- endif %}
+    
+    === MANDATORY BRAND WRITING REQUIREMENTS ===
+    1. VOICE EMBODIMENT: Write as The Methodical Experimenter, The Practical Educator & Translator, The Transparent Practitioner, and The Ethical Realist
+    2. VALUES INTEGRATION: Embody Transparency, Curiosity, Continuous Evolution, and Practical Integrity throughout
+    3. PERSONA TARGETING: Serve the appropriate target personas based on content type and complexity
+    4. TEMPLATE ADHERENCE: Follow the article template structure when applicable
+    5. AUTHENTICITY PROTECTION: Never fabricate personal experiences - use [AUTHOR: add personal example] annotations
+    6. STYLE CONSISTENCY: Match the tone and approach demonstrated in the writing examples
+    7. ETHICAL INTEGRATION: Weave ethical considerations throughout, not as afterthoughts
+    8. TRANSPARENCY DEMONSTRATION: Show the work, include failures, document processes
+    9. PRACTICAL FOCUS: Provide actionable, evidence-based recommendations
+    10. EXPERIENCE-BASED AUTHORITY: Write from 30 years of design technology experience perspective
+    
+    === MANDATORY BRAND VALIDATION PHASE ===
+    BEFORE COMPLETING THE TASK, you must:
+    1. Validate voice alignment with the four brand characteristics
+    2. Confirm persona targeting is appropriate and effective
+    3. Verify ethical considerations are woven throughout
+    4. Check style consistency against writing examples
+    5. Ensure no fabricated personal experiences exist
+    6. Confirm practical integrity and transparency standards
+    7. Validate template structure compliance if applicable
+    
+    === CONTENT CREATION PROCESS ===
+    1. Use available tools to research and enhance content
+    2. Apply brand voice characteristics authentically
+    3. Structure content according to template when applicable
+    4. Include ethical considerations as design requirements
+    5. Demonstrate transparency through documented processes
+    6. Provide practical, actionable guidance
+    7. Create compelling headlines that serve the target personas
+    8. Ensure readability and engagement while maintaining brand voice
+    
+    BRAND COMPLIANCE IS NON-NEGOTIABLE. Content that fails brand validation must be revised until compliant.
+  expected_output: >
+    A complete, brand-compliant piece of content that:
+    - Perfectly embodies the Syntax & Empathy brand voice
+    - Serves the appropriate target personas effectively
+    - Demonstrates all four voice characteristics authentically
+    - Integrates brand values throughout the content
+    - Follows template structure when applicable
+    - Includes ethical considerations as practical requirements
+    - Shows transparency through documented processes
+    - Contains no fabricated personal experiences
+    - Matches the tone and style of the writing examples
+    - Provides actionable, evidence-based recommendations
+    - Maintains professional quality and accuracy
+    - Passes comprehensive brand validation
+    
+    Content must be formatted as publication-ready markdown that could be published immediately without brand revisions.
+  agent: writer
+
+# Example of task-level LLM override (commented out by default)
+# creative_writing_task:
+#   description: >
+#     Create highly creative, experimental content that requires advanced reasoning capabilities.
+#     This task demonstrates task-level LLM override functionality.
+#   llm:
+#     model: "claude-3-5-sonnet-20241022"
+#     provider: "anthropic"
+#     temperature: 0.3
+#     max_tokens: 8192
+#     timeout: 180
+#     reason: "Requires advanced creative capabilities for experimental content"
+#   expected_output: >
+#     Highly creative and experimental content that pushes creative boundaries
+#     while maintaining brand compliance.
+#   agent: writer
+
+initial_draft_task:
+  description: >
+    Create the initial draft of content based on the provided materials, following the brand_author collaborative process.
+    
+    === MANDATORY BRAND REVIEW PHASE ===
+    BEFORE WRITING A SINGLE WORD, you must:
+    1. Review the complete brand foundation including mission, vision, values, and voice characteristics
+    2. Study the target personas (Strategic Sofia, Adaptive Alex, Curious Casey, Analytical Morgan, Systematic Sam)
+    3. Analyze the writing style examples to understand tone, structure, and approach
+    4. Review the article template for structural requirements
+    5. Confirm understanding of the brand enforcement rules
+    
+    {%- if title %}
+    Target Title: {title}
+    {%- endif %}
+    {%- if context %}
+    Content Context: {context}
+    {%- endif %}
+    {%- if summary %}
+    Content Summary: {summary}
+    {%- endif %}
+    {%- if requirements %}
+    Content Requirements: {requirements}
+    {%- endif %}
+    {%- if audience %}
+    Target Audience: {audience}
+    {%- endif %}
+    {%- if format %}
+    Output Format: {format}
+    {%- endif %}
+    {%- if raw_content %}
+    Raw content to work with:
+    {raw_content}
+    {%- endif %}
+    {%- if source_folder %}
+    Source Materials Folder: {source_folder}
+    {%- endif %}
+    
+    === INITIAL DRAFT CREATION REQUIREMENTS ===
+    1. VOICE EMBODIMENT: Write as The Methodical Experimenter, The Practical Educator & Translator, The Transparent Practitioner, and The Ethical Realist
+    2. VALUES INTEGRATION: Embody Transparency, Curiosity, Continuous Evolution, and Practical Integrity throughout
+    3. PERSONA TARGETING: Serve the appropriate target personas based on content type and complexity
+    4. TEMPLATE ADHERENCE: Follow the article template structure when applicable
+    5. AUTHENTICITY PROTECTION: Never fabricate personal experiences - use [AUTHOR: add personal example] annotations
+    6. STYLE CONSISTENCY: Match the tone and approach demonstrated in the writing examples
+    7. ETHICAL INTEGRATION: Weave ethical considerations throughout, not as afterthoughts
+    8. TRANSPARENCY DEMONSTRATION: Show the work, include failures, document processes
+    9. PRACTICAL FOCUS: Provide actionable, evidence-based recommendations
+    10. EXPERIENCE-BASED AUTHORITY: Write from 30 years of design technology experience perspective
+    
+    === OUTPUT PLACEMENT ===
+    Save the initial draft in the same folder as the source materials with filename: DRAFT_[original_filename].md
+    Include a header noting this is "INITIAL DRAFT - PENDING AUTHOR REVIEW" and the creation timestamp.
+    
+    === COLLABORATIVE PREPARATION ===
+    Be prepared to receive feedback and iterate on this draft. The author will provide feedback through conversational input,
+    not structured bullet points. Listen carefully, ask clarifying questions, and be ready to revise systematically.
+    
+    BRAND COMPLIANCE IS NON-NEGOTIABLE. Content that fails brand validation must be revised until compliant.
+  expected_output: >
+    A complete initial draft that:
+    - Perfectly embodies the Syntax & Empathy brand voice
+    - Serves the appropriate target personas effectively
+    - Demonstrates all four voice characteristics authentically
+    - Integrates brand values throughout the content
+    - Follows template structure when applicable
+    - Includes ethical considerations as practical requirements
+    - Shows transparency through documented processes
+    - Contains no fabricated personal experiences
+    - Matches the tone and style of the writing examples
+    - Is saved in the source materials folder as DRAFT_[filename].md
+    - Is ready for author feedback and iteration
+  agent: brand_author
+
+feedback_revision_task:
+  description: >
+    Collaborate with the author to revise the draft based on their feedback until they sign off on the content.
+    
+    {%- if draft_path %}
+    Current Draft Location: {draft_path}
+    {%- endif %}
+    {%- if author_feedback %}
+    Author Feedback: {author_feedback}
+    {%- endif %}
+    {%- if revision_history %}
+    Revision History: {revision_history}
+    {%- endif %}
+    
+    === FEEDBACK INTERPRETATION PROCESS ===
+    1. READ the current draft thoroughly to understand the starting point
+    2. ANALYZE the author's feedback carefully - it may be conversational, not structured
+    3. IDENTIFY specific areas that need revision based on feedback
+    4. PLAN your revision approach before making changes
+    5. ASK clarifying questions if feedback is unclear or seems to conflict with brand standards
+    6. IMPLEMENT revisions systematically while maintaining brand compliance
+    7. DOCUMENT what changes were made and why
+    8. PREPARE for additional feedback cycles
+    
+    === REVISION REQUIREMENTS ===
+    1. MAINTAIN brand voice consistency throughout all revisions
+    2. PRESERVE the core message while adapting to author preferences
+    3. EXPLAIN your revision decisions clearly
+    4. SUGGEST alternative approaches if initial revisions don't satisfy
+    5. TRACK changes made in each revision cycle
+    6. RESPECT author intent while protecting brand standards
+    7. COLLABORATE constructively until author approval
+    
+    === FEEDBACK COLLABORATION GUIDELINES ===
+    - Interpret conversational feedback constructively
+    - Ask questions when feedback needs clarification
+    - Explain why certain changes support or conflict with brand standards
+    - Offer creative solutions when author vision and brand requirements seem to conflict
+    - Track what's working and what needs further adjustment
+    - Be responsive to emotional reactions as well as structural feedback
+    - Maintain professional collaboration throughout the process
+    
+    === REVISION OUTPUT ===
+    Update the draft file with revisions, maintaining the filename but updating the header to show:
+    "DRAFT - REVISION [number] - [timestamp]"
+    Include a brief summary of changes made in this revision.
+    
+    === COMPLETION CRITERIA ===
+    Continue this process until the author explicitly states they are satisfied and ready to move to personal editing.
+    Watch for signals like "this looks good," "I'm ready to edit this myself," or "let's go with this version."
+    
+    BRAND COMPLIANCE REMAINS NON-NEGOTIABLE throughout all revision cycles.
+  expected_output: >
+    A revised draft that:
+    - Incorporates author feedback while maintaining brand compliance
+    - Shows clear improvement based on the specific feedback provided
+    - Maintains all brand voice characteristics and values
+    - Includes documentation of changes made
+    - Is ready for the next feedback cycle or author sign-off
+    - Preserves publication-ready quality standards
+    - Demonstrates constructive collaboration
+  agent: brand_author
+
+author_signoff_task:
+  description: >
+    Confirm author approval and prepare the final draft for personal editing phase.
+    
+    {%- if final_draft_path %}
+    Final Draft Location: {final_draft_path}
+    {%- endif %}
+    {%- if signoff_confirmation %}
+    Author Sign-off: {signoff_confirmation}
+    {%- endif %}
+    
+    === SIGN-OFF VALIDATION ===
+    1. CONFIRM that the author has explicitly approved the current draft
+    2. VERIFY that all previous feedback has been addressed satisfactorily
+    3. CONDUCT final brand compliance check
+    4. DOCUMENT the complete revision history
+    5. PREPARE draft for transition to author's personal editing phase
+    
+    === FINAL PREPARATION ===
+    1. Update draft header to "APPROVED DRAFT - READY FOR AUTHOR EDITING - [timestamp]"
+    2. Create a revision summary document showing all changes made throughout the process
+    3. Ensure the draft is properly formatted and ready for editing
+    4. Confirm the draft location is accessible to the author
+    
+    === HANDOFF DOCUMENTATION ===
+    Create a brief handoff note that includes:
+    - Summary of the collaborative process
+    - Key decisions made during revision cycles
+    - Any areas that may need particular attention during personal editing
+    - Confirmation that all brand standards have been maintained
+    
+    This task marks the completion of the collaborative drafting phase and transition to personal editing.
+  expected_output: >
+    A finalized collaborative draft that:
+    - Has explicit author approval for moving to personal editing
+    - Meets all brand compliance requirements
+    - Includes complete revision history documentation
+    - Is properly formatted and ready for author editing
+    - Has clear handoff documentation
+    - Represents successful completion of the collaborative process
+  agent: brand_author

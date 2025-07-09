@@ -1,0 +1,4 @@
+Transition,Similarity(%),WordChange(%),NewVocabCount
+Draft → Refined,49.4,68.8,297
+Refined → Edited,20.3,-34.0,126
+Edited → Final,76.8,-5.3,72

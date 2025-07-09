@@ -1,0 +1,4 @@
+Transition,CosineSimilarity(%)
+Draft → Refined,81.2
+Refined → Edited,68.1
+Edited → Final,89.3
