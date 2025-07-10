@@ -924,6 +924,40 @@ creative_writing_task:
   agent: writer
 ```
 
+## Testing
+
+### Quick System Validation
+
+To validate that all core systems are working correctly:
+
+```bash
+python3 tests/test_core_functionality.py
+```
+
+This lightweight test runner validates:
+- ✅ Project structure and configuration
+- ✅ Memory management operations  
+- ✅ Knowledge integration functionality
+- ✅ Reasoning and planning system
+- ✅ Validation and guardrails system
+
+**No dependencies required** - runs with standard Python libraries.
+
+### Comprehensive Testing
+
+For full testing with pytest (requires dependency resolution):
+
+```bash
+# Install minimal testing dependencies
+pip install pytest pytest-mock PyYAML
+
+# Run comprehensive test suite (149 test cases across 10 files)
+# Note: May require resolving CrewAI dependency conflicts
+pytest tests/ -v
+```
+
+See `tests/README.md` for detailed testing documentation.
+
 ## Project Architecture
 
 ```
@@ -985,6 +1019,8 @@ soylent_red_division/
 │   └── validation_operations.log # Validation operation logs
 ├── output/                      # Generated content (direct workflow)
 └── tests/                       # Test files
+    ├── test_core_functionality.py # Working test runner (no dependencies)
+    └── [comprehensive test suite] # Full pytest tests (requires setup)
 ```
 
 ### Brand Author Workflow Structure
