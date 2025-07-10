@@ -1,0 +1,3647 @@
+{
+  "article_name": "markup-languages",
+  "analysis_timestamp": "2025-06-14T16:55:32.067560",
+  "article_metadata": {
+    "article_name": "markup-languages",
+    "input_path": "/content/drive/MyDrive/Google Drive/syntaxandempathy/30-articles/ai-vs-human",
+    "processing_timestamp": "2025-06-14T16:03:47.523436",
+    "versions_found": [
+      "draft",
+      "refined",
+      "edited",
+      "final"
+    ],
+    "validation_status": "passed",
+    "validation_results": {
+      "has_draft": true,
+      "has_final": true,
+      "missing_required": [],
+      "versions_found": [
+        "edited",
+        "draft",
+        "refined",
+        "final"
+      ],
+      "is_valid": true
+    }
+  },
+  "processing_summary": {
+    "draft": {
+      "character_count": 5535,
+      "word_count": 863,
+      "sentence_count": 47,
+      "paragraph_count": 29,
+      "avg_sentence_length": 115.40425531914893,
+      "avg_paragraph_length": 188.93103448275863
+    },
+    "refined": {
+      "character_count": 7213,
+      "word_count": 1128,
+      "sentence_count": 60,
+      "paragraph_count": 31,
+      "avg_sentence_length": 117.88333333333334,
+      "avg_paragraph_length": 230.74193548387098
+    },
+    "edited": {
+      "character_count": 7479,
+      "word_count": 1066,
+      "sentence_count": 45,
+      "paragraph_count": 35,
+      "avg_sentence_length": 141.24444444444444,
+      "avg_paragraph_length": 211.74285714285713
+    },
+    "final": {
+      "character_count": 6258,
+      "word_count": 892,
+      "sentence_count": 42,
+      "paragraph_count": 38,
+      "avg_sentence_length": 117.54761904761905,
+      "avg_paragraph_length": 162.73684210526315
+    }
+  },
+  "similarity_analysis": {
+    "sequential_analysis": [
+      {
+        "version_pair": "draft_to_refined",
+        "full_text": {
+          "lexical": {
+            "jaccard_similarity": 0.2281134401972873,
+            "edit_similarity": 0.060244744273611546,
+            "tfidf_similarity": 0.3740073321774418,
+            "lexical_average": 0.22078850554944687
+          },
+          "semantic": {
+            "semantic_similarity": 0.7033904790878296,
+            "embedding_dim": 384
+          },
+          "combined": 0.4620894923186382
+        },
+        "sentence_level": {
+          "average_similarity": 0.37614390720378454,
+          "individual_similarities": [
+            0.49568388088569804,
+            0.30016558627113327,
+            0.4937080409240577,
+            0.4113688460805235,
+            0.30839258199830416,
+            0.33025415258464014,
+            0.29145521399164087,
+            0.38937369429550395,
+            0.27641733982983757,
+            0.4670905375247842,
+            0.3599582124966866,
+            0.5411687057368981,
+            0.3309244796435038,
+            0.2788377856766736,
+            0.3624692465600663,
+            0.3069554014398452,
+            0.41761615218785064,
+            0.32305650174081213,
+            0.7336658213971412,
+            0.6979386326794716,
+            0.3854356358339466,
+            0.3219110971399809,
+            0.3801020548319109,
+            0.27208823407077354,
+            0.3606485431798762,
+            0.30689122677029657,
+            0.28144168651009077,
+            0.19811784847953032,
+            0.3266525899777984,
+            0.34810982028781745,
+            0.43199755734463496,
+            0.3322409438559957,
+            0.4510578596858297,
+            0.7787996760963651,
+            0.2632089461384789,
+            0.3012465598704412,
+            0.574587225605238,
+            0.5166670125814037,
+            0.4056152959514936,
+            0.250272323803497,
+            0.4155967233970091,
+            0.2500856382609072,
+            0.4592740828865133,
+            0.2373759103665623,
+            0.3040706545878679,
+            0.22242772269321873,
+            0.18633995442532444
+          ],
+          "detailed_analysis": [
+            {
+              "source_index": 0,
+              "source_sentence": "Mermaid Mapping: Charting My Content Creation Workflow\n\nHow AI-assisted diagramming illuminated my process and paradoxically made it more human\n\nI set out to create a visual diagram of my content workflow—a seemingly straightforward task",
+              "best_match": {
+                "index": 0,
+                "lexical": 0.17050707785339678,
+                "semantic": 0.8208606839179993,
+                "combined": 0.49568388088569804,
+                "target_sentence": "Mermaid AI: A Tool Trial for Diagramming\n\nTesting the capabilities of AI-assisted diagram creation\n\nTL;DR: When I decided to try Mermaid AI for diagramming my content creation workflow, I was simply curious to see if it would be beneficial"
+              }
+            },
+            {
+              "source_index": 1,
+              "source_sentence": "Little did I know this simple experiment would transform not just how I understand my own process, but how I approach documentation, collaboration, and systems thinking altogether",
+              "best_match": {
+                "index": 14,
+                "lexical": 0.12098549325912446,
+                "semantic": 0.4793456792831421,
+                "combined": 0.30016558627113327,
+                "target_sentence": "This mismatch between my approach and reality led to a cascade of revisions as my understanding evolved"
+              }
+            },
+            {
+              "source_index": 2,
+              "source_sentence": "TL;DR: Creating a workflow diagram in Mermaid with AI assistance proved to be both frustrating and revelatory",
+              "best_match": {
+                "index": 56,
+                "lexical": 0.1821359924697584,
+                "semantic": 0.8052800893783569,
+                "combined": 0.4937080409240577,
+                "target_sentence": "For complex diagramming tasks, Mermaid AI offers a powerful starting point—not a complete solution"
+              }
+            },
+            {
+              "source_index": 3,
+              "source_sentence": "While the AI could rapidly generate the initial structure (saving 4-5x the time it would have taken manually), navigating the balance between visual thinking and code editing exposed critical insights about my creative process",
+              "best_match": {
+                "index": 2,
+                "lexical": 0.18866997794672202,
+                "semantic": 0.634067714214325,
+                "combined": 0.4113688460805235,
+                "target_sentence": "The trial revealed that AI excels at generating initial structures 4-5x faster than manual methods, but struggles with modifications and style preferences"
+              }
+            },
+            {
+              "source_index": 4,
+              "source_sentence": "The greatest value wasn't the final diagram but the forced articulation of how my work actually flows between research, authoring, and publication—revealing connections I hadn't consciously recognized",
+              "best_match": {
+                "index": 14,
+                "lexical": 0.13724615704813725,
+                "semantic": 0.47953900694847107,
+                "combined": 0.30839258199830416,
+                "target_sentence": "This mismatch between my approach and reality led to a cascade of revisions as my understanding evolved"
+              }
+            },
+            {
+              "source_index": 5,
+              "source_sentence": "## The Diagram as Mirror\n\nWe build systems to reflect how we think we work",
+              "best_match": {
+                "index": 42,
+                "lexical": 0.14592352542990042,
+                "semantic": 0.5145847797393799,
+                "combined": 0.33025415258464014,
+                "target_sentence": "## Pro Tips From My Experience\n\nThrough dozens of iterations, my diagram gradually evolved from a complex tangle to a streamlined visualization"
+              }
+            },
+            {
+              "source_index": 6,
+              "source_sentence": "But the act of mapping those systems often reveals how we actually work",
+              "best_match": {
+                "index": 15,
+                "lexical": 0.09730283373164904,
+                "semantic": 0.4856075942516327,
+                "combined": 0.29145521399164087,
+                "target_sentence": "What should have been an exploratory, iterative process became a frustrating cycle of restructuring an increasingly complex diagram"
+              }
+            },
+            {
+              "source_index": 7,
+              "source_sentence": "My initial thought was simple: \"I just need a flowchart showing how I write articles.\" Four hours and dozens of iterations later, I had not only a comprehensive diagram, but a fundamentally different understanding of my creative process",
+              "best_match": {
+                "index": 42,
+                "lexical": 0.16982443021698443,
+                "semantic": 0.6089229583740234,
+                "combined": 0.38937369429550395,
+                "target_sentence": "## Pro Tips From My Experience\n\nThrough dozens of iterations, my diagram gradually evolved from a complex tangle to a streamlined visualization"
+              }
+            },
+            {
+              "source_index": 8,
+              "source_sentence": "Here's the journey and what I learned along the way",
+              "best_match": {
+                "index": 58,
+                "lexical": 0.13294117647058826,
+                "semantic": 0.4198935031890869,
+                "combined": 0.27641733982983757,
+                "target_sentence": "The key is knowing yourself as well as your tools"
+              }
+            },
+            {
+              "source_index": 9,
+              "source_sentence": "## Starting Simple: The AI Advantage\n\nHaving used Mermaid script before, I thought adding AI assistance would make this process even smoother",
+              "best_match": {
+                "index": 10,
+                "lexical": 0.15083835597150444,
+                "semantic": 0.783342719078064,
+                "combined": 0.4670905375247842,
+                "target_sentence": "My curiosity about Mermaid AI was straightforward: would it combine the flexibility of script with faster creation"
+              }
+            },
+            {
+              "source_index": 10,
+              "source_sentence": "My expectations were cautiously optimistic: I knew there would be bumps given the complexity of the diagram I wanted, but I also knew AI could save me significant setup time",
+              "best_match": {
+                "index": 3,
+                "lexical": 0.14025922799477702,
+                "semantic": 0.5796571969985962,
+                "combined": 0.3599582124966866,
+                "target_sentence": "The journey from a verbose, complex diagram to a streamlined visualization reinforced my existing approach to diagramming and highlighted both the promise and limitations of AI assistance"
+              }
+            },
+            {
+              "source_index": 11,
+              "source_sentence": "The initial time savings were substantial—what would have taken me a good hour to structure manually was scaffolded in minutes",
+              "best_match": {
+                "index": 29,
+                "lexical": 0.3114120684371446,
+                "semantic": 0.7709253430366516,
+                "combined": 0.5411687057368981,
+                "target_sentence": "What would have taken me an hour or more of manual setup materialized in minutes"
+              }
+            },
+            {
+              "source_index": 12,
+              "source_sentence": "As one node led to another, the basic architecture emerged rapidly, giving me something concrete to react to and refine",
+              "best_match": {
+                "index": 15,
+                "lexical": 0.10933333333333334,
+                "semantic": 0.5525156259536743,
+                "combined": 0.3309244796435038,
+                "target_sentence": "What should have been an exploratory, iterative process became a frustrating cycle of restructuring an increasingly complex diagram"
+              }
+            },
+            {
+              "source_index": 13,
+              "source_sentence": "`\nI need an end to end flow chart that demonstrates how I approach authoring articles",
+              "best_match": {
+                "index": 17,
+                "lexical": 0.10185185185185186,
+                "semantic": 0.45582371950149536,
+                "combined": 0.2788377856766736,
+                "target_sentence": "Looking back, I see how different approaches would serve different diagramming scenarios:\n\n### For Exploration Mode (Figuring It Out As You Go)\nBe a writer"
+              }
+            },
+            {
+              "source_index": 14,
+              "source_sentence": "The process, in general, is as follows: 1",
+              "best_match": {
+                "index": 13,
+                "lexical": 0.181856315481125,
+                "semantic": 0.5430821776390076,
+                "combined": 0.3624692465600663,
+                "target_sentence": "This time, I hadn't really considered the process in any detail"
+              }
+            },
+            {
+              "source_index": 15,
+              "source_sentence": "I use Perplexity AI",
+              "best_match": {
+                "index": 21,
+                "lexical": 0.07385326293980997,
+                "semantic": 0.5400575399398804,
+                "combined": 0.3069554014398452,
+                "target_sentence": "### For Direction Mode (Having a Solid Idea)\nProvide the AI with a clear framework and let it fill in details as you go"
+              }
+            },
+            {
+              "source_index": 16,
+              "source_sentence": "`\n\nThe AI responded with a surprisingly accurate first draft, but the real work was just beginning",
+              "best_match": {
+                "index": 30,
+                "lexical": 0.15094779614739925,
+                "semantic": 0.684284508228302,
+                "combined": 0.41761615218785064,
+                "target_sentence": "The AI generated a robust first draft approximately four to five times faster than I could have done it manually—a significant time savings by any measure"
+              }
+            },
+            {
+              "source_index": 17,
+              "source_sentence": "## When Structure Meets Reality\n\nThe biggest surprise came when I finally dove into the code myself",
+              "best_match": {
+                "index": 33,
+                "lexical": 0.20258798717379345,
+                "semantic": 0.4435250163078308,
+                "combined": 0.32305650174081213,
+                "target_sentence": "## Modification Issues Drive Code Inspection\n\nThe real challenges emerged when I started making changes to the diagram"
+              }
+            },
+            {
+              "source_index": 18,
+              "source_sentence": "The AI had stripped out much of my template formatting and written what was probably the most verbose version possible of the Mermaid syntax",
+              "best_match": {
+                "index": 37,
+                "lexical": 0.5709772655245374,
+                "semantic": 0.8963543772697449,
+                "combined": 0.7336658213971412,
+                "target_sentence": "These modification issues eventually drove me to examine the code itself, where I discovered another drawback: the AI had stripped out much of my template formatting and produced what was probably the most verbose version possible of the Mermaid syntax"
+              }
+            },
+            {
+              "source_index": 19,
+              "source_sentence": "For someone like me who prefers tidy code, this was jarring",
+              "best_match": {
+                "index": 38,
+                "lexical": 0.5764924520502276,
+                "semantic": 0.8193848133087158,
+                "combined": 0.6979386326794716,
+                "target_sentence": "For someone who prefers tidy code, this was a significant issue"
+              }
+            },
+            {
+              "source_index": 20,
+              "source_sentence": "As I tried to make modifications, I discovered an important rhythm to working with AI in this context:\nInitial structure: AI excels here, saving hours\nModification: AI struggles, often breaking what was working\nRefinement: Requires human intervention, especially for style preferences\n\nMy most significant learning was in how I approached the diagram itself",
+              "best_match": {
+                "index": 3,
+                "lexical": 0.10611437755625984,
+                "semantic": 0.6647568941116333,
+                "combined": 0.3854356358339466,
+                "target_sentence": "The journey from a verbose, complex diagram to a streamlined visualization reinforced my existing approach to diagramming and highlighted both the promise and limitations of AI assistance"
+              }
+            },
+            {
+              "source_index": 21,
+              "source_sentence": "Initially, I tried to build the entire complex workflow at once",
+              "best_match": {
+                "index": 54,
+                "lexical": 0.19603461140566372,
+                "semantic": 0.4477875828742981,
+                "combined": 0.3219110971399809,
+                "target_sentence": "If I had tried to create the diagram manually, it probably would have taken me twice as long"
+              }
+            },
+            {
+              "source_index": 22,
+              "source_sentence": "This led to endless revisions as each new node forced me to reconsider earlier decisions",
+              "best_match": {
+                "index": 14,
+                "lexical": 0.21834257554516942,
+                "semantic": 0.5418615341186523,
+                "combined": 0.3801020548319109,
+                "target_sentence": "This mismatch between my approach and reality led to a cascade of revisions as my understanding evolved"
+              }
+            },
+            {
+              "source_index": 23,
+              "source_sentence": "> \"I should have approached it like writing a story or document, really",
+              "best_match": {
+                "index": 18,
+                "lexical": 0.13168949771689498,
+                "semantic": 0.4124869704246521,
+                "combined": 0.27208823407077354,
+                "target_sentence": "Start with a simple outline, then flesh it out as you review and reconsider"
+              }
+            },
+            {
+              "source_index": 24,
+              "source_sentence": "Get the skeleton out, that rough outline, use smart and concise terminology, work through it piece by piece, basically iterating and layering in the complexity.\"\n\n## The Meta-Lesson: Systems Thinking Made Visible\n\nBeyond the mechanics of diagram creation, this experiment revealed something deeper about my workflow",
+              "best_match": {
+                "index": 15,
+                "lexical": 0.09515589583088276,
+                "semantic": 0.6261411905288696,
+                "combined": 0.3606485431798762,
+                "target_sentence": "What should have been an exploratory, iterative process became a frustrating cycle of restructuring an increasingly complex diagram"
+              }
+            },
+            {
+              "source_index": 25,
+              "source_sentence": "The process of mapping made me confront assumptions I hadn't even realized I was making",
+              "best_match": {
+                "index": 14,
+                "lexical": 0.11675741076830005,
+                "semantic": 0.4970250427722931,
+                "combined": 0.30689122677029657,
+                "target_sentence": "This mismatch between my approach and reality led to a cascade of revisions as my understanding evolved"
+              }
+            },
+            {
+              "source_index": 26,
+              "source_sentence": "For example, separating my workflow into distinct subgraphs—Ideation, Authoring, and Processing—forced me to recognize these as different cognitive modes",
+              "best_match": {
+                "index": 45,
+                "lexical": 0.11146840047646515,
+                "semantic": 0.45141497254371643,
+                "combined": 0.28144168651009077,
+                "target_sentence": "Create clearer visual hierarchy: Using subgraphs to logically group related activities"
+              }
+            },
+            {
+              "source_index": 27,
+              "source_sentence": "I often blur them together in practice, which creates unnecessary friction",
+              "best_match": {
+                "index": 20,
+                "lexical": 0.10613598673300166,
+                "semantic": 0.29009971022605896,
+                "combined": 0.19811784847953032,
+                "target_sentence": "Use Mermaid AI to generate small sections that you gradually connect, rather than trying to create the entire structure at once"
+              }
+            },
+            {
+              "source_index": 28,
+              "source_sentence": "The archival system within the diagram (Initial Archive → Updated Archive → Final Archive) emerged not as an afterthought but as a crucial connection point between phases",
+              "best_match": {
+                "index": 19,
+                "lexical": 0.13367152917587263,
+                "semantic": 0.5196336507797241,
+                "combined": 0.3266525899777984,
+                "target_sentence": "Grow the diagram from the ground up, expecting multiple revisions as your understanding evolves"
+              }
+            },
+            {
+              "source_index": 29,
+              "source_sentence": "This wasn't something I had consciously built, but seeing it visualized helped me understand why certain projects felt more coherent than others",
+              "best_match": {
+                "index": 16,
+                "lexical": 0.11655052264808362,
+                "semantic": 0.5796691179275513,
+                "combined": 0.34810982028781745,
+                "target_sentence": "The experience reinforced something I already knew—your diagramming approach needs to match your level of clarity about what you're visualizing"
+              }
+            },
+            {
+              "source_index": 30,
+              "source_sentence": "## Pro Tips for AI-Assisted Diagramming\n\nIf you're attempting something similar, here's what I wish I'd known:\nUse brief node names when working with AI",
+              "best_match": {
+                "index": 24,
+                "lexical": 0.1543895400814208,
+                "semantic": 0.7096055746078491,
+                "combined": 0.43199755734463496,
+                "target_sentence": "### For Documentation Mode (Knowing Exactly What You Need)\nWrite out the diagram in text first—what it is, what it connects to—then use that as a script for the AI"
+              }
+            },
+            {
+              "source_index": 31,
+              "source_sentence": "Long descriptive names mean typing them repeatedly during revisions",
+              "best_match": {
+                "index": 40,
+                "lexical": 0.12891794194172765,
+                "semantic": 0.5355639457702637,
+                "combined": 0.3322409438559957,
+                "target_sentence": "With every modification, I had to repeatedly type out these verbose identifiers"
+              }
+            },
+            {
+              "source_index": 32,
+              "source_sentence": "Expect to edit the code directly",
+              "best_match": {
+                "index": 22,
+                "lexical": 0.265030043178422,
+                "semantic": 0.6370856761932373,
+                "combined": 0.4510578596858297,
+                "target_sentence": "Expect to make a manual pass through the code afterward to clean up and standardize"
+              }
+            },
+            {
+              "source_index": 33,
+              "source_sentence": "The AI creates a solid foundation, but refinement requires manual adjustment",
+              "best_match": {
+                "index": 49,
+                "lexical": 0.7956847413299983,
+                "semantic": 0.7619146108627319,
+                "combined": 0.7787996760963651,
+                "target_sentence": "Expect code intervention: The AI creates a solid foundation, but refinement requires manual adjustment"
+              }
+            },
+            {
+              "source_index": 34,
+              "source_sentence": "Start with skeleton, add complexity later",
+              "best_match": {
+                "index": 2,
+                "lexical": 0.07388414055080722,
+                "semantic": 0.4525337517261505,
+                "combined": 0.2632089461384789,
+                "target_sentence": "The trial revealed that AI excels at generating initial structures 4-5x faster than manual methods, but struggles with modifications and style preferences"
+              }
+            },
+            {
+              "source_index": 35,
+              "source_sentence": "Build the basic structure first, then layer in details iteratively",
+              "best_match": {
+                "index": 2,
+                "lexical": 0.1380254154447703,
+                "semantic": 0.46446770429611206,
+                "combined": 0.3012465598704412,
+                "target_sentence": "The trial revealed that AI excels at generating initial structures 4-5x faster than manual methods, but struggles with modifications and style preferences"
+              }
+            },
+            {
+              "source_index": 36,
+              "source_sentence": "Leverage \"Change All\" in editors for consistent renaming across complex diagrams",
+              "best_match": {
+                "index": 47,
+                "lexical": 0.3874341243290673,
+                "semantic": 0.7617403268814087,
+                "combined": 0.574587225605238,
+                "target_sentence": "Use 'Change All' in the editor: For consistent updates across a complex diagram"
+              }
+            },
+            {
+              "source_index": 37,
+              "source_sentence": "Don't assume AI will maintain structure across updates—it may rewrite connections you want to preserve",
+              "best_match": {
+                "index": 46,
+                "lexical": 0.23823393227492903,
+                "semantic": 0.7951000928878784,
+                "combined": 0.5166670125814037,
+                "target_sentence": "Tell the AI to maintain connections: Be explicit about wanting to keep existing connections when making modifications"
+              }
+            },
+            {
+              "source_index": 38,
+              "source_sentence": "## Visualization as Discovery\n\nThe most powerful outcome wasn't the diagram itself, but what it revealed about my process",
+              "best_match": {
+                "index": 42,
+                "lexical": 0.09749942220236464,
+                "semantic": 0.7137311697006226,
+                "combined": 0.4056152959514936,
+                "target_sentence": "## Pro Tips From My Experience\n\nThrough dozens of iterations, my diagram gradually evolved from a complex tangle to a streamlined visualization"
+              }
+            },
+            {
+              "source_index": 39,
+              "source_sentence": "By making the invisible visible, I saw connections and inefficiencies I had missed for years",
+              "best_match": {
+                "index": 46,
+                "lexical": 0.17690594020762576,
+                "semantic": 0.3236387073993683,
+                "combined": 0.250272323803497,
+                "target_sentence": "Tell the AI to maintain connections: Be explicit about wanting to keep existing connections when making modifications"
+              }
+            },
+            {
+              "source_index": 40,
+              "source_sentence": "The diagram didn't just document my workflow—it changed it",
+              "best_match": {
+                "index": 11,
+                "lexical": 0.19130325285480923,
+                "semantic": 0.639890193939209,
+                "combined": 0.4155967233970091,
+                "target_sentence": "I didn't need a diagram—I wanted to test the tool"
+              }
+            },
+            {
+              "source_index": 41,
+              "source_sentence": "I now see more clearly how my roles as researcher, writer, and editor interact, and where my collaborative touchpoints need the most attention",
+              "best_match": {
+                "index": 1,
+                "lexical": 0.10841959972394756,
+                "semantic": 0.3917516767978668,
+                "combined": 0.2500856382609072,
+                "target_sentence": "What began as a straightforward test evolved into a fascinating exploration of representation, abstraction, and human-AI collaboration"
+              }
+            },
+            {
+              "source_index": 42,
+              "source_sentence": "As much as this was a technical exercise in Mermaid and AI, it became something more profound: a conversation with myself about how I think and create",
+              "best_match": {
+                "index": 43,
+                "lexical": 0.13874155185090745,
+                "semantic": 0.7798066139221191,
+                "combined": 0.4592740828865133,
+                "target_sentence": "This transformation reflected my growing understanding of how to work effectively with Mermaid AI"
+              }
+            },
+            {
+              "source_index": 43,
+              "source_sentence": "The technology was just the medium that made that conversation possible",
+              "best_match": {
+                "index": 55,
+                "lexical": 0.159626802374894,
+                "semantic": 0.3151250183582306,
+                "combined": 0.2373759103665623,
+                "target_sentence": "The initial time savings alone justified the experimentation"
+              }
+            },
+            {
+              "source_index": 44,
+              "source_sentence": "Have you ever tried mapping your own creative process",
+              "best_match": {
+                "index": 17,
+                "lexical": 0.07131410256410256,
+                "semantic": 0.5368272066116333,
+                "combined": 0.3040706545878679,
+                "target_sentence": "Looking back, I see how different approaches would serve different diagramming scenarios:\n\n### For Exploration Mode (Figuring It Out As You Go)\nBe a writer"
+              }
+            },
+            {
+              "source_index": 45,
+              "source_sentence": "Did it reveal anything that surprised you about how you work",
+              "best_match": {
+                "index": 58,
+                "lexical": 0.1162079510703364,
+                "semantic": 0.3286474943161011,
+                "combined": 0.22242772269321873,
+                "target_sentence": "The key is knowing yourself as well as your tools"
+              }
+            },
+            {
+              "source_index": 46,
+              "source_sentence": "I'd love to hear about your experiences in the comments.",
+              "best_match": {
+                "index": 13,
+                "lexical": 0.11912133274362376,
+                "semantic": 0.25355857610702515,
+                "combined": 0.18633995442532444,
+                "target_sentence": "This time, I hadn't really considered the process in any detail"
+              }
+            }
+          ]
+        },
+        "paragraph_level": {
+          "lexical": {
+            "jaccard_similarity": 0.2281134401972873,
+            "edit_similarity": 0.038613081166272656,
+            "tfidf_similarity": 0.3740073321774418,
+            "lexical_average": 0.21357795118033393
+          },
+          "semantic": {
+            "semantic_similarity": 0.7033904790878296,
+            "embedding_dim": 384
+          },
+          "combined": 0.4584842151340818
+        }
+      },
+      {
+        "version_pair": "refined_to_edited",
+        "full_text": {
+          "lexical": {
+            "jaccard_similarity": 0.4965612104539202,
+            "edit_similarity": 0.28205826300027226,
+            "tfidf_similarity": 0.6912587981447126,
+            "lexical_average": 0.4899594238663017
+          },
+          "semantic": {
+            "semantic_similarity": 0.9615957736968994,
+            "embedding_dim": 384
+          },
+          "combined": 0.7257775987816005
+        },
+        "sentence_level": {
+          "average_similarity": 0.551904873627388,
+          "individual_similarities": [
+            0.6621195363404743,
+            0.49042000605890257,
+            0.8461417006720027,
+            0.5485826064022992,
+            1.0,
+            0.8512306356073558,
+            0.8567749821925623,
+            0.6208310007493999,
+            0.724697428083865,
+            0.7509690992572705,
+            0.9166320009271709,
+            0.6549986061562748,
+            0.9020980526989271,
+            0.28468060551878344,
+            0.3649626307693842,
+            0.698628319822695,
+            0.7858197198507568,
+            0.43063017288449035,
+            0.25733787078483433,
+            0.4087616751854543,
+            0.410084542002004,
+            0.41713790815399043,
+            0.27486890558456645,
+            0.3622332317337914,
+            0.44936325009944644,
+            0.25869177139444505,
+            0.330849727469621,
+            0.6674062786454864,
+            0.6088027422344495,
+            0.5572528557028662,
+            0.6788951920508068,
+            0.4066441867190693,
+            0.262773269528094,
+            0.34098127222916785,
+            0.9159133222126639,
+            0.39624681333370737,
+            0.5971576240984764,
+            0.6316444361740854,
+            0.49024379805689977,
+            0.24951204007246774,
+            0.23832016039713136,
+            0.23648698920135575,
+            0.9563838829817448,
+            0.4614884412508988,
+            0.3668226173561023,
+            0.26299718875137457,
+            0.4558504904210968,
+            0.34774162675385367,
+            0.1543964046589184,
+            0.3942658647197415,
+            0.2924155373705758,
+            0.465001510773439,
+            0.2660280534697292,
+            0.762937948753222,
+            0.5853617371740387,
+            0.6075509368426525,
+            0.9628439366918327,
+            0.9343791534072816,
+            1.0,
+            1.0000001192092893
+          ],
+          "detailed_analysis": [
+            {
+              "source_index": 0,
+              "source_sentence": "Mermaid AI: A Tool Trial for Diagramming\n\nTesting the capabilities of AI-assisted diagram creation\n\nTL;DR: When I decided to try Mermaid AI for diagramming my content creation workflow, I was simply curious to see if it would be beneficial",
+              "best_match": {
+                "index": 0,
+                "lexical": 0.4705279444460853,
+                "semantic": 0.8537111282348633,
+                "combined": 0.6621195363404743,
+                "target_sentence": "Mermaid AI: A Tool Trial for Diagramming\n\nTesting the capabilities of AI-assisted diagram creation\n\nTL;DR: What began as a simple test of Mermaid AI for diagramming evolved into a revealing exploration of human-AI collaboration"
+              }
+            },
+            {
+              "source_index": 1,
+              "source_sentence": "What began as a straightforward test evolved into a fascinating exploration of representation, abstraction, and human-AI collaboration",
+              "best_match": {
+                "index": 0,
+                "lexical": 0.31825505165714235,
+                "semantic": 0.6625849604606628,
+                "combined": 0.49042000605890257,
+                "target_sentence": "Mermaid AI: A Tool Trial for Diagramming\n\nTesting the capabilities of AI-assisted diagram creation\n\nTL;DR: What began as a simple test of Mermaid AI for diagramming evolved into a revealing exploration of human-AI collaboration"
+              }
+            },
+            {
+              "source_index": 2,
+              "source_sentence": "The trial revealed that AI excels at generating initial structures 4-5x faster than manual methods, but struggles with modifications and style preferences",
+              "best_match": {
+                "index": 1,
+                "lexical": 0.7256296967007558,
+                "semantic": 0.9666537046432495,
+                "combined": 0.8461417006720027,
+                "target_sentence": "The trial showed that AI excels at generating initial structures 4-5x faster than manual methods, but struggles with modifications and maintaining stylistic consistency"
+              }
+            },
+            {
+              "source_index": 3,
+              "source_sentence": "The journey from a verbose, complex diagram to a streamlined visualization reinforced my existing approach to diagramming and highlighted both the promise and limitations of AI assistance",
+              "best_match": {
+                "index": 2,
+                "lexical": 0.3196530200784631,
+                "semantic": 0.7775121927261353,
+                "combined": 0.5485826064022992,
+                "target_sentence": "This journey from verbose complexity to streamlined visualization highlighted when AI assistance delivers genuine value versus when it creates unnecessary friction"
+              }
+            },
+            {
+              "source_index": 4,
+              "source_sentence": "## Why Try Another Tool",
+              "best_match": {
+                "index": 3,
+                "lexical": 1.0,
+                "semantic": 1.0,
+                "combined": 1.0,
+                "target_sentence": "## Why Try Another Tool"
+              }
+            },
+            {
+              "source_index": 5,
+              "source_sentence": "Interestingly, my first exposure to Mermaid script came through ChatGPT (version 3 or 3.5) when I asked it to create a diagram for me",
+              "best_match": {
+                "index": 4,
+                "lexical": 0.7404570864918112,
+                "semantic": 0.9620041847229004,
+                "combined": 0.8512306356073558,
+                "target_sentence": "My first exposure to Mermaid script came through ChatGPT when I asked it to create a diagram"
+              }
+            },
+            {
+              "source_index": 6,
+              "source_sentence": "Since then, I've been using the script version for over a year specifically because of its flexibility and practicality",
+              "best_match": {
+                "index": 5,
+                "lexical": 0.7247961687613454,
+                "semantic": 0.9887537956237793,
+                "combined": 0.8567749821925623,
+                "target_sentence": "Since then, I've used the script version for over a year because of its flexibility and practicality"
+              }
+            },
+            {
+              "source_index": 7,
+              "source_sentence": "There's always a tradeoff in diagramming tools",
+              "best_match": {
+                "index": 6,
+                "lexical": 0.3472039460025839,
+                "semantic": 0.8944580554962158,
+                "combined": 0.6208310007493999,
+                "target_sentence": "Diagramming tools always present tradeoffs"
+              }
+            },
+            {
+              "source_index": 8,
+              "source_sentence": "Mermaid script gives me quick modification capabilities, even if the output isn't presentation-deck quality",
+              "best_match": {
+                "index": 7,
+                "lexical": 0.5814627153405508,
+                "semantic": 0.867932140827179,
+                "combined": 0.724697428083865,
+                "target_sentence": "Mermaid script enables quick modifications even if the output isn't presentation quality"
+              }
+            },
+            {
+              "source_index": 9,
+              "source_sentence": "Something like Figma produces visually polished results but becomes impractical for early iterations where changes are constant",
+              "best_match": {
+                "index": 8,
+                "lexical": 0.6071228727775415,
+                "semantic": 0.8948153257369995,
+                "combined": 0.7509690992572705,
+                "target_sentence": "Figma produces polished results but becomes impractical for early iterations requiring frequent changes"
+              }
+            },
+            {
+              "source_index": 10,
+              "source_sentence": "My curiosity about Mermaid AI was straightforward: would it combine the flexibility of script with faster creation",
+              "best_match": {
+                "index": 9,
+                "lexical": 0.8360098686298544,
+                "semantic": 0.9972541332244873,
+                "combined": 0.9166320009271709,
+                "target_sentence": "My curiosity about Mermaid AI was straightforward: would it combine script flexibility with faster creation"
+              }
+            },
+            {
+              "source_index": 11,
+              "source_sentence": "I didn't need a diagram—I wanted to test the tool",
+              "best_match": {
+                "index": 10,
+                "lexical": 0.41803456487450036,
+                "semantic": 0.8919626474380493,
+                "combined": 0.6549986061562748,
+                "target_sentence": "I wanted to test the tool, not create a specific diagram"
+              }
+            },
+            {
+              "source_index": 12,
+              "source_sentence": "## Starting Without a Clear Map\n\nTypically, I sketch a diagram before diving into any tool, ensuring I have a clear direction",
+              "best_match": {
+                "index": 11,
+                "lexical": 0.8266830305229762,
+                "semantic": 0.9775130748748779,
+                "combined": 0.9020980526989271,
+                "target_sentence": "## Starting Without a Clear Map\n\nTypically, I sketch a diagram before using any tool, ensuring clear direction"
+              }
+            },
+            {
+              "source_index": 13,
+              "source_sentence": "This time, I hadn't really considered the process in any detail",
+              "best_match": {
+                "index": 12,
+                "lexical": 0.23478153464787266,
+                "semantic": 0.3345796763896942,
+                "combined": 0.28468060551878344,
+                "target_sentence": "This time, I jumped into testing the AI without proper planning"
+              }
+            },
+            {
+              "source_index": 14,
+              "source_sentence": "This mismatch between my approach and reality led to a cascade of revisions as my understanding evolved",
+              "best_match": {
+                "index": 13,
+                "lexical": 0.20236669639899782,
+                "semantic": 0.5275585651397705,
+                "combined": 0.3649626307693842,
+                "target_sentence": "This lack of preparation led to a frustrating cycle of restructuring an increasingly complex diagram"
+              }
+            },
+            {
+              "source_index": 15,
+              "source_sentence": "What should have been an exploratory, iterative process became a frustrating cycle of restructuring an increasingly complex diagram",
+              "best_match": {
+                "index": 13,
+                "lexical": 0.5334686905601546,
+                "semantic": 0.8637879490852356,
+                "combined": 0.698628319822695,
+                "target_sentence": "This lack of preparation led to a frustrating cycle of restructuring an increasingly complex diagram"
+              }
+            },
+            {
+              "source_index": 16,
+              "source_sentence": "The experience reinforced something I already knew—your diagramming approach needs to match your level of clarity about what you're visualizing",
+              "best_match": {
+                "index": 14,
+                "lexical": 0.6514187666172546,
+                "semantic": 0.920220673084259,
+                "combined": 0.7858197198507568,
+                "target_sentence": "The experience reinforced a critical insight—your diagramming approach must match your level of clarity about what you're visualizing"
+              }
+            },
+            {
+              "source_index": 17,
+              "source_sentence": "Looking back, I see how different approaches would serve different diagramming scenarios:\n\n### For Exploration Mode (Figuring It Out As You Go)\nBe a writer",
+              "best_match": {
+                "index": 15,
+                "lexical": 0.21965288240914796,
+                "semantic": 0.6416074633598328,
+                "combined": 0.43063017288449035,
+                "target_sentence": "Looking back, I see how different approaches serve different scenarios:\n\n### For Exploration Mode (Figuring It Out As You Go)\nStart with a simple outline, then expand as you review and reconsider\nBuild the diagram incrementally rather than attempting the entire structure at once\nUse Mermaid AI for generating small sections that you gradually connect\n\n### For Direction Mode (Having a Solid Idea)\nProvide the AI with a clear framework and let it fill in details\nPlan for a manual pass through the code to clean up and standardize\nUse AI as an accelerator, not a complete solution\n\n### For Documentation Mode (Knowing Exactly What You Need)\nWrite out the diagram in text first, then use that as a script for the AI\nThis approach minimizes surprises and maximizes control\n\nI approached the tool as if I had a solid idea when I was actually still exploring"
+              }
+            },
+            {
+              "source_index": 18,
+              "source_sentence": "Start with a simple outline, then flesh it out as you review and reconsider",
+              "best_match": {
+                "index": 44,
+                "lexical": 0.08627450980392158,
+                "semantic": 0.42840123176574707,
+                "combined": 0.25733787078483433,
+                "target_sentence": "Be honest about your level of clarity, choose your approach accordingly, and remember that the process of creating the diagram might be just as valuable as the diagram itself."
+              }
+            },
+            {
+              "source_index": 19,
+              "source_sentence": "Grow the diagram from the ground up, expecting multiple revisions as your understanding evolves",
+              "best_match": {
+                "index": 31,
+                "lexical": 0.11150359119274696,
+                "semantic": 0.7060197591781616,
+                "combined": 0.4087616751854543,
+                "target_sentence": "revising) and your diagramming approach (structured vs"
+              }
+            },
+            {
+              "source_index": 20,
+              "source_sentence": "Use Mermaid AI to generate small sections that you gradually connect, rather than trying to create the entire structure at once",
+              "best_match": {
+                "index": 15,
+                "lexical": 0.16007160418375652,
+                "semantic": 0.6600974798202515,
+                "combined": 0.410084542002004,
+                "target_sentence": "Looking back, I see how different approaches serve different scenarios:\n\n### For Exploration Mode (Figuring It Out As You Go)\nStart with a simple outline, then expand as you review and reconsider\nBuild the diagram incrementally rather than attempting the entire structure at once\nUse Mermaid AI for generating small sections that you gradually connect\n\n### For Direction Mode (Having a Solid Idea)\nProvide the AI with a clear framework and let it fill in details\nPlan for a manual pass through the code to clean up and standardize\nUse AI as an accelerator, not a complete solution\n\n### For Documentation Mode (Knowing Exactly What You Need)\nWrite out the diagram in text first, then use that as a script for the AI\nThis approach minimizes surprises and maximizes control\n\nI approached the tool as if I had a solid idea when I was actually still exploring"
+              }
+            },
+            {
+              "source_index": 21,
+              "source_sentence": "### For Direction Mode (Having a Solid Idea)\nProvide the AI with a clear framework and let it fill in details as you go",
+              "best_match": {
+                "index": 15,
+                "lexical": 0.2701079591378759,
+                "semantic": 0.564167857170105,
+                "combined": 0.41713790815399043,
+                "target_sentence": "Looking back, I see how different approaches serve different scenarios:\n\n### For Exploration Mode (Figuring It Out As You Go)\nStart with a simple outline, then expand as you review and reconsider\nBuild the diagram incrementally rather than attempting the entire structure at once\nUse Mermaid AI for generating small sections that you gradually connect\n\n### For Direction Mode (Having a Solid Idea)\nProvide the AI with a clear framework and let it fill in details\nPlan for a manual pass through the code to clean up and standardize\nUse AI as an accelerator, not a complete solution\n\n### For Documentation Mode (Knowing Exactly What You Need)\nWrite out the diagram in text first, then use that as a script for the AI\nThis approach minimizes surprises and maximizes control\n\nI approached the tool as if I had a solid idea when I was actually still exploring"
+              }
+            },
+            {
+              "source_index": 22,
+              "source_sentence": "Expect to make a manual pass through the code afterward to clean up and standardize",
+              "best_match": {
+                "index": 26,
+                "lexical": 0.14680707462738485,
+                "semantic": 0.40293073654174805,
+                "combined": 0.27486890558456645,
+                "target_sentence": "For someone who values code clarity, this was problematic"
+              }
+            },
+            {
+              "source_index": 23,
+              "source_sentence": "The AI serves as an accelerator rather than a complete solution",
+              "best_match": {
+                "index": 41,
+                "lexical": 0.27825739040087133,
+                "semantic": 0.4462090730667114,
+                "combined": 0.3622332317337914,
+                "target_sentence": "For complex diagramming tasks, Mermaid AI offers a powerful starting point, not a complete solution"
+              }
+            },
+            {
+              "source_index": 24,
+              "source_sentence": "### For Documentation Mode (Knowing Exactly What You Need)\nWrite out the diagram in text first—what it is, what it connects to—then use that as a script for the AI",
+              "best_match": {
+                "index": 15,
+                "lexical": 0.2411072622991126,
+                "semantic": 0.6576192378997803,
+                "combined": 0.44936325009944644,
+                "target_sentence": "Looking back, I see how different approaches serve different scenarios:\n\n### For Exploration Mode (Figuring It Out As You Go)\nStart with a simple outline, then expand as you review and reconsider\nBuild the diagram incrementally rather than attempting the entire structure at once\nUse Mermaid AI for generating small sections that you gradually connect\n\n### For Direction Mode (Having a Solid Idea)\nProvide the AI with a clear framework and let it fill in details\nPlan for a manual pass through the code to clean up and standardize\nUse AI as an accelerator, not a complete solution\n\n### For Documentation Mode (Knowing Exactly What You Need)\nWrite out the diagram in text first, then use that as a script for the AI\nThis approach minimizes surprises and maximizes control\n\nI approached the tool as if I had a solid idea when I was actually still exploring"
+              }
+            },
+            {
+              "source_index": 25,
+              "source_sentence": "This approach minimizes surprises and gives you the greatest control over the output",
+              "best_match": {
+                "index": 23,
+                "lexical": 0.13403263403263402,
+                "semantic": 0.3833509087562561,
+                "combined": 0.25869177139444505,
+                "target_sentence": "This pattern—rapid initial creation followed by diminishing returns during refinement—appears consistent across many AI tools"
+              }
+            },
+            {
+              "source_index": 26,
+              "source_sentence": "I came in trying to make things up as I went (Exploration Mode) but approached the tool as if I had a solid idea (Direction Mode)",
+              "best_match": {
+                "index": 11,
+                "lexical": 0.1469879557250696,
+                "semantic": 0.5147114992141724,
+                "combined": 0.330849727469621,
+                "target_sentence": "## Starting Without a Clear Map\n\nTypically, I sketch a diagram before using any tool, ensuring clear direction"
+              }
+            },
+            {
+              "source_index": 27,
+              "source_sentence": "The problems intensified when I started making substantial changes to sections I'd already created—exactly the situation where a more iterative, writer-like approach would have served me better",
+              "best_match": {
+                "index": 16,
+                "lexical": 0.5034190173854246,
+                "semantic": 0.8313935399055481,
+                "combined": 0.6674062786454864,
+                "target_sentence": "The problems intensified when making substantial changes to existing sections—precisely when a more iterative approach would have worked better"
+              }
+            },
+            {
+              "source_index": 28,
+              "source_sentence": "## The Initial Speed Advantage\n\nWhere Mermaid AI truly delivered was in generating the initial structure",
+              "best_match": {
+                "index": 18,
+                "lexical": 0.47987974975820574,
+                "semantic": 0.7377257347106934,
+                "combined": 0.6088027422344495,
+                "target_sentence": "Where Mermaid AI truly delivered was in generating the initial structure—what would have taken an hour of manual setup materialized in minutes"
+              }
+            },
+            {
+              "source_index": 29,
+              "source_sentence": "What would have taken me an hour or more of manual setup materialized in minutes",
+              "best_match": {
+                "index": 18,
+                "lexical": 0.5316912563733839,
+                "semantic": 0.5828144550323486,
+                "combined": 0.5572528557028662,
+                "target_sentence": "Where Mermaid AI truly delivered was in generating the initial structure—what would have taken an hour of manual setup materialized in minutes"
+              }
+            },
+            {
+              "source_index": 30,
+              "source_sentence": "The AI generated a robust first draft approximately four to five times faster than I could have done it manually—a significant time savings by any measure",
+              "best_match": {
+                "index": 19,
+                "lexical": 0.4522340629575097,
+                "semantic": 0.905556321144104,
+                "combined": 0.6788951920508068,
+                "target_sentence": "The AI generated a robust first draft approximately 4-5x faster than manual methods, providing a significant time advantage and something tangible to refine"
+              }
+            },
+            {
+              "source_index": 31,
+              "source_sentence": "This rapid scaffolding demonstrated the tool's primary advantage",
+              "best_match": {
+                "index": 24,
+                "lexical": 0.16146282621981586,
+                "semantic": 0.6518255472183228,
+                "combined": 0.4066441867190693,
+                "target_sentence": "The technology excels at generating scaffolding but struggles with contextual understanding during iterative improvements"
+              }
+            },
+            {
+              "source_index": 32,
+              "source_sentence": "Having something tangible to react to accelerated the process, even if that something wasn't perfect",
+              "best_match": {
+                "index": 40,
+                "lexical": 0.1216391804097951,
+                "semantic": 0.4039073586463928,
+                "combined": 0.262773269528094,
+                "target_sentence": "The initial time savings alone justified the experimentation—creating the diagram manually would have taken at least twice as long"
+              }
+            },
+            {
+              "source_index": 33,
+              "source_sentence": "## Modification Issues Drive Code Inspection\n\nThe real challenges emerged when I started making changes to the diagram",
+              "best_match": {
+                "index": 13,
+                "lexical": 0.1418353862933577,
+                "semantic": 0.540127158164978,
+                "combined": 0.34098127222916785,
+                "target_sentence": "This lack of preparation led to a frustrating cycle of restructuring an increasingly complex diagram"
+              }
+            },
+            {
+              "source_index": 34,
+              "source_sentence": "While the AI handled additive instructions well (\"add this node,\" \"connect these elements\"), it became unreliable during revisions",
+              "best_match": {
+                "index": 21,
+                "lexical": 0.8869041376160931,
+                "semantic": 0.9449225068092346,
+                "combined": 0.9159133222126639,
+                "target_sentence": "While the AI handled additive instructions well (\"add this node,\" \"connect these elements\"), it became unreliable during modifications"
+              }
+            },
+            {
+              "source_index": 35,
+              "source_sentence": "If I asked it to move something or connect a different element, it would often undo all previous connections",
+              "best_match": {
+                "index": 22,
+                "lexical": 0.22828941066399677,
+                "semantic": 0.564204216003418,
+                "combined": 0.39624681333370737,
+                "target_sentence": "Requesting a change to one element often resulted in the AI breaking previously established connections"
+              }
+            },
+            {
+              "source_index": 36,
+              "source_sentence": "I learned that you can explicitly tell it to maintain existing connections, but you have to know to do so—highlighting how working effectively with AI tools often requires discovering their quirks through trial and error",
+              "best_match": {
+                "index": 27,
+                "lexical": 0.36227768010460665,
+                "semantic": 0.8320375680923462,
+                "combined": 0.5971576240984764,
+                "target_sentence": "I discovered you could explicitly instruct the AI to maintain existing connections, but you need to know to do this—highlighting how effective collaboration with AI tools often requires discovering their specific behaviors through trial and error rather than intuitive interaction"
+              }
+            },
+            {
+              "source_index": 37,
+              "source_sentence": "These modification issues eventually drove me to examine the code itself, where I discovered another drawback: the AI had stripped out much of my template formatting and produced what was probably the most verbose version possible of the Mermaid syntax",
+              "best_match": {
+                "index": 25,
+                "lexical": 0.3960112501252704,
+                "semantic": 0.8672776222229004,
+                "combined": 0.6316444361740854,
+                "target_sentence": "### Behind the Interface: Code Quality Issues\n\nThese modification challenges eventually drove me to examine the underlying Mermaid code, revealing another limitation: the AI had stripped my template formatting and produced unnecessarily verbose syntax"
+              }
+            },
+            {
+              "source_index": 38,
+              "source_sentence": "For someone who prefers tidy code, this was a significant issue",
+              "best_match": {
+                "index": 26,
+                "lexical": 0.3393498769594416,
+                "semantic": 0.6411377191543579,
+                "combined": 0.49024379805689977,
+                "target_sentence": "For someone who values code clarity, this was problematic"
+              }
+            },
+            {
+              "source_index": 39,
+              "source_sentence": "I also made a critical error that compounded these challenges: using long node names",
+              "best_match": {
+                "index": 21,
+                "lexical": 0.14643411527829733,
+                "semantic": 0.3525899648666382,
+                "combined": 0.24951204007246774,
+                "target_sentence": "While the AI handled additive instructions well (\"add this node,\" \"connect these elements\"), it became unreliable during modifications"
+              }
+            },
+            {
+              "source_index": 40,
+              "source_sentence": "With every modification, I had to repeatedly type out these verbose identifiers",
+              "best_match": {
+                "index": 25,
+                "lexical": 0.08766899205891114,
+                "semantic": 0.38897132873535156,
+                "combined": 0.23832016039713136,
+                "target_sentence": "### Behind the Interface: Code Quality Issues\n\nThese modification challenges eventually drove me to examine the underlying Mermaid code, revealing another limitation: the AI had stripped my template formatting and produced unnecessarily verbose syntax"
+              }
+            },
+            {
+              "source_index": 41,
+              "source_sentence": "Had I known how much tweaking would be involved, I would have used brief node names from the start",
+              "best_match": {
+                "index": 21,
+                "lexical": 0.11780423510322723,
+                "semantic": 0.35516974329948425,
+                "combined": 0.23648698920135575,
+                "target_sentence": "While the AI handled additive instructions well (\"add this node,\" \"connect these elements\"), it became unreliable during modifications"
+              }
+            },
+            {
+              "source_index": 42,
+              "source_sentence": "## Pro Tips From My Experience\n\nThrough dozens of iterations, my diagram gradually evolved from a complex tangle to a streamlined visualization",
+              "best_match": {
+                "index": 34,
+                "lexical": 0.9163470248822517,
+                "semantic": 0.9964207410812378,
+                "combined": 0.9563838829817448,
+                "target_sentence": "## Pro Tips From My Experience\n\nThrough dozens of iterations, my diagram evolved from a complex tangle to a streamlined visualization"
+              }
+            },
+            {
+              "source_index": 43,
+              "source_sentence": "This transformation reflected my growing understanding of how to work effectively with Mermaid AI",
+              "best_match": {
+                "index": 9,
+                "lexical": 0.1569121194326447,
+                "semantic": 0.7660647630691528,
+                "combined": 0.4614884412508988,
+                "target_sentence": "My curiosity about Mermaid AI was straightforward: would it combine script flexibility with faster creation"
+              }
+            },
+            {
+              "source_index": 44,
+              "source_sentence": "The key improvements and lessons included:\nApply different approaches based on clarity:\nIf exploring a new concept, start small and build incrementally\nIf you have a clear framework, provide that structure and let the AI fill in details\nIf you know exactly what you need, write it out in text first as a script for the AI\nUse brief node names: Makes adjustments and updates with the AI much easier",
+              "best_match": {
+                "index": 15,
+                "lexical": 0.16892233908995113,
+                "semantic": 0.5647228956222534,
+                "combined": 0.3668226173561023,
+                "target_sentence": "Looking back, I see how different approaches serve different scenarios:\n\n### For Exploration Mode (Figuring It Out As You Go)\nStart with a simple outline, then expand as you review and reconsider\nBuild the diagram incrementally rather than attempting the entire structure at once\nUse Mermaid AI for generating small sections that you gradually connect\n\n### For Direction Mode (Having a Solid Idea)\nProvide the AI with a clear framework and let it fill in details\nPlan for a manual pass through the code to clean up and standardize\nUse AI as an accelerator, not a complete solution\n\n### For Documentation Mode (Knowing Exactly What You Need)\nWrite out the diagram in text first, then use that as a script for the AI\nThis approach minimizes surprises and maximizes control\n\nI approached the tool as if I had a solid idea when I was actually still exploring"
+              }
+            },
+            {
+              "source_index": 45,
+              "source_sentence": "Create clearer visual hierarchy: Using subgraphs to logically group related activities",
+              "best_match": {
+                "index": 14,
+                "lexical": 0.0669710806697108,
+                "semantic": 0.45902329683303833,
+                "combined": 0.26299718875137457,
+                "target_sentence": "The experience reinforced a critical insight—your diagramming approach must match your level of clarity about what you're visualizing"
+              }
+            },
+            {
+              "source_index": 46,
+              "source_sentence": "Tell the AI to maintain connections: Be explicit about wanting to keep existing connections when making modifications",
+              "best_match": {
+                "index": 22,
+                "lexical": 0.16665007370718382,
+                "semantic": 0.7450509071350098,
+                "combined": 0.4558504904210968,
+                "target_sentence": "Requesting a change to one element often resulted in the AI breaking previously established connections"
+              }
+            },
+            {
+              "source_index": 47,
+              "source_sentence": "Use 'Change All' in the editor: For consistent updates across a complex diagram",
+              "best_match": {
+                "index": 13,
+                "lexical": 0.1838139753628709,
+                "semantic": 0.5116692781448364,
+                "combined": 0.34774162675385367,
+                "target_sentence": "This lack of preparation led to a frustrating cycle of restructuring an increasingly complex diagram"
+              }
+            },
+            {
+              "source_index": 48,
+              "source_sentence": "This is a lifesaver",
+              "best_match": {
+                "index": 30,
+                "lexical": 0.16117216117216118,
+                "semantic": 0.14762064814567566,
+                "combined": 0.1543964046589184,
+                "target_sentence": "This creates a natural mapping between your mental state (documenting vs"
+              }
+            },
+            {
+              "source_index": 49,
+              "source_sentence": "Expect code intervention: The AI creates a solid foundation, but refinement requires manual adjustment",
+              "best_match": {
+                "index": 23,
+                "lexical": 0.15133268521188295,
+                "semantic": 0.6371990442276001,
+                "combined": 0.3942658647197415,
+                "target_sentence": "This pattern—rapid initial creation followed by diminishing returns during refinement—appears consistent across many AI tools"
+              }
+            },
+            {
+              "source_index": 50,
+              "source_sentence": "What's interesting is that these improvements mirror the evolution you'd want in your mental model of any complex system: concise terminology, clear categorization, focus on key relationships, and consistent patterns",
+              "best_match": {
+                "index": 1,
+                "lexical": 0.12069444444444444,
+                "semantic": 0.46413663029670715,
+                "combined": 0.2924155373705758,
+                "target_sentence": "The trial showed that AI excels at generating initial structures 4-5x faster than manual methods, but struggles with modifications and maintaining stylistic consistency"
+              }
+            },
+            {
+              "source_index": 51,
+              "source_sentence": "## The Final Verdict\n\nThere's definitely a learning curve to working with Mermaid AI",
+              "best_match": {
+                "index": 39,
+                "lexical": 0.3463263257232086,
+                "semantic": 0.5836766958236694,
+                "combined": 0.465001510773439,
+                "target_sentence": "## The Final Verdict\n\nDespite the learning curve and friction points, the AI-assisted approach delivered significant value"
+              }
+            },
+            {
+              "source_index": 52,
+              "source_sentence": "I already have ideas for GPT scripts that will address many of the frustrations I encountered",
+              "best_match": {
+                "index": 5,
+                "lexical": 0.15538085879340122,
+                "semantic": 0.37667524814605713,
+                "combined": 0.2660280534697292,
+                "target_sentence": "Since then, I've used the script version for over a year because of its flexibility and practicality"
+              }
+            },
+            {
+              "source_index": 53,
+              "source_sentence": "But despite the friction points, the AI-assisted approach delivered significant value",
+              "best_match": {
+                "index": 39,
+                "lexical": 0.6648124767338914,
+                "semantic": 0.8610634207725525,
+                "combined": 0.762937948753222,
+                "target_sentence": "## The Final Verdict\n\nDespite the learning curve and friction points, the AI-assisted approach delivered significant value"
+              }
+            },
+            {
+              "source_index": 54,
+              "source_sentence": "If I had tried to create the diagram manually, it probably would have taken me twice as long",
+              "best_match": {
+                "index": 40,
+                "lexical": 0.40432546170998546,
+                "semantic": 0.766398012638092,
+                "combined": 0.5853617371740387,
+                "target_sentence": "The initial time savings alone justified the experimentation—creating the diagram manually would have taken at least twice as long"
+              }
+            },
+            {
+              "source_index": 55,
+              "source_sentence": "The initial time savings alone justified the experimentation",
+              "best_match": {
+                "index": 40,
+                "lexical": 0.4965011237158226,
+                "semantic": 0.7186007499694824,
+                "combined": 0.6075509368426525,
+                "target_sentence": "The initial time savings alone justified the experimentation—creating the diagram manually would have taken at least twice as long"
+              }
+            },
+            {
+              "source_index": 56,
+              "source_sentence": "For complex diagramming tasks, Mermaid AI offers a powerful starting point—not a complete solution",
+              "best_match": {
+                "index": 41,
+                "lexical": 0.9282571912013533,
+                "semantic": 0.997430682182312,
+                "combined": 0.9628439366918327,
+                "target_sentence": "For complex diagramming tasks, Mermaid AI offers a powerful starting point, not a complete solution"
+              }
+            },
+            {
+              "source_index": 57,
+              "source_sentence": "The human-AI collaboration works best when we leverage the AI for rapid structure generation while maintaining control over refinement and style",
+              "best_match": {
+                "index": 42,
+                "lexical": 0.8775523165000796,
+                "semantic": 0.9912059903144836,
+                "combined": 0.9343791534072816,
+                "target_sentence": "The human-AI collaboration works best when leveraging AI for rapid structure generation while maintaining control over refinement and style"
+              }
+            },
+            {
+              "source_index": 58,
+              "source_sentence": "The key is knowing yourself as well as your tools",
+              "best_match": {
+                "index": 43,
+                "lexical": 1.0,
+                "semantic": 1.0,
+                "combined": 1.0,
+                "target_sentence": "The key is knowing yourself as well as your tools"
+              }
+            },
+            {
+              "source_index": 59,
+              "source_sentence": "Be honest about your level of clarity, choose your approach accordingly, and remember that the process of creating the diagram might be just as valuable as the diagram itself.",
+              "best_match": {
+                "index": 44,
+                "lexical": 0.9999999999999997,
+                "semantic": 1.000000238418579,
+                "combined": 1.0000001192092893,
+                "target_sentence": "Be honest about your level of clarity, choose your approach accordingly, and remember that the process of creating the diagram might be just as valuable as the diagram itself."
+              }
+            }
+          ]
+        },
+        "paragraph_level": {
+          "lexical": {
+            "jaccard_similarity": 0.4965612104539202,
+            "edit_similarity": 0.21438337435056057,
+            "tfidf_similarity": 0.6912587981447126,
+            "lexical_average": 0.46740112764973113
+          },
+          "semantic": {
+            "semantic_similarity": 0.9615957736968994,
+            "embedding_dim": 384
+          },
+          "combined": 0.7144984506733153
+        }
+      },
+      {
+        "version_pair": "edited_to_final",
+        "full_text": {
+          "lexical": {
+            "jaccard_similarity": 0.40027322404371585,
+            "edit_similarity": 0.027516925092815024,
+            "tfidf_similarity": 0.6302058880460649,
+            "lexical_average": 0.35266534572753194
+          },
+          "semantic": {
+            "semantic_similarity": 0.96013343334198,
+            "embedding_dim": 384
+          },
+          "combined": 0.656399389534756
+        },
+        "sentence_level": {
+          "average_similarity": 0.5362141662766593,
+          "individual_similarities": [
+            0.7433030649132724,
+            0.5694416735280601,
+            0.35151994232526607,
+            0.4004672388056735,
+            0.647100064577055,
+            0.3503462080958654,
+            0.7584300030150871,
+            0.4322744525916866,
+            0.5080510941555222,
+            0.619155350478165,
+            0.6340192998064189,
+            0.7204931324086923,
+            0.3688969840682016,
+            0.7576421523860284,
+            0.448200069318804,
+            0.41563303843454624,
+            0.4527259123042174,
+            0.5607110721875218,
+            0.4313762009743412,
+            0.42429926383588396,
+            0.46960493969530165,
+            0.3842852220215338,
+            0.5164279188427205,
+            0.36643898513360834,
+            0.5984527046469171,
+            0.4101766410408996,
+            0.27580069359574305,
+            0.3930552014664507,
+            0.6721150171145687,
+            0.3483467548645627,
+            0.3351917719260864,
+            0.48250639382845967,
+            0.21609087666468835,
+            0.36894094738596245,
+            0.9002303201774273,
+            0.5983807709575438,
+            0.7553172673161872,
+            0.9999999403953553,
+            0.7672805312965345,
+            0.5584801325737296,
+            0.7456367976522689,
+            0.9633050989946519,
+            0.5269744154738188,
+            0.3928335704743415,
+            0.489678350699999
+          ],
+          "detailed_analysis": [
+            {
+              "source_index": 0,
+              "source_sentence": "Mermaid AI: A Tool Trial for Diagramming\n\nTesting the capabilities of AI-assisted diagram creation\n\nTL;DR: What began as a simple test of Mermaid AI for diagramming evolved into a revealing exploration of human-AI collaboration",
+              "best_match": {
+                "index": 0,
+                "lexical": 0.5566687671556464,
+                "semantic": 0.9299373626708984,
+                "combined": 0.7433030649132724,
+                "target_sentence": "Mermaid AI Test Run\n\nTesting the capabilities of AI-assisted diagram creation\n\n## TL;DR:\n\nMy Mermaid AI test became a study of human-AI collaboration"
+              }
+            },
+            {
+              "source_index": 1,
+              "source_sentence": "The trial showed that AI excels at generating initial structures 4-5x faster than manual methods, but struggles with modifications and maintaining stylistic consistency",
+              "best_match": {
+                "index": 1,
+                "lexical": 0.5037430472590622,
+                "semantic": 0.6351402997970581,
+                "combined": 0.5694416735280601,
+                "target_sentence": "The tool generates initial diagram structures faster than manual methods but struggles with modifications and consistency"
+              }
+            },
+            {
+              "source_index": 2,
+              "source_sentence": "This journey from verbose complexity to streamlined visualization highlighted when AI assistance delivers genuine value versus when it creates unnecessary friction",
+              "best_match": {
+                "index": 41,
+                "lexical": 0.14667308338863025,
+                "semantic": 0.5563668012619019,
+                "combined": 0.35151994232526607,
+                "target_sentence": "I've discovered that the process of creating the diagram often delivers as much value as the final visualization itself."
+              }
+            },
+            {
+              "source_index": 3,
+              "source_sentence": "## Why Try Another Tool",
+              "best_match": {
+                "index": 3,
+                "lexical": 0.2732732732732733,
+                "semantic": 0.5276612043380737,
+                "combined": 0.4004672388056735,
+                "target_sentence": "## Why Mermaid"
+              }
+            },
+            {
+              "source_index": 4,
+              "source_sentence": "My first exposure to Mermaid script came through ChatGPT when I asked it to create a diagram",
+              "best_match": {
+                "index": 4,
+                "lexical": 0.3961749740866662,
+                "semantic": 0.8980251550674438,
+                "combined": 0.647100064577055,
+                "target_sentence": "I first encountered Mermaid script through ChatGPT-3.5 when requesting diagrams"
+              }
+            },
+            {
+              "source_index": 5,
+              "source_sentence": "Since then, I've used the script version for over a year because of its flexibility and practicality",
+              "best_match": {
+                "index": 5,
+                "lexical": 0.2993166158205608,
+                "semantic": 0.40137580037117004,
+                "combined": 0.3503462080958654,
+                "target_sentence": "It's become my go-to diagramming approach for over a year now because of its practical flexibility"
+              }
+            },
+            {
+              "source_index": 6,
+              "source_sentence": "Diagramming tools always present tradeoffs",
+              "best_match": {
+                "index": 6,
+                "lexical": 0.5607343293982467,
+                "semantic": 0.9561256766319275,
+                "combined": 0.7584300030150871,
+                "target_sentence": "Diagramming tools involve tradeoffs"
+              }
+            },
+            {
+              "source_index": 7,
+              "source_sentence": "Mermaid script enables quick modifications even if the output isn't presentation quality",
+              "best_match": {
+                "index": 7,
+                "lexical": 0.18578003196865156,
+                "semantic": 0.6787688732147217,
+                "combined": 0.4322744525916866,
+                "target_sentence": "Mermaid script enables rapid iterations despite limited aesthetics, while Figma delivers polished results but becomes unwieldy during early stages when changes happen frequently"
+              }
+            },
+            {
+              "source_index": 8,
+              "source_sentence": "Figma produces polished results but becomes impractical for early iterations requiring frequent changes",
+              "best_match": {
+                "index": 7,
+                "lexical": 0.3009651834587494,
+                "semantic": 0.7151370048522949,
+                "combined": 0.5080510941555222,
+                "target_sentence": "Mermaid script enables rapid iterations despite limited aesthetics, while Figma delivers polished results but becomes unwieldy during early stages when changes happen frequently"
+              }
+            },
+            {
+              "source_index": 9,
+              "source_sentence": "My curiosity about Mermaid AI was straightforward: would it combine script flexibility with faster creation",
+              "best_match": {
+                "index": 8,
+                "lexical": 0.3117353978786322,
+                "semantic": 0.9265753030776978,
+                "combined": 0.619155350478165,
+                "target_sentence": "I wanted to see if Mermaid AI could maintain script-based flexibility while accelerating creation"
+              }
+            },
+            {
+              "source_index": 10,
+              "source_sentence": "I wanted to test the tool, not create a specific diagram",
+              "best_match": {
+                "index": 9,
+                "lexical": 0.4626115251804648,
+                "semantic": 0.805427074432373,
+                "combined": 0.6340192998064189,
+                "target_sentence": "My goal was simply to assess the tool's capabilities, not to create a specific diagram"
+              }
+            },
+            {
+              "source_index": 11,
+              "source_sentence": "## Starting Without a Clear Map\n\nTypically, I sketch a diagram before using any tool, ensuring clear direction",
+              "best_match": {
+                "index": 10,
+                "lexical": 0.5487257133647477,
+                "semantic": 0.8922605514526367,
+                "combined": 0.7204931324086923,
+                "target_sentence": "## Starting Without a Clear Map\n\nI typically sketch diagrams before using any tool, but I jumped straight into testing without planning"
+              }
+            },
+            {
+              "source_index": 12,
+              "source_sentence": "This time, I jumped into testing the AI without proper planning",
+              "best_match": {
+                "index": 0,
+                "lexical": 0.16333387892970766,
+                "semantic": 0.5744600892066956,
+                "combined": 0.3688969840682016,
+                "target_sentence": "Mermaid AI Test Run\n\nTesting the capabilities of AI-assisted diagram creation\n\n## TL;DR:\n\nMy Mermaid AI test became a study of human-AI collaboration"
+              }
+            },
+            {
+              "source_index": 13,
+              "source_sentence": "This lack of preparation led to a frustrating cycle of restructuring an increasingly complex diagram",
+              "best_match": {
+                "index": 11,
+                "lexical": 0.5834819723707813,
+                "semantic": 0.9318023324012756,
+                "combined": 0.7576421523860284,
+                "target_sentence": "This created frustrating cycles of restructuring an increasingly complex diagram"
+              }
+            },
+            {
+              "source_index": 14,
+              "source_sentence": "The experience reinforced a critical insight—your diagramming approach must match your level of clarity about what you're visualizing",
+              "best_match": {
+                "index": 41,
+                "lexical": 0.1473155467720685,
+                "semantic": 0.7490845918655396,
+                "combined": 0.448200069318804,
+                "target_sentence": "I've discovered that the process of creating the diagram often delivers as much value as the final visualization itself."
+              }
+            },
+            {
+              "source_index": 15,
+              "source_sentence": "Looking back, I see how different approaches serve different scenarios:\n\n### For Exploration Mode (Figuring It Out As You Go)\nStart with a simple outline, then expand as you review and reconsider\nBuild the diagram incrementally rather than attempting the entire structure at once\nUse Mermaid AI for generating small sections that you gradually connect\n\n### For Direction Mode (Having a Solid Idea)\nProvide the AI with a clear framework and let it fill in details\nPlan for a manual pass through the code to clean up and standardize\nUse AI as an accelerator, not a complete solution\n\n### For Documentation Mode (Knowing Exactly What You Need)\nWrite out the diagram in text first, then use that as a script for the AI\nThis approach minimizes surprises and maximizes control\n\nI approached the tool as if I had a solid idea when I was actually still exploring",
+              "best_match": {
+                "index": 38,
+                "lexical": 0.10304030925663525,
+                "semantic": 0.7282257676124573,
+                "combined": 0.41563303843454624,
+                "target_sentence": "For complex diagramming tasks, Mermaid AI offers a powerful starting point but not a complete solution"
+              }
+            },
+            {
+              "source_index": 16,
+              "source_sentence": "The problems intensified when making substantial changes to existing sections—precisely when a more iterative approach would have worked better",
+              "best_match": {
+                "index": 13,
+                "lexical": 0.2747395538717404,
+                "semantic": 0.6307122707366943,
+                "combined": 0.4527259123042174,
+                "target_sentence": "This created friction during revisions where an incremental approach would have worked far better"
+              }
+            },
+            {
+              "source_index": 17,
+              "source_sentence": "## AI Diagramming: Strengths, Limitations, and Mental Models\n\n### The Speed-Control Tradeoff\n\nMy testing revealed a fundamental tradeoff with AI-assisted diagramming",
+              "best_match": {
+                "index": 14,
+                "lexical": 0.3301103438951547,
+                "semantic": 0.7913118004798889,
+                "combined": 0.5607110721875218,
+                "target_sentence": "# Collaborate with AI Diagramming Tools\n\n## The Speed-Control Tradeoff\n\nAI-assisted diagramming generates initial structures 2-3x faster than manual methods, giving you a significant head start"
+              }
+            },
+            {
+              "source_index": 18,
+              "source_sentence": "Where Mermaid AI truly delivered was in generating the initial structure—what would have taken an hour of manual setup materialized in minutes",
+              "best_match": {
+                "index": 8,
+                "lexical": 0.15269794476102982,
+                "semantic": 0.7100544571876526,
+                "combined": 0.4313762009743412,
+                "target_sentence": "I wanted to see if Mermaid AI could maintain script-based flexibility while accelerating creation"
+              }
+            },
+            {
+              "source_index": 19,
+              "source_sentence": "The AI generated a robust first draft approximately 4-5x faster than manual methods, providing a significant time advantage and something tangible to refine",
+              "best_match": {
+                "index": 14,
+                "lexical": 0.2614839551467435,
+                "semantic": 0.5871145725250244,
+                "combined": 0.42429926383588396,
+                "target_sentence": "# Collaborate with AI Diagramming Tools\n\n## The Speed-Control Tradeoff\n\nAI-assisted diagramming generates initial structures 2-3x faster than manual methods, giving you a significant head start"
+              }
+            },
+            {
+              "source_index": 20,
+              "source_sentence": "However, this initial speed advantage quickly diminished during the revision phase",
+              "best_match": {
+                "index": 15,
+                "lexical": 0.27570623254001736,
+                "semantic": 0.6635036468505859,
+                "combined": 0.46960493969530165,
+                "target_sentence": "However, this advantage fades during revisions, ultimately resulting in lost time"
+              }
+            },
+            {
+              "source_index": 21,
+              "source_sentence": "While the AI handled additive instructions well (\"add this node,\" \"connect these elements\"), it became unreliable during modifications",
+              "best_match": {
+                "index": 16,
+                "lexical": 0.3270999998406445,
+                "semantic": 0.4414704442024231,
+                "combined": 0.3842852220215338,
+                "target_sentence": "The tool handles additions well but becomes unreliable during modifications"
+              }
+            },
+            {
+              "source_index": 22,
+              "source_sentence": "Requesting a change to one element often resulted in the AI breaking previously established connections",
+              "best_match": {
+                "index": 17,
+                "lexical": 0.3217431000298014,
+                "semantic": 0.7111127376556396,
+                "combined": 0.5164279188427205,
+                "target_sentence": "Changing one element often breaks established connections or introduces inconsistencies"
+              }
+            },
+            {
+              "source_index": 23,
+              "source_sentence": "This pattern—rapid initial creation followed by diminishing returns during refinement—appears consistent across many AI tools",
+              "best_match": {
+                "index": 39,
+                "lexical": 0.14604008250323963,
+                "semantic": 0.586837887763977,
+                "combined": 0.36643898513360834,
+                "target_sentence": "I found the best results come from using AI to rapidly generate the initial structure while I maintain control over refinement and styling"
+              }
+            },
+            {
+              "source_index": 24,
+              "source_sentence": "The technology excels at generating scaffolding but struggles with contextual understanding during iterative improvements",
+              "best_match": {
+                "index": 18,
+                "lexical": 0.3641748776013294,
+                "semantic": 0.8327305316925049,
+                "combined": 0.5984527046469171,
+                "target_sentence": "This technology builds excellent scaffolding but struggles to maintain context during iterations"
+              }
+            },
+            {
+              "source_index": 25,
+              "source_sentence": "### Behind the Interface: Code Quality Issues\n\nThese modification challenges eventually drove me to examine the underlying Mermaid code, revealing another limitation: the AI had stripped my template formatting and produced unnecessarily verbose syntax",
+              "best_match": {
+                "index": 20,
+                "lexical": 0.1948835974809692,
+                "semantic": 0.6254696846008301,
+                "combined": 0.4101766410408996,
+                "target_sentence": "## Behind the Interface\n\nThe generated code revealed issues beyond the visual interface"
+              }
+            },
+            {
+              "source_index": 26,
+              "source_sentence": "For someone who values code clarity, this was problematic",
+              "best_match": {
+                "index": 40,
+                "lexical": 0.12693235986299492,
+                "semantic": 0.4246690273284912,
+                "combined": 0.27580069359574305,
+                "target_sentence": "Understanding both your own clarity level and your tools is essential when choosing your approach"
+              }
+            },
+            {
+              "source_index": 27,
+              "source_sentence": "I discovered you could explicitly instruct the AI to maintain existing connections, but you need to know to do this—highlighting how effective collaboration with AI tools often requires discovering their specific behaviors through trial and error rather than intuitive interaction",
+              "best_match": {
+                "index": 22,
+                "lexical": 0.25460350691391936,
+                "semantic": 0.5315068960189819,
+                "combined": 0.3930552014664507,
+                "target_sentence": "I discovered that explicitly instructing the tool to maintain existing connections improved results"
+              }
+            },
+            {
+              "source_index": 28,
+              "source_sentence": "### A Mental Model for Effective Collaboration\n\nThink of AI diagramming tools as technical collaborators rather than independent creators—assistants who can rapidly generate initial drafts but require clear direction and oversight during revisions",
+              "best_match": {
+                "index": 24,
+                "lexical": 0.5031214736670035,
+                "semantic": 0.8411085605621338,
+                "combined": 0.6721150171145687,
+                "target_sentence": "## A Mental Model for Collaboration\n\nThink of AI tools as technical collaborators rather than independent creators"
+              }
+            },
+            {
+              "source_index": 29,
+              "source_sentence": "The familiar UX principle of progressive disclosure applies perfectly: just as interfaces should reveal complexity gradually, your approach to AI diagramming should match your level of clarity about the desired outcome",
+              "best_match": {
+                "index": 5,
+                "lexical": 0.13927516332409604,
+                "semantic": 0.5574183464050293,
+                "combined": 0.3483467548645627,
+                "target_sentence": "It's become my go-to diagramming approach for over a year now because of its practical flexibility"
+              }
+            },
+            {
+              "source_index": 30,
+              "source_sentence": "This creates a natural mapping between your mental state (documenting vs",
+              "best_match": {
+                "index": 33,
+                "lexical": 0.1609105180533752,
+                "semantic": 0.5094730257987976,
+                "combined": 0.3351917719260864,
+                "target_sentence": "This enables version control alongside other documentation, creating a single source of truth that evolves with your systems"
+              }
+            },
+            {
+              "source_index": 31,
+              "source_sentence": "revising) and your diagramming approach (structured vs",
+              "best_match": {
+                "index": 5,
+                "lexical": 0.23504197485937292,
+                "semantic": 0.7299708127975464,
+                "combined": 0.48250639382845967,
+                "target_sentence": "It's become my go-to diagramming approach for over a year now because of its practical flexibility"
+              }
+            },
+            {
+              "source_index": 32,
+              "source_sentence": "iterative)",
+              "best_match": {
+                "index": 29,
+                "lexical": 0.04477611940298507,
+                "semantic": 0.3874056339263916,
+                "combined": 0.21609087666468835,
+                "target_sentence": "## Tips From My Experience\n\nThrough many iterations, my diagram evolved from a complex tangle to a streamlined visualization"
+              }
+            },
+            {
+              "source_index": 33,
+              "source_sentence": "Understanding this relationship creates more realistic expectations about when AI assistance delivers value versus when it creates unnecessary friction",
+              "best_match": {
+                "index": 2,
+                "lexical": 0.22552311009632672,
+                "semantic": 0.5123587846755981,
+                "combined": 0.36894094738596245,
+                "target_sentence": "This experience demonstrated where Mermaid AI adds value versus creates friction, though my unstructured approach limited definitive conclusions"
+              }
+            },
+            {
+              "source_index": 34,
+              "source_sentence": "## Pro Tips From My Experience\n\nThrough dozens of iterations, my diagram evolved from a complex tangle to a streamlined visualization",
+              "best_match": {
+                "index": 29,
+                "lexical": 0.8243257440764734,
+                "semantic": 0.9761348962783813,
+                "combined": 0.9002303201774273,
+                "target_sentence": "## Tips From My Experience\n\nThrough many iterations, my diagram evolved from a complex tangle to a streamlined visualization"
+              }
+            },
+            {
+              "source_index": 35,
+              "source_sentence": "## Integration with Broader Design Systems\n\nDiagramming tools like Mermaid become more valuable when integrated into the broader design documentation ecosystem",
+              "best_match": {
+                "index": 31,
+                "lexical": 0.42878197963252546,
+                "semantic": 0.7679795622825623,
+                "combined": 0.5983807709575438,
+                "target_sentence": "## Integration with Documentation\n\nMermaid delivers the most value when integrated into your documentation ecosystem"
+              }
+            },
+            {
+              "source_index": 36,
+              "source_sentence": "Mermaid's text-based approach enables version control alongside other documentation, creating a single source of truth that evolves as systems change",
+              "best_match": {
+                "index": 33,
+                "lexical": 0.7326178481928602,
+                "semantic": 0.7780166864395142,
+                "combined": 0.7553172673161872,
+                "target_sentence": "This enables version control alongside other documentation, creating a single source of truth that evolves with your systems"
+              }
+            },
+            {
+              "source_index": 37,
+              "source_sentence": "This integration transforms diagrams from static artifacts into living documentation",
+              "best_match": {
+                "index": 34,
+                "lexical": 1.0000000000000002,
+                "semantic": 0.9999998807907104,
+                "combined": 0.9999999403953553,
+                "target_sentence": "This integration transforms diagrams from static artifacts into living documentation"
+              }
+            },
+            {
+              "source_index": 38,
+              "source_sentence": "The ability to maintain diagrams as code provides substantial long-term value that outweighs the initial learning curve, especially for complex systems requiring ongoing updates",
+              "best_match": {
+                "index": 35,
+                "lexical": 0.5791874773689175,
+                "semantic": 0.9553735852241516,
+                "combined": 0.7672805312965345,
+                "target_sentence": "Maintaining diagrams as code provides long-term benefits that outweigh the initial learning curve, especially for complex systems needing frequent updates"
+              }
+            },
+            {
+              "source_index": 39,
+              "source_sentence": "## The Final Verdict\n\nDespite the learning curve and friction points, the AI-assisted approach delivered significant value",
+              "best_match": {
+                "index": 36,
+                "lexical": 0.3585732955811141,
+                "semantic": 0.7583869695663452,
+                "combined": 0.5584801325737296,
+                "target_sentence": "## The Final Verdict\n\nThe AI-assisted approach proved worthwhile despite requiring time to learn"
+              }
+            },
+            {
+              "source_index": 40,
+              "source_sentence": "The initial time savings alone justified the experimentation—creating the diagram manually would have taken at least twice as long",
+              "best_match": {
+                "index": 37,
+                "lexical": 0.6308652891827115,
+                "semantic": 0.8604083061218262,
+                "combined": 0.7456367976522689,
+                "target_sentence": "Creating the diagram manually would have taken at least twice as long"
+              }
+            },
+            {
+              "source_index": 41,
+              "source_sentence": "For complex diagramming tasks, Mermaid AI offers a powerful starting point, not a complete solution",
+              "best_match": {
+                "index": 38,
+                "lexical": 0.929208126036484,
+                "semantic": 0.9974020719528198,
+                "combined": 0.9633050989946519,
+                "target_sentence": "For complex diagramming tasks, Mermaid AI offers a powerful starting point but not a complete solution"
+              }
+            },
+            {
+              "source_index": 42,
+              "source_sentence": "The human-AI collaboration works best when leveraging AI for rapid structure generation while maintaining control over refinement and style",
+              "best_match": {
+                "index": 39,
+                "lexical": 0.349718224391699,
+                "semantic": 0.7042306065559387,
+                "combined": 0.5269744154738188,
+                "target_sentence": "I found the best results come from using AI to rapidly generate the initial structure while I maintain control over refinement and styling"
+              }
+            },
+            {
+              "source_index": 43,
+              "source_sentence": "The key is knowing yourself as well as your tools",
+              "best_match": {
+                "index": 40,
+                "lexical": 0.19839777516117682,
+                "semantic": 0.5872693657875061,
+                "combined": 0.3928335704743415,
+                "target_sentence": "Understanding both your own clarity level and your tools is essential when choosing your approach"
+              }
+            },
+            {
+              "source_index": 44,
+              "source_sentence": "Be honest about your level of clarity, choose your approach accordingly, and remember that the process of creating the diagram might be just as valuable as the diagram itself.",
+              "best_match": {
+                "index": 41,
+                "lexical": 0.32500260594101354,
+                "semantic": 0.6543540954589844,
+                "combined": 0.489678350699999,
+                "target_sentence": "I've discovered that the process of creating the diagram often delivers as much value as the final visualization itself."
+              }
+            }
+          ]
+        },
+        "paragraph_level": {
+          "lexical": {
+            "jaccard_similarity": 0.40027322404371585,
+            "edit_similarity": 0.02722084004097761,
+            "tfidf_similarity": 0.6302058880460649,
+            "lexical_average": 0.3525666507102528
+          },
+          "semantic": {
+            "semantic_similarity": 0.96013343334198,
+            "embedding_dim": 384
+          },
+          "combined": 0.6563500420261164
+        }
+      }
+    ],
+    "draft_to_final": {
+      "version_pair": "draft_to_final",
+      "full_text": {
+        "lexical": {
+          "jaccard_similarity": 0.18401015228426396,
+          "edit_similarity": 0.03374883405409989,
+          "tfidf_similarity": 0.312887063812693,
+          "lexical_average": 0.17688201671701895
+        },
+        "semantic": {
+          "semantic_similarity": 0.685882568359375,
+          "embedding_dim": 384
+        },
+        "combined": 0.431382292538197
+      },
+      "sentence_level": {
+        "average_similarity": 0.31669151933098244,
+        "individual_similarities": [
+          0.42622676752794747,
+          0.3164024891814229,
+          0.49619481259529674,
+          0.38910481553049714,
+          0.3178860039642704,
+          0.33395639674329,
+          0.31058272422137523,
+          0.38733378385138006,
+          0.25220581040655166,
+          0.45869602490286226,
+          0.36161247227184834,
+          0.370385502420106,
+          0.3189520276500455,
+          0.28119216764260646,
+          0.2351108095710372,
+          0.26968643231549444,
+          0.303638978797653,
+          0.3554625257179965,
+          0.3912187570788425,
+          0.1926134106440422,
+          0.366747265661998,
+          0.35152803810201366,
+          0.3653215493130536,
+          0.22032365904543505,
+          0.35276274014446046,
+          0.2608277843826235,
+          0.25017956282959475,
+          0.218157643296216,
+          0.2994742130072641,
+          0.31864454589708885,
+          0.362032434629665,
+          0.27951023373491796,
+          0.19077265613219319,
+          0.37426501438410226,
+          0.2554040229684952,
+          0.35536469435628293,
+          0.32155933596106984,
+          0.3390773798773962,
+          0.4063244397840734,
+          0.29141747443195387,
+          0.3636689745045037,
+          0.2590352698512699,
+          0.44347661280901635,
+          0.21932322144443078,
+          0.3126058532439057,
+          0.17360696401081832,
+          0.1646271117177664
+        ],
+        "detailed_analysis": [
+          {
+            "source_index": 0,
+            "source_sentence": "Mermaid Mapping: Charting My Content Creation Workflow\n\nHow AI-assisted diagramming illuminated my process and paradoxically made it more human\n\nI set out to create a visual diagram of my content workflow—a seemingly straightforward task",
+            "best_match": {
+              "index": 0,
+              "lexical": 0.20689374730565077,
+              "semantic": 0.6455597877502441,
+              "combined": 0.42622676752794747,
+              "target_sentence": "Mermaid AI Test Run\n\nTesting the capabilities of AI-assisted diagram creation\n\n## TL;DR:\n\nMy Mermaid AI test became a study of human-AI collaboration"
+            }
+          },
+          {
+            "source_index": 1,
+            "source_sentence": "Little did I know this simple experiment would transform not just how I understand my own process, but how I approach documentation, collaboration, and systems thinking altogether",
+            "best_match": {
+              "index": 40,
+              "lexical": 0.12289010333232818,
+              "semantic": 0.5099148750305176,
+              "combined": 0.3164024891814229,
+              "target_sentence": "Understanding both your own clarity level and your tools is essential when choosing your approach"
+            }
+          },
+          {
+            "source_index": 2,
+            "source_sentence": "TL;DR: Creating a workflow diagram in Mermaid with AI assistance proved to be both frustrating and revelatory",
+            "best_match": {
+              "index": 0,
+              "lexical": 0.25137174713502103,
+              "semantic": 0.7410178780555725,
+              "combined": 0.49619481259529674,
+              "target_sentence": "Mermaid AI Test Run\n\nTesting the capabilities of AI-assisted diagram creation\n\n## TL;DR:\n\nMy Mermaid AI test became a study of human-AI collaboration"
+            }
+          },
+          {
+            "source_index": 3,
+            "source_sentence": "While the AI could rapidly generate the initial structure (saving 4-5x the time it would have taken manually), navigating the balance between visual thinking and code editing exposed critical insights about my creative process",
+            "best_match": {
+              "index": 39,
+              "lexical": 0.25337118349019344,
+              "semantic": 0.5248384475708008,
+              "combined": 0.38910481553049714,
+              "target_sentence": "I found the best results come from using AI to rapidly generate the initial structure while I maintain control over refinement and styling"
+            }
+          },
+          {
+            "source_index": 4,
+            "source_sentence": "The greatest value wasn't the final diagram but the forced articulation of how my work actually flows between research, authoring, and publication—revealing connections I hadn't consciously recognized",
+            "best_match": {
+              "index": 41,
+              "lexical": 0.15599297307555926,
+              "semantic": 0.47977903485298157,
+              "combined": 0.3178860039642704,
+              "target_sentence": "I've discovered that the process of creating the diagram often delivers as much value as the final visualization itself."
+            }
+          },
+          {
+            "source_index": 5,
+            "source_sentence": "## The Diagram as Mirror\n\nWe build systems to reflect how we think we work",
+            "best_match": {
+              "index": 29,
+              "lexical": 0.15795059236811068,
+              "semantic": 0.5099622011184692,
+              "combined": 0.33395639674329,
+              "target_sentence": "## Tips From My Experience\n\nThrough many iterations, my diagram evolved from a complex tangle to a streamlined visualization"
+            }
+          },
+          {
+            "source_index": 6,
+            "source_sentence": "But the act of mapping those systems often reveals how we actually work",
+            "best_match": {
+              "index": 11,
+              "lexical": 0.11669676901464981,
+              "semantic": 0.5044686794281006,
+              "combined": 0.31058272422137523,
+              "target_sentence": "This created frustrating cycles of restructuring an increasingly complex diagram"
+            }
+          },
+          {
+            "source_index": 7,
+            "source_sentence": "My initial thought was simple: \"I just need a flowchart showing how I write articles.\" Four hours and dozens of iterations later, I had not only a comprehensive diagram, but a fundamentally different understanding of my creative process",
+            "best_match": {
+              "index": 41,
+              "lexical": 0.13086033532284674,
+              "semantic": 0.6438072323799133,
+              "combined": 0.38733378385138006,
+              "target_sentence": "I've discovered that the process of creating the diagram often delivers as much value as the final visualization itself."
+            }
+          },
+          {
+            "source_index": 8,
+            "source_sentence": "Here's the journey and what I learned along the way",
+            "best_match": {
+              "index": 27,
+              "lexical": 0.16083608360836082,
+              "semantic": 0.34357553720474243,
+              "combined": 0.25220581040655166,
+              "target_sentence": "Guide the process actively when exploring concepts"
+            }
+          },
+          {
+            "source_index": 9,
+            "source_sentence": "## Starting Simple: The AI Advantage\n\nHaving used Mermaid script before, I thought adding AI assistance would make this process even smoother",
+            "best_match": {
+              "index": 8,
+              "lexical": 0.17005202628811592,
+              "semantic": 0.7473400235176086,
+              "combined": 0.45869602490286226,
+              "target_sentence": "I wanted to see if Mermaid AI could maintain script-based flexibility while accelerating creation"
+            }
+          },
+          {
+            "source_index": 10,
+            "source_sentence": "My expectations were cautiously optimistic: I knew there would be bumps given the complexity of the diagram I wanted, but I also knew AI could save me significant setup time",
+            "best_match": {
+              "index": 41,
+              "lexical": 0.14692670769677282,
+              "semantic": 0.5762982368469238,
+              "combined": 0.36161247227184834,
+              "target_sentence": "I've discovered that the process of creating the diagram often delivers as much value as the final visualization itself."
+            }
+          },
+          {
+            "source_index": 11,
+            "source_sentence": "The initial time savings were substantial—what would have taken me a good hour to structure manually was scaffolded in minutes",
+            "best_match": {
+              "index": 37,
+              "lexical": 0.2086475583756734,
+              "semantic": 0.5321234464645386,
+              "combined": 0.370385502420106,
+              "target_sentence": "Creating the diagram manually would have taken at least twice as long"
+            }
+          },
+          {
+            "source_index": 12,
+            "source_sentence": "As one node led to another, the basic architecture emerged rapidly, giving me something concrete to react to and refine",
+            "best_match": {
+              "index": 39,
+              "lexical": 0.14983919996294803,
+              "semantic": 0.48806485533714294,
+              "combined": 0.3189520276500455,
+              "target_sentence": "I found the best results come from using AI to rapidly generate the initial structure while I maintain control over refinement and styling"
+            }
+          },
+          {
+            "source_index": 13,
+            "source_sentence": "`\nI need an end to end flow chart that demonstrates how I approach authoring articles",
+            "best_match": {
+              "index": 41,
+              "lexical": 0.09929913092234371,
+              "semantic": 0.46308520436286926,
+              "combined": 0.28119216764260646,
+              "target_sentence": "I've discovered that the process of creating the diagram often delivers as much value as the final visualization itself."
+            }
+          },
+          {
+            "source_index": 14,
+            "source_sentence": "The process, in general, is as follows: 1",
+            "best_match": {
+              "index": 27,
+              "lexical": 0.16828165484764082,
+              "semantic": 0.3019399642944336,
+              "combined": 0.2351108095710372,
+              "target_sentence": "Guide the process actively when exploring concepts"
+            }
+          },
+          {
+            "source_index": 15,
+            "source_sentence": "I use Perplexity AI",
+            "best_match": {
+              "index": 0,
+              "lexical": 0.08433962192850471,
+              "semantic": 0.45503324270248413,
+              "combined": 0.26968643231549444,
+              "target_sentence": "Mermaid AI Test Run\n\nTesting the capabilities of AI-assisted diagram creation\n\n## TL;DR:\n\nMy Mermaid AI test became a study of human-AI collaboration"
+            }
+          },
+          {
+            "source_index": 16,
+            "source_sentence": "`\n\nThe AI responded with a surprisingly accurate first draft, but the real work was just beginning",
+            "best_match": {
+              "index": 0,
+              "lexical": 0.14132991234155237,
+              "semantic": 0.46594804525375366,
+              "combined": 0.303638978797653,
+              "target_sentence": "Mermaid AI Test Run\n\nTesting the capabilities of AI-assisted diagram creation\n\n## TL;DR:\n\nMy Mermaid AI test became a study of human-AI collaboration"
+            }
+          },
+          {
+            "source_index": 17,
+            "source_sentence": "## When Structure Meets Reality\n\nThe biggest surprise came when I finally dove into the code myself",
+            "best_match": {
+              "index": 20,
+              "lexical": 0.16747094081358704,
+              "semantic": 0.543454110622406,
+              "combined": 0.3554625257179965,
+              "target_sentence": "## Behind the Interface\n\nThe generated code revealed issues beyond the visual interface"
+            }
+          },
+          {
+            "source_index": 18,
+            "source_sentence": "The AI had stripped out much of my template formatting and written what was probably the most verbose version possible of the Mermaid syntax",
+            "best_match": {
+              "index": 0,
+              "lexical": 0.16594047436276316,
+              "semantic": 0.6164970397949219,
+              "combined": 0.3912187570788425,
+              "target_sentence": "Mermaid AI Test Run\n\nTesting the capabilities of AI-assisted diagram creation\n\n## TL;DR:\n\nMy Mermaid AI test became a study of human-AI collaboration"
+            }
+          },
+          {
+            "source_index": 19,
+            "source_sentence": "For someone like me who prefers tidy code, this was jarring",
+            "best_match": {
+              "index": 40,
+              "lexical": 0.08974358974358974,
+              "semantic": 0.29548323154449463,
+              "combined": 0.1926134106440422,
+              "target_sentence": "Understanding both your own clarity level and your tools is essential when choosing your approach"
+            }
+          },
+          {
+            "source_index": 20,
+            "source_sentence": "As I tried to make modifications, I discovered an important rhythm to working with AI in this context:\nInitial structure: AI excels here, saving hours\nModification: AI struggles, often breaking what was working\nRefinement: Requires human intervention, especially for style preferences\n\nMy most significant learning was in how I approached the diagram itself",
+            "best_match": {
+              "index": 14,
+              "lexical": 0.1438771597648529,
+              "semantic": 0.5896173715591431,
+              "combined": 0.366747265661998,
+              "target_sentence": "# Collaborate with AI Diagramming Tools\n\n## The Speed-Control Tradeoff\n\nAI-assisted diagramming generates initial structures 2-3x faster than manual methods, giving you a significant head start"
+            }
+          },
+          {
+            "source_index": 21,
+            "source_sentence": "Initially, I tried to build the entire complex workflow at once",
+            "best_match": {
+              "index": 19,
+              "lexical": 0.21396909061595357,
+              "semantic": 0.48908698558807373,
+              "combined": 0.35152803810201366,
+              "target_sentence": "Be sure to consider this when planning your workflow"
+            }
+          },
+          {
+            "source_index": 22,
+            "source_sentence": "This led to endless revisions as each new node forced me to reconsider earlier decisions",
+            "best_match": {
+              "index": 13,
+              "lexical": 0.19150126484391114,
+              "semantic": 0.539141833782196,
+              "combined": 0.3653215493130536,
+              "target_sentence": "This created friction during revisions where an incremental approach would have worked far better"
+            }
+          },
+          {
+            "source_index": 23,
+            "source_sentence": "> \"I should have approached it like writing a story or document, really",
+            "best_match": {
+              "index": 26,
+              "lexical": 0.1445221445221445,
+              "semantic": 0.2961251735687256,
+              "combined": 0.22032365904543505,
+              "target_sentence": "Align your approach with the fidelity of your thinking about the outcome"
+            }
+          },
+          {
+            "source_index": 24,
+            "source_sentence": "Get the skeleton out, that rough outline, use smart and concise terminology, work through it piece by piece, basically iterating and layering in the complexity.\"\n\n## The Meta-Lesson: Systems Thinking Made Visible\n\nBeyond the mechanics of diagram creation, this experiment revealed something deeper about my workflow",
+            "best_match": {
+              "index": 29,
+              "lexical": 0.10483493663734016,
+              "semantic": 0.6006905436515808,
+              "combined": 0.35276274014446046,
+              "target_sentence": "## Tips From My Experience\n\nThrough many iterations, my diagram evolved from a complex tangle to a streamlined visualization"
+            }
+          },
+          {
+            "source_index": 25,
+            "source_sentence": "The process of mapping made me confront assumptions I hadn't even realized I was making",
+            "best_match": {
+              "index": 11,
+              "lexical": 0.12626920072897682,
+              "semantic": 0.39538636803627014,
+              "combined": 0.2608277843826235,
+              "target_sentence": "This created frustrating cycles of restructuring an increasingly complex diagram"
+            }
+          },
+          {
+            "source_index": 26,
+            "source_sentence": "For example, separating my workflow into distinct subgraphs—Ideation, Authoring, and Processing—forced me to recognize these as different cognitive modes",
+            "best_match": {
+              "index": 11,
+              "lexical": 0.12017167381974249,
+              "semantic": 0.380187451839447,
+              "combined": 0.25017956282959475,
+              "target_sentence": "This created frustrating cycles of restructuring an increasingly complex diagram"
+            }
+          },
+          {
+            "source_index": 27,
+            "source_sentence": "I often blur them together in practice, which creates unnecessary friction",
+            "best_match": {
+              "index": 39,
+              "lexical": 0.13653885169405558,
+              "semantic": 0.29977643489837646,
+              "combined": 0.218157643296216,
+              "target_sentence": "I found the best results come from using AI to rapidly generate the initial structure while I maintain control over refinement and styling"
+            }
+          },
+          {
+            "source_index": 28,
+            "source_sentence": "The archival system within the diagram (Initial Archive → Updated Archive → Final Archive) emerged not as an afterthought but as a crucial connection point between phases",
+            "best_match": {
+              "index": 11,
+              "lexical": 0.07787472701703073,
+              "semantic": 0.5210736989974976,
+              "combined": 0.2994742130072641,
+              "target_sentence": "This created frustrating cycles of restructuring an increasingly complex diagram"
+            }
+          },
+          {
+            "source_index": 29,
+            "source_sentence": "This wasn't something I had consciously built, but seeing it visualized helped me understand why certain projects felt more coherent than others",
+            "best_match": {
+              "index": 41,
+              "lexical": 0.08838383838383838,
+              "semantic": 0.5489052534103394,
+              "combined": 0.31864454589708885,
+              "target_sentence": "I've discovered that the process of creating the diagram often delivers as much value as the final visualization itself."
+            }
+          },
+          {
+            "source_index": 30,
+            "source_sentence": "## Pro Tips for AI-Assisted Diagramming\n\nIf you're attempting something similar, here's what I wish I'd known:\nUse brief node names when working with AI",
+            "best_match": {
+              "index": 14,
+              "lexical": 0.16848300156447524,
+              "semantic": 0.5555818676948547,
+              "combined": 0.362032434629665,
+              "target_sentence": "# Collaborate with AI Diagramming Tools\n\n## The Speed-Control Tradeoff\n\nAI-assisted diagramming generates initial structures 2-3x faster than manual methods, giving you a significant head start"
+            }
+          },
+          {
+            "source_index": 31,
+            "source_sentence": "Long descriptive names mean typing them repeatedly during revisions",
+            "best_match": {
+              "index": 25,
+              "lexical": 0.14298755712285108,
+              "semantic": 0.41603291034698486,
+              "combined": 0.27951023373491796,
+              "target_sentence": "They excel at initial drafts but need clear direction during revisions"
+            }
+          },
+          {
+            "source_index": 32,
+            "source_sentence": "Expect to edit the code directly",
+            "best_match": {
+              "index": 25,
+              "lexical": 0.11764705882352942,
+              "semantic": 0.26389825344085693,
+              "combined": 0.19077265613219319,
+              "target_sentence": "They excel at initial drafts but need clear direction during revisions"
+            }
+          },
+          {
+            "source_index": 33,
+            "source_sentence": "The AI creates a solid foundation, but refinement requires manual adjustment",
+            "best_match": {
+              "index": 39,
+              "lexical": 0.14945489019932634,
+              "semantic": 0.5990751385688782,
+              "combined": 0.37426501438410226,
+              "target_sentence": "I found the best results come from using AI to rapidly generate the initial structure while I maintain control over refinement and styling"
+            }
+          },
+          {
+            "source_index": 34,
+            "source_sentence": "Start with skeleton, add complexity later",
+            "best_match": {
+              "index": 1,
+              "lexical": 0.10640799529688418,
+              "semantic": 0.4044000506401062,
+              "combined": 0.2554040229684952,
+              "target_sentence": "The tool generates initial diagram structures faster than manual methods but struggles with modifications and consistency"
+            }
+          },
+          {
+            "source_index": 35,
+            "source_sentence": "Build the basic structure first, then layer in details iteratively",
+            "best_match": {
+              "index": 39,
+              "lexical": 0.14788421821467151,
+              "semantic": 0.5628451704978943,
+              "combined": 0.35536469435628293,
+              "target_sentence": "I found the best results come from using AI to rapidly generate the initial structure while I maintain control over refinement and styling"
+            }
+          },
+          {
+            "source_index": 36,
+            "source_sentence": "Leverage \"Change All\" in editors for consistent renaming across complex diagrams",
+            "best_match": {
+              "index": 11,
+              "lexical": 0.18432643249457317,
+              "semantic": 0.45879223942756653,
+              "combined": 0.32155933596106984,
+              "target_sentence": "This created frustrating cycles of restructuring an increasingly complex diagram"
+            }
+          },
+          {
+            "source_index": 37,
+            "source_sentence": "Don't assume AI will maintain structure across updates—it may rewrite connections you want to preserve",
+            "best_match": {
+              "index": 22,
+              "lexical": 0.18922572647537353,
+              "semantic": 0.48892903327941895,
+              "combined": 0.3390773798773962,
+              "target_sentence": "I discovered that explicitly instructing the tool to maintain existing connections improved results"
+            }
+          },
+          {
+            "source_index": 38,
+            "source_sentence": "## Visualization as Discovery\n\nThe most powerful outcome wasn't the diagram itself, but what it revealed about my process",
+            "best_match": {
+              "index": 29,
+              "lexical": 0.10779182819561878,
+              "semantic": 0.7048570513725281,
+              "combined": 0.4063244397840734,
+              "target_sentence": "## Tips From My Experience\n\nThrough many iterations, my diagram evolved from a complex tangle to a streamlined visualization"
+            }
+          },
+          {
+            "source_index": 39,
+            "source_sentence": "By making the invisible visible, I saw connections and inefficiencies I had missed for years",
+            "best_match": {
+              "index": 22,
+              "lexical": 0.17822640117637725,
+              "semantic": 0.4046085476875305,
+              "combined": 0.29141747443195387,
+              "target_sentence": "I discovered that explicitly instructing the tool to maintain existing connections improved results"
+            }
+          },
+          {
+            "source_index": 40,
+            "source_sentence": "The diagram didn't just document my workflow—it changed it",
+            "best_match": {
+              "index": 37,
+              "lexical": 0.16663496944434064,
+              "semantic": 0.5607029795646667,
+              "combined": 0.3636689745045037,
+              "target_sentence": "Creating the diagram manually would have taken at least twice as long"
+            }
+          },
+          {
+            "source_index": 41,
+            "source_sentence": "I now see more clearly how my roles as researcher, writer, and editor interact, and where my collaborative touchpoints need the most attention",
+            "best_match": {
+              "index": 23,
+              "lexical": 0.08695652173913043,
+              "semantic": 0.4311140179634094,
+              "combined": 0.2590352698512699,
+              "target_sentence": "Effective collaboration requires learning specific prompting techniques through practice"
+            }
+          },
+          {
+            "source_index": 42,
+            "source_sentence": "As much as this was a technical exercise in Mermaid and AI, it became something more profound: a conversation with myself about how I think and create",
+            "best_match": {
+              "index": 0,
+              "lexical": 0.1955847649628203,
+              "semantic": 0.6913684606552124,
+              "combined": 0.44347661280901635,
+              "target_sentence": "Mermaid AI Test Run\n\nTesting the capabilities of AI-assisted diagram creation\n\n## TL;DR:\n\nMy Mermaid AI test became a study of human-AI collaboration"
+            }
+          },
+          {
+            "source_index": 43,
+            "source_sentence": "The technology was just the medium that made that conversation possible",
+            "best_match": {
+              "index": 18,
+              "lexical": 0.1835544776903447,
+              "semantic": 0.25509196519851685,
+              "combined": 0.21932322144443078,
+              "target_sentence": "This technology builds excellent scaffolding but struggles to maintain context during iterations"
+            }
+          },
+          {
+            "source_index": 44,
+            "source_sentence": "Have you ever tried mapping your own creative process",
+            "best_match": {
+              "index": 5,
+              "lexical": 0.11037527593818985,
+              "semantic": 0.5148364305496216,
+              "combined": 0.3126058532439057,
+              "target_sentence": "It's become my go-to diagramming approach for over a year now because of its practical flexibility"
+            }
+          },
+          {
+            "source_index": 45,
+            "source_sentence": "Did it reveal anything that surprised you about how you work",
+            "best_match": {
+              "index": 2,
+              "lexical": 0.06862745098039215,
+              "semantic": 0.2785864770412445,
+              "combined": 0.17360696401081832,
+              "target_sentence": "This experience demonstrated where Mermaid AI adds value versus creates friction, though my unstructured approach limited definitive conclusions"
+            }
+          },
+          {
+            "source_index": 46,
+            "source_sentence": "I'd love to hear about your experiences in the comments.",
+            "best_match": {
+              "index": 26,
+              "lexical": 0.17861519607843138,
+              "semantic": 0.15063902735710144,
+              "combined": 0.1646271117177664,
+              "target_sentence": "Align your approach with the fidelity of your thinking about the outcome"
+            }
+          }
+        ]
+      },
+      "paragraph_level": {
+        "lexical": {
+          "jaccard_similarity": 0.18401015228426396,
+          "edit_similarity": 0.047748976807639835,
+          "tfidf_similarity": 0.312887063812693,
+          "lexical_average": 0.18154873096819893
+        },
+        "semantic": {
+          "semantic_similarity": 0.685882568359375,
+          "embedding_dim": 384
+        },
+        "combined": 0.43371564966378695
+      }
+    },
+    "analysis_timestamp": "2025-06-14T16:51:15.192630",
+    "versions_analyzed": [
+      "draft",
+      "refined",
+      "edited",
+      "final"
+    ]
+  },
+  "attribution_analysis": {
+    "sentence_attributions": [
+      {
+        "final_index": 0,
+        "final_sentence": "Mermaid AI Test Run\n\nTesting the capabilities of AI-assisted diagram creation\n\n## TL;DR:\n\nMy Mermaid AI test became a study of human-AI collaboration",
+        "origin_version": "edited",
+        "origin_index": 0,
+        "similarity_scores": {
+          "edited": 0.6837186813354492,
+          "refined": 0.5454290747642517,
+          "draft": 0.4511541003181088
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.6837186813354492,
+            "sentence": "Mermaid AI: A Tool Trial for Diagramming\n\nTesting the capabilities of AI-assisted diagram creation\n\nTL;DR: What began as a simple test of Mermaid AI for diagramming evolved into a revealing exploration of human-AI collaboration"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.5454290747642517,
+            "sentence": "Mermaid AI: A Tool Trial for Diagramming\n\nTesting the capabilities of AI-assisted diagram creation\n\nTL;DR: When I decided to try Mermaid AI for diagramming my content creation workflow, I was simply curious to see if it would be beneficial"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.4511541003181088,
+            "sentence": "TL;DR: Creating a workflow diagram in Mermaid with AI assistance proved to be both frustrating and revelatory"
+          }
+        ]
+      },
+      {
+        "final_index": 1,
+        "final_sentence": "The tool generates initial diagram structures faster than manual methods but struggles with modifications and consistency",
+        "origin_version": "edited",
+        "origin_index": 1,
+        "similarity_scores": {
+          "edited": 0.5397923721207513,
+          "refined": 0.5240792058132313,
+          "draft": 0.2809444329955361
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.5397923721207513,
+            "sentence": "The trial showed that AI excels at generating initial structures 4-5x faster than manual methods, but struggles with modifications and maintaining stylistic consistency"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.5240792058132313,
+            "sentence": "The trial revealed that AI excels at generating initial structures 4-5x faster than manual methods, but struggles with modifications and style preferences"
+          }
+        ]
+      },
+      {
+        "final_index": 2,
+        "final_sentence": "This experience demonstrated where Mermaid AI adds value versus creates friction, though my unstructured approach limited definitive conclusions",
+        "origin_version": "edited",
+        "origin_index": 9,
+        "similarity_scores": {
+          "edited": 0.4076068580150604,
+          "refined": 0.47051629849842613,
+          "draft": 0.3855104684829712
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.4076068580150604,
+            "sentence": "My curiosity about Mermaid AI was straightforward: would it combine script flexibility with faster creation"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.47051629849842613,
+            "sentence": "This transformation reflected my growing understanding of how to work effectively with Mermaid AI"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.3855104684829712,
+            "sentence": "As much as this was a technical exercise in Mermaid and AI, it became something more profound: a conversation with myself about how I think and create"
+          }
+        ]
+      },
+      {
+        "final_index": 3,
+        "final_sentence": "## Why Mermaid",
+        "origin_version": "edited",
+        "origin_index": 3,
+        "similarity_scores": {
+          "edited": 0.4304972688357035,
+          "refined": 0.4304972688357035,
+          "draft": 0.30717043443159625
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.4304972688357035,
+            "sentence": "## Why Try Another Tool"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.4304972688357035,
+            "sentence": "## Why Try Another Tool"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.30717043443159625,
+            "sentence": "## Starting Simple: The AI Advantage\n\nHaving used Mermaid script before, I thought adding AI assistance would make this process even smoother"
+          }
+        ]
+      },
+      {
+        "final_index": 4,
+        "final_sentence": "I first encountered Mermaid script through ChatGPT-3.5 when requesting diagrams",
+        "origin_version": "edited",
+        "origin_index": 4,
+        "similarity_scores": {
+          "edited": 0.599012577533722,
+          "refined": 0.5733400947517819,
+          "draft": 0.3168231707352858
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.599012577533722,
+            "sentence": "My first exposure to Mermaid script came through ChatGPT when I asked it to create a diagram"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.5733400947517819,
+            "sentence": "Interestingly, my first exposure to Mermaid script came through ChatGPT (version 3 or 3.5) when I asked it to create a diagram for me"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.3168231707352858,
+            "sentence": "TL;DR: Creating a workflow diagram in Mermaid with AI assistance proved to be both frustrating and revelatory"
+          }
+        ]
+      },
+      {
+        "final_index": 5,
+        "final_sentence": "It's become my go-to diagramming approach for over a year now because of its practical flexibility",
+        "origin_version": "edited",
+        "origin_index": 31,
+        "similarity_scores": {
+          "edited": 0.4126044540178208,
+          "refined": 0.436994853473845,
+          "draft": 0.33329705166262247
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.4126044540178208,
+            "sentence": "revising) and your diagramming approach (structured vs"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.436994853473845,
+            "sentence": "There's always a tradeoff in diagramming tools"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.33329705166262247,
+            "sentence": "Mermaid Mapping: Charting My Content Creation Workflow\n\nHow AI-assisted diagramming illuminated my process and paradoxically made it more human\n\nI set out to create a visual diagram of my content workflow—a seemingly straightforward task"
+          }
+        ]
+      },
+      {
+        "final_index": 6,
+        "final_sentence": "Diagramming tools involve tradeoffs",
+        "origin_version": "edited",
+        "origin_index": 6,
+        "similarity_scores": {
+          "edited": 0.7280628383159637,
+          "refined": 0.5721062190002866,
+          "draft": 0.2746065416756798
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.7280628383159637,
+            "sentence": "Diagramming tools always present tradeoffs"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.5721062190002866,
+            "sentence": "There's always a tradeoff in diagramming tools"
+          }
+        ]
+      },
+      {
+        "final_index": 7,
+        "final_sentence": "Mermaid script enables rapid iterations despite limited aesthetics, while Figma delivers polished results but becomes unwieldy during early stages when changes happen frequently",
+        "origin_version": "edited",
+        "origin_index": 8,
+        "similarity_scores": {
+          "edited": 0.5004256452832903,
+          "refined": 0.4683316946029663,
+          "draft": 0.30247059606370474
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.5004256452832903,
+            "sentence": "Figma produces polished results but becomes impractical for early iterations requiring frequent changes"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.4683316946029663,
+            "sentence": "Something like Figma produces visually polished results but becomes impractical for early iterations where changes are constant"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.30247059606370474,
+            "sentence": "## Starting Simple: The AI Advantage\n\nHaving used Mermaid script before, I thought adding AI assistance would make this process even smoother"
+          }
+        ]
+      },
+      {
+        "final_index": 8,
+        "final_sentence": "I wanted to see if Mermaid AI could maintain script-based flexibility while accelerating creation",
+        "origin_version": "edited",
+        "origin_index": 9,
+        "similarity_scores": {
+          "edited": 0.5432876515388488,
+          "refined": 0.534084125801369,
+          "draft": 0.4205450117588043
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.5432876515388488,
+            "sentence": "My curiosity about Mermaid AI was straightforward: would it combine script flexibility with faster creation"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.534084125801369,
+            "sentence": "My curiosity about Mermaid AI was straightforward: would it combine the flexibility of script with faster creation"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.4205450117588043,
+            "sentence": "## Starting Simple: The AI Advantage\n\nHaving used Mermaid script before, I thought adding AI assistance would make this process even smoother"
+          }
+        ]
+      },
+      {
+        "final_index": 9,
+        "final_sentence": "My goal was simply to assess the tool's capabilities, not to create a specific diagram",
+        "origin_version": "edited",
+        "origin_index": 10,
+        "similarity_scores": {
+          "edited": 0.5971579816606309,
+          "refined": 0.47112617322376793,
+          "draft": 0.3386537849903107
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.5971579816606309,
+            "sentence": "I wanted to test the tool, not create a specific diagram"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.47112617322376793,
+            "sentence": "I didn't need a diagram—I wanted to test the tool"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.3386537849903107,
+            "sentence": "The diagram didn't just document my workflow—it changed it"
+          }
+        ]
+      },
+      {
+        "final_index": 10,
+        "final_sentence": "## Starting Without a Clear Map\n\nI typically sketch diagrams before using any tool, but I jumped straight into testing without planning",
+        "origin_version": "edited",
+        "origin_index": 11,
+        "similarity_scores": {
+          "edited": 0.6961302757263184,
+          "refined": 0.6748673159342546,
+          "draft": 0.3238924609290229
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.6961302757263184,
+            "sentence": "## Starting Without a Clear Map\n\nTypically, I sketch a diagram before using any tool, ensuring clear direction"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.6748673159342546,
+            "sentence": "## Starting Without a Clear Map\n\nTypically, I sketch a diagram before diving into any tool, ensuring I have a clear direction"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.3238924609290229,
+            "sentence": "## Visualization as Discovery\n\nThe most powerful outcome wasn't the diagram itself, but what it revealed about my process"
+          }
+        ]
+      },
+      {
+        "final_index": 11,
+        "final_sentence": "This created frustrating cycles of restructuring an increasingly complex diagram",
+        "origin_version": "edited",
+        "origin_index": 13,
+        "similarity_scores": {
+          "edited": 0.7159011662006378,
+          "refined": 0.6220784664154053,
+          "draft": 0.33429832183397734
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.7159011662006378,
+            "sentence": "This lack of preparation led to a frustrating cycle of restructuring an increasingly complex diagram"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.6220784664154053,
+            "sentence": "What should have been an exploratory, iterative process became a frustrating cycle of restructuring an increasingly complex diagram"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.33429832183397734,
+            "sentence": "As I tried to make modifications, I discovered an important rhythm to working with AI in this context:\nInitial structure: AI excels here, saving hours\nModification: AI struggles, often breaking what was working\nRefinement: Requires human intervention, especially for style preferences\n\nMy most significant learning was in how I approached the diagram itself"
+          }
+        ]
+      },
+      {
+        "final_index": 12,
+        "final_sentence": "The experience reminded me that effective diagramming depends on knowing what you intend to represent, something I had forgotten amid the flexibility of script-based approaches",
+        "origin_version": "edited",
+        "origin_index": 14,
+        "similarity_scores": {
+          "edited": 0.3823167488381669,
+          "refined": 0.4561283654636807,
+          "draft": 0.3202105787065294
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.3823167488381669,
+            "sentence": "The experience reinforced a critical insight—your diagramming approach must match your level of clarity about what you're visualizing"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.4561283654636807,
+            "sentence": "The experience reinforced something I already knew—your diagramming approach needs to match your level of clarity about what you're visualizing"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.3202105787065294,
+            "sentence": "## Pro Tips for AI-Assisted Diagramming\n\nIf you're attempting something similar, here's what I wish I'd known:\nUse brief node names when working with AI"
+          }
+        ]
+      },
+      {
+        "final_index": 13,
+        "final_sentence": "This created friction during revisions where an incremental approach would have worked far better",
+        "origin_version": "edited",
+        "origin_index": 16,
+        "similarity_scores": {
+          "edited": 0.4079487279609397,
+          "refined": 0.3312730524275038,
+          "draft": 0.30803245535263646
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.4079487279609397,
+            "sentence": "The problems intensified when making substantial changes to existing sections—precisely when a more iterative approach would have worked better"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.3312730524275038,
+            "sentence": "This mismatch between my approach and reality led to a cascade of revisions as my understanding evolved"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.30803245535263646,
+            "sentence": "This led to endless revisions as each new node forced me to reconsider earlier decisions"
+          }
+        ]
+      },
+      {
+        "final_index": 14,
+        "final_sentence": "# Collaborate with AI Diagramming Tools\n\n## The Speed-Control Tradeoff\n\nAI-assisted diagramming generates initial structures 2-3x faster than manual methods, giving you a significant head start",
+        "origin_version": "edited",
+        "origin_index": 17,
+        "similarity_scores": {
+          "edited": 0.5206559002399445,
+          "refined": 0.4319947707025628,
+          "draft": 0.33334648940298295
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.5206559002399445,
+            "sentence": "## AI Diagramming: Strengths, Limitations, and Mental Models\n\n### The Speed-Control Tradeoff\n\nMy testing revealed a fundamental tradeoff with AI-assisted diagramming"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.4319947707025628,
+            "sentence": "The trial revealed that AI excels at generating initial structures 4-5x faster than manual methods, but struggles with modifications and style preferences"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.33334648940298295,
+            "sentence": "## Pro Tips for AI-Assisted Diagramming\n\nIf you're attempting something similar, here's what I wish I'd known:\nUse brief node names when working with AI"
+          }
+        ]
+      },
+      {
+        "final_index": 15,
+        "final_sentence": "However, this advantage fades during revisions, ultimately resulting in lost time",
+        "origin_version": "edited",
+        "origin_index": 20,
+        "similarity_scores": {
+          "edited": 0.4428629345364041,
+          "refined": 0.25725671824286966,
+          "draft": 0.25187580784161884
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.4428629345364041,
+            "sentence": "However, this initial speed advantage quickly diminished during the revision phase"
+          }
+        ]
+      },
+      {
+        "final_index": 16,
+        "final_sentence": "The tool handles additions well but becomes unreliable during modifications",
+        "origin_version": "edited",
+        "origin_index": 21,
+        "similarity_scores": {
+          "edited": 0.3294308742751246,
+          "refined": 0.29882900913556415,
+          "draft": 0.20980725398189143
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.3294308742751246,
+            "sentence": "While the AI handled additive instructions well (\"add this node,\" \"connect these elements\"), it became unreliable during modifications"
+          }
+        ]
+      },
+      {
+        "final_index": 17,
+        "final_sentence": "Changing one element often breaks established connections or introduces inconsistencies",
+        "origin_version": "edited",
+        "origin_index": 22,
+        "similarity_scores": {
+          "edited": 0.4805563688278198,
+          "refined": 0.3762091374397278,
+          "draft": 0.22167559464772543
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.4805563688278198,
+            "sentence": "Requesting a change to one element often resulted in the AI breaking previously established connections"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.3762091374397278,
+            "sentence": "If I asked it to move something or connect a different element, it would often undo all previous connections"
+          }
+        ]
+      },
+      {
+        "final_index": 18,
+        "final_sentence": "This technology builds excellent scaffolding but struggles to maintain context during iterations",
+        "origin_version": "edited",
+        "origin_index": 24,
+        "similarity_scores": {
+          "edited": 0.5354128848938715,
+          "refined": 0.39286953541967606,
+          "draft": 0.25177391550757666
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.5354128848938715,
+            "sentence": "The technology excels at generating scaffolding but struggles with contextual understanding during iterative improvements"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.39286953541967606,
+            "sentence": "This rapid scaffolding demonstrated the tool's primary advantage"
+          }
+        ]
+      },
+      {
+        "final_index": 19,
+        "final_sentence": "Be sure to consider this when planning your workflow",
+        "origin_version": "draft",
+        "origin_index": 21,
+        "similarity_scores": {
+          "edited": 0.2544521951469882,
+          "refined": 0.2544521951469882,
+          "draft": 0.30009904834959245
+        },
+        "modification_path": [
+          {
+            "version": "draft",
+            "similarity": 0.30009904834959245,
+            "sentence": "Initially, I tried to build the entire complex workflow at once"
+          }
+        ]
+      },
+      {
+        "final_index": 20,
+        "final_sentence": "## Behind the Interface\n\nThe generated code revealed issues beyond the visual interface",
+        "origin_version": "edited",
+        "origin_index": 25,
+        "similarity_scores": {
+          "edited": 0.36536642124778346,
+          "refined": 0.3285897283450417,
+          "draft": 0.3399088734930212
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.36536642124778346,
+            "sentence": "### Behind the Interface: Code Quality Issues\n\nThese modification challenges eventually drove me to examine the underlying Mermaid code, revealing another limitation: the AI had stripped my template formatting and produced unnecessarily verbose syntax"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.3285897283450417,
+            "sentence": "## Modification Issues Drive Code Inspection\n\nThe real challenges emerged when I started making changes to the diagram"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.3399088734930212,
+            "sentence": "## When Structure Meets Reality\n\nThe biggest surprise came when I finally dove into the code myself"
+          }
+        ]
+      },
+      {
+        "final_index": 21,
+        "final_sentence": "My template theme variables and class definitions were stripped out, while the syntax became unnecessarily verbose, requiring manual cleanup",
+        "origin_version": "new_in_final",
+        "origin_index": null,
+        "similarity_scores": {
+          "edited": 0.29736924306912854,
+          "refined": 0.263258128750081,
+          "draft": 0.29426459003897276
+        },
+        "modification_path": []
+      },
+      {
+        "final_index": 22,
+        "final_sentence": "I discovered that explicitly instructing the tool to maintain existing connections improved results",
+        "origin_version": "edited",
+        "origin_index": 27,
+        "similarity_scores": {
+          "edited": 0.3490867813428243,
+          "refined": 0.4100419382254283,
+          "draft": 0.30446451663970947
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.3490867813428243,
+            "sentence": "I discovered you could explicitly instruct the AI to maintain existing connections, but you need to know to do this—highlighting how effective collaboration with AI tools often requires discovering their specific behaviors through trial and error rather than intuitive interaction"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.4100419382254283,
+            "sentence": "Tell the AI to maintain connections: Be explicit about wanting to keep existing connections when making modifications"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.30446451663970947,
+            "sentence": "Don't assume AI will maintain structure across updates—it may rewrite connections you want to preserve"
+          }
+        ]
+      },
+      {
+        "final_index": 23,
+        "final_sentence": "Effective collaboration requires learning specific prompting techniques through practice",
+        "origin_version": "edited",
+        "origin_index": 27,
+        "similarity_scores": {
+          "edited": 0.3080848455429077,
+          "refined": 0.238573690255483,
+          "draft": 0.23319806158542633
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.3080848455429077,
+            "sentence": "I discovered you could explicitly instruct the AI to maintain existing connections, but you need to know to do this—highlighting how effective collaboration with AI tools often requires discovering their specific behaviors through trial and error rather than intuitive interaction"
+          }
+        ]
+      },
+      {
+        "final_index": 24,
+        "final_sentence": "## A Mental Model for Collaboration\n\nThink of AI tools as technical collaborators rather than independent creators",
+        "origin_version": "edited",
+        "origin_index": 28,
+        "similarity_scores": {
+          "edited": 0.6348399945667812,
+          "refined": 0.38019823308648737,
+          "draft": 0.30315268370840287
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.6348399945667812,
+            "sentence": "### A Mental Model for Effective Collaboration\n\nThink of AI diagramming tools as technical collaborators rather than independent creators—assistants who can rapidly generate initial drafts but require clear direction and oversight during revisions"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.38019823308648737,
+            "sentence": "What began as a straightforward test evolved into a fascinating exploration of representation, abstraction, and human-AI collaboration"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.30315268370840287,
+            "sentence": "## The Diagram as Mirror\n\nWe build systems to reflect how we think we work"
+          }
+        ]
+      },
+      {
+        "final_index": 25,
+        "final_sentence": "They excel at initial drafts but need clear direction during revisions",
+        "origin_version": "edited",
+        "origin_index": 28,
+        "similarity_scores": {
+          "edited": 0.3070898023811547,
+          "refined": 0.23239427032294097,
+          "draft": 0.263572010729048
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.3070898023811547,
+            "sentence": "### A Mental Model for Effective Collaboration\n\nThink of AI diagramming tools as technical collaborators rather than independent creators—assistants who can rapidly generate initial drafts but require clear direction and oversight during revisions"
+          }
+        ]
+      },
+      {
+        "final_index": 26,
+        "final_sentence": "Align your approach with the fidelity of your thinking about the outcome",
+        "origin_version": "new_in_final",
+        "origin_index": null,
+        "similarity_scores": {
+          "edited": 0.2791136315335398,
+          "refined": 0.2792631934086482,
+          "draft": 0.23316830396652222
+        },
+        "modification_path": []
+      },
+      {
+        "final_index": 27,
+        "final_sentence": "Guide the process actively when exploring concepts",
+        "origin_version": "new_in_final",
+        "origin_index": null,
+        "similarity_scores": {
+          "edited": 0.26739666759967806,
+          "refined": 0.252780020236969,
+          "draft": 0.2607026994228363
+        },
+        "modification_path": []
+      },
+      {
+        "final_index": 28,
+        "final_sentence": "Provide structured inputs when documenting established systems",
+        "origin_version": "new_in_final",
+        "origin_index": null,
+        "similarity_scores": {
+          "edited": 0.24447520191852862,
+          "refined": 0.2054918110370636,
+          "draft": 0.23523826400438944
+        },
+        "modification_path": []
+      },
+      {
+        "final_index": 29,
+        "final_sentence": "## Tips From My Experience\n\nThrough many iterations, my diagram evolved from a complex tangle to a streamlined visualization",
+        "origin_version": "edited",
+        "origin_index": 34,
+        "similarity_scores": {
+          "edited": 0.8828042902444538,
+          "refined": 0.8615345358848572,
+          "draft": 0.4190951923529307
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.8828042902444538,
+            "sentence": "## Pro Tips From My Experience\n\nThrough dozens of iterations, my diagram evolved from a complex tangle to a streamlined visualization"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.8615345358848572,
+            "sentence": "## Pro Tips From My Experience\n\nThrough dozens of iterations, my diagram gradually evolved from a complex tangle to a streamlined visualization"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.4190951923529307,
+            "sentence": "## Visualization as Discovery\n\nThe most powerful outcome wasn't the diagram itself, but what it revealed about my process"
+          }
+        ]
+      },
+      {
+        "final_index": 30,
+        "final_sentence": "Here are key insights for working with Mermaid AI:\n\n### Design Principles\nMatch your approach to the fidelity of your thinking\nUse brief node names for easier adjustments\nCreate visual hierarchy with subgraphs to group related activities\nExplicitly instruct the AI to preserve existing relationships when making changes\n\n### Workflow Practices\nUse 'Change All' functionality in edit mode for consistent updates\nDocument your creation process for future modifications\nBe transparent about AI assistance when sharing with teams\nPlan for manual refinement after AI-generated drafts\n\nThese practices align with what makes any complex system model effective: concise terminology, clear categorization, focus on key relationships, and consistent patterns",
+        "origin_version": "edited",
+        "origin_index": 0,
+        "similarity_scores": {
+          "edited": 0.40557610932386146,
+          "refined": 0.406989465157191,
+          "draft": 0.43529631087654513
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.40557610932386146,
+            "sentence": "Mermaid AI: A Tool Trial for Diagramming\n\nTesting the capabilities of AI-assisted diagram creation\n\nTL;DR: What began as a simple test of Mermaid AI for diagramming evolved into a revealing exploration of human-AI collaboration"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.406989465157191,
+            "sentence": "This transformation reflected my growing understanding of how to work effectively with Mermaid AI"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.43529631087654513,
+            "sentence": "TL;DR: Creating a workflow diagram in Mermaid with AI assistance proved to be both frustrating and revelatory"
+          }
+        ]
+      },
+      {
+        "final_index": 31,
+        "final_sentence": "## Integration with Documentation\n\nMermaid delivers the most value when integrated into your documentation ecosystem",
+        "origin_version": "edited",
+        "origin_index": 35,
+        "similarity_scores": {
+          "edited": 0.6013810854891072,
+          "refined": 0.3337139089902242,
+          "draft": 0.31066370010375977
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.6013810854891072,
+            "sentence": "## Integration with Broader Design Systems\n\nDiagramming tools like Mermaid become more valuable when integrated into the broader design documentation ecosystem"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.3337139089902242,
+            "sentence": "## The Final Verdict\n\nThere's definitely a learning curve to working with Mermaid AI"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.31066370010375977,
+            "sentence": "The AI had stripped out much of my template formatting and written what was probably the most verbose version possible of the Mermaid syntax"
+          }
+        ]
+      },
+      {
+        "final_index": 32,
+        "final_sentence": "Its text-based approach works across numerous applications including Notion, Obsidian, and many other platforms",
+        "origin_version": "new_in_final",
+        "origin_index": null,
+        "similarity_scores": {
+          "edited": 0.28980073476991347,
+          "refined": 0.21280923581892444,
+          "draft": 0.18050214813815224
+        },
+        "modification_path": []
+      },
+      {
+        "final_index": 33,
+        "final_sentence": "This enables version control alongside other documentation, creating a single source of truth that evolves with your systems",
+        "origin_version": "edited",
+        "origin_index": 36,
+        "similarity_scores": {
+          "edited": 0.7150952997414962,
+          "refined": 0.24389101709088973,
+          "draft": 0.23859748473534217
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.7150952997414962,
+            "sentence": "Mermaid's text-based approach enables version control alongside other documentation, creating a single source of truth that evolves as systems change"
+          }
+        ]
+      },
+      {
+        "final_index": 34,
+        "final_sentence": "This integration transforms diagrams from static artifacts into living documentation",
+        "origin_version": "edited",
+        "origin_index": 37,
+        "similarity_scores": {
+          "edited": 0.9999999403953552,
+          "refined": 0.2984903671524741,
+          "draft": 0.2572508454322815
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.9999999403953552,
+            "sentence": "This integration transforms diagrams from static artifacts into living documentation"
+          }
+        ]
+      },
+      {
+        "final_index": 35,
+        "final_sentence": "Maintaining diagrams as code provides long-term benefits that outweigh the initial learning curve, especially for complex systems needing frequent updates",
+        "origin_version": "edited",
+        "origin_index": 38,
+        "similarity_scores": {
+          "edited": 0.7455439354692186,
+          "refined": 0.3322203981465307,
+          "draft": 0.311445848921598
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.7455439354692186,
+            "sentence": "The ability to maintain diagrams as code provides substantial long-term value that outweighs the initial learning curve, especially for complex systems requiring ongoing updates"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.3322203981465307,
+            "sentence": "Use 'Change All' in the editor: For consistent updates across a complex diagram"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.311445848921598,
+            "sentence": "As I tried to make modifications, I discovered an important rhythm to working with AI in this context:\nInitial structure: AI excels here, saving hours\nModification: AI struggles, often breaking what was working\nRefinement: Requires human intervention, especially for style preferences\n\nMy most significant learning was in how I approached the diagram itself"
+          }
+        ]
+      },
+      {
+        "final_index": 36,
+        "final_sentence": "## The Final Verdict\n\nThe AI-assisted approach proved worthwhile despite requiring time to learn",
+        "origin_version": "edited",
+        "origin_index": 39,
+        "similarity_scores": {
+          "edited": 0.5458601514498392,
+          "refined": 0.44586979259144177,
+          "draft": 0.33110368251800537
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.5458601514498392,
+            "sentence": "## The Final Verdict\n\nDespite the learning curve and friction points, the AI-assisted approach delivered significant value"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.44586979259144177,
+            "sentence": "## The Final Verdict\n\nThere's definitely a learning curve to working with Mermaid AI"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.33110368251800537,
+            "sentence": "## Starting Simple: The AI Advantage\n\nHaving used Mermaid script before, I thought adding AI assistance would make this process even smoother"
+          }
+        ]
+      },
+      {
+        "final_index": 37,
+        "final_sentence": "Creating the diagram manually would have taken at least twice as long",
+        "origin_version": "edited",
+        "origin_index": 40,
+        "similarity_scores": {
+          "edited": 0.7357597086164687,
+          "refined": 0.6349841898137873,
+          "draft": 0.35865431582486185
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.7357597086164687,
+            "sentence": "The initial time savings alone justified the experimentation—creating the diagram manually would have taken at least twice as long"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.6349841898137873,
+            "sentence": "If I had tried to create the diagram manually, it probably would have taken me twice as long"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.35865431582486185,
+            "sentence": "The initial time savings were substantial—what would have taken me a good hour to structure manually was scaffolded in minutes"
+          }
+        ]
+      },
+      {
+        "final_index": 38,
+        "final_sentence": "For complex diagramming tasks, Mermaid AI offers a powerful starting point but not a complete solution",
+        "origin_version": "edited",
+        "origin_index": 41,
+        "similarity_scores": {
+          "edited": 0.9049510359764099,
+          "refined": 0.8726590275764465,
+          "draft": 0.45120847430722466
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.9049510359764099,
+            "sentence": "For complex diagramming tasks, Mermaid AI offers a powerful starting point, not a complete solution"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.8726590275764465,
+            "sentence": "For complex diagramming tasks, Mermaid AI offers a powerful starting point—not a complete solution"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.45120847430722466,
+            "sentence": "TL;DR: Creating a workflow diagram in Mermaid with AI assistance proved to be both frustrating and revelatory"
+          }
+        ]
+      },
+      {
+        "final_index": 39,
+        "final_sentence": "I found the best results come from using AI to rapidly generate the initial structure while I maintain control over refinement and styling",
+        "origin_version": "edited",
+        "origin_index": 42,
+        "similarity_scores": {
+          "edited": 0.49727659360055,
+          "refined": 0.48657962679862976,
+          "draft": 0.35332831469449133
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.49727659360055,
+            "sentence": "The human-AI collaboration works best when leveraging AI for rapid structure generation while maintaining control over refinement and style"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.48657962679862976,
+            "sentence": "The human-AI collaboration works best when we leverage the AI for rapid structure generation while maintaining control over refinement and style"
+          },
+          {
+            "version": "draft",
+            "similarity": 0.35332831469449133,
+            "sentence": "While the AI could rapidly generate the initial structure (saving 4-5x the time it would have taken manually), navigating the balance between visual thinking and code editing exposed critical insights about my creative process"
+          }
+        ]
+      },
+      {
+        "final_index": 40,
+        "final_sentence": "Understanding both your own clarity level and your tools is essential when choosing your approach",
+        "origin_version": "edited",
+        "origin_index": 43,
+        "similarity_scores": {
+          "edited": 0.3725820513148057,
+          "refined": 0.3725820513148057,
+          "draft": 0.29907508457408233
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.3725820513148057,
+            "sentence": "The key is knowing yourself as well as your tools"
+          },
+          {
+            "version": "refined",
+            "similarity": 0.3725820513148057,
+            "sentence": "The key is knowing yourself as well as your tools"
+          }
+        ]
+      },
+      {
+        "final_index": 41,
+        "final_sentence": "I've discovered that the process of creating the diagram often delivers as much value as the final visualization itself.",
+        "origin_version": "edited",
+        "origin_index": 44,
+        "similarity_scores": {
+          "edited": 0.4605103810628255,
+          "refined": 0.4605103810628255,
+          "draft": 0.39976163054334707
+        },
+        "modification_path": [
+          {
+            "version": "edited",
+            "similarity": 0.4605103810628255,
+            "sentence": "Be honest about your level of clarity, choose your approach accordingly, and remember that the process of creating the diagram might be just as valuable as the diagram itself."
+          },
+          {
+            "version": "refined",
+            "similarity": 0.4605103810628255,
+            "sentence": "Be honest about your level of clarity, choose your approach accordingly, and remember that the process of creating the diagram might be just as valuable as the diagram itself."
+          },
+          {
+            "version": "draft",
+            "similarity": 0.39976163054334707,
+            "sentence": "## Visualization as Discovery\n\nThe most powerful outcome wasn't the diagram itself, but what it revealed about my process"
+          }
+        ]
+      }
+    ],
+    "statistics": {
+      "total_sentences": 42,
+      "origin_distribution": {
+        "edited": {
+          "count": 36,
+          "percentage": 85.71428571428571
+        },
+        "draft": {
+          "count": 1,
+          "percentage": 2.380952380952381
+        },
+        "new_in_final": {
+          "count": 5,
+          "percentage": 11.904761904761903
+        }
+      },
+      "modification_distribution": {
+        "high_similarity": {
+          "count": 3,
+          "percentage": 7.142857142857142
+        },
+        "medium_similarity": {
+          "count": 17,
+          "percentage": 40.476190476190474
+        },
+        "low_similarity": {
+          "count": 17,
+          "percentage": 40.476190476190474
+        },
+        "new_content": {
+          "count": 5,
+          "percentage": 11.904761904761903
+        }
+      }
+    },
+    "analysis_timestamp": "2025-06-14T16:55:32.066935",
+    "similarity_threshold": 0.3
+  }
+}
